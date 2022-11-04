@@ -11,9 +11,14 @@ jobs:
   publish:
     runs-on: "ubuntu-20.04"
     steps:
+      - id: string
+        uses: ASzc/change-string-case-action@v2
+        with:
+          string: ${{ github.repository }}
+
       - uses: actions/checkout@v2
-      - name: Build and publish a Docker image for ${{ github.repository }}
+      - name: Build and publish a Docker image for ${{ steps.string.outputs.lowercase }}
         uses: macbre/push-to-ghcr@master
         with:
-          image_name: ${{ github.repository }}
+          image_name: ${{ steps.string.outputs.lowercase }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
