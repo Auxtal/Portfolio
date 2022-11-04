@@ -3,7 +3,7 @@
 <div>
     <p align="center">
         <a href="https://www.auxtal.xyz">
-            <img src="https://i.imgur.com/RRivTWc.pn" width="100" height="100">
+            <img src="https://i.imgur.com/RRivTWc.png" width="100" height="100">
         </a>
     </p>
 </div>
@@ -15,7 +15,7 @@
         <br>
         <br>
         <a href="https://github.com/Auxtal/Portfolio">
-            <img src="https://github.com/auxbot-discord-bot/website/actions/workflows/publish%20docker%20image.yml/badge.svg">
+            <img src="https://github.com/Auxtal/Portfolio/actions/workflows/publish%20docker%20image.yml/badge.svg?branch=main">
         </a>
     </p>
 </div>
