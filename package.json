@@ -18,6 +18,7 @@
 		"@sentry/svelte": "^7.17.3",
 		"@sentry/tracing": "^7.17.3",
 		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/adapter-node": "^1.0.0-next.100",
 		"@sveltejs/kit": "^1.0.0-next.504",
 		"@zerodevx/svelte-toast": "^0.8.0",
 		"autoprefixer": "^10.4.8",

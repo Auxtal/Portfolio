@@ -17,7 +17,7 @@ jobs:
           string: ${{ github.repository }}
 
       - uses: actions/checkout@v2
-      - name: Build and publish a Docker image for ${{ steps.string.outputs.lowercase }}
+      - name: Build and publish a Docker image for ${{ github.repository }}
         uses: macbre/push-to-ghcr@master
         with:
           image_name: ${{ steps.string.outputs.lowercase }}
