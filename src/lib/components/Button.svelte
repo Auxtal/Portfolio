@@ -1,20 +1,34 @@
 <script>
 	export let href = "";
-	export let onClickEvent = new Function();
+	export let download = false;
 	export let loading = false;
+	export let onClickEvent = new Function();
+	export let classes;
 </script>
 
 {#if href}
-	<a
-		class={`btn border-2 border-accent bg-transparent text-accent backdrop-blur-sm transition-all duration-200 hover:border-neutral hover:bg-accent hover:text-primary`}
-		href={`${href}`}
-		class:loading
-	>
-		<slot />
-	</a>
+	{#if download}
+		<a
+			class={`btn !border-none bg-secondary/20 text-secondary backdrop-blur-sm transition-all duration-200 hover:bg-neutral hover:text-secondary focus:bg-neutral ${classes}`}
+			{href}
+			target="_blank"
+			class:loading
+			download
+		>
+			<slot />
+		</a>
+	{:else}
+		<a
+			class={`btn !border-none bg-secondary/20 text-secondary backdrop-blur-sm transition-all duration-200 hover:bg-neutral hover:text-secondary focus:bg-neutral ${classes}`}
+			{href}
+			class:loading
+		>
+			<slot />
+		</a>
+	{/if}
 {:else}
 	<button
-		class={`btn border-2 border-accent bg-transparent leading-[3.3] text-accent backdrop-blur-sm transition-all duration-200 hover:border-neutral hover:bg-accent hover:text-primary`}
+		class={`btn !border-none bg-secondary/20 text-secondary backdrop-blur-sm transition-all duration-200 hover:bg-neutral hover:text-secondary focus:bg-neutral ${classes}`}
 		on:click={onClickEvent()}
 		class:loading
 	>

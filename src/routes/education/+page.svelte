@@ -1,6 +1,5 @@
 <script>
 	import Education from "$json/Education.json";
-	import { t } from "$lib/locales/i18n";
 
 	import { onMount } from "svelte";
 	import { fade, fly } from "svelte/transition";
@@ -32,7 +31,9 @@
 					{#if animate}
 						<span in:fly|local={{ delay: 250, y: (-100 / 2) * (i + 1), duration: 1500 }}>
 							<TimelineDot
-								style={`background-color: ${i % 2 == 0 ? "var(--accent)" : "var(--light)"};`}
+								style={`background-color: ${
+									i % 2 == 0 ? "var(--accent)" : "var(--light)"
+								}; border: none;`}
 							/>
 						</span>
 					{/if}
@@ -40,7 +41,7 @@
 				</TimelineSeparator>
 				<TimelineContent>
 					{#if animate}
-						<h3 in:fly|local={{ x: -150, duration: 2000 }} class="font-secondary font-bold">
+						<h3 in:fly|local={{ x: -150, duration: 2000 }} class="font-secondary !font-extrabold">
 							{Education.place}
 						</h3>
 						<p in:fly|local={{ x: 100, duration: 1500 }} class="py-2 text-sm text-neutral">

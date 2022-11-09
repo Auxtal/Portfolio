@@ -125,7 +125,7 @@
 						</label>
 					{/if}
 				</div>
-				<Button {loading}>Send</Button>
+				<Button classes="w-full" {loading}>Send</Button>
 			</form>
 		</div>
 	</div>

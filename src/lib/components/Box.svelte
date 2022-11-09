@@ -13,7 +13,7 @@
 
 {#if animation}
 	<div
-		class="dark:bg-stone-900/10 max-h-[23rem] w-full max-w-[25rem] rounded-xl border border-accent p-6 shadow-sm shadow-accent backdrop-blur-sm transition-transform duration-200 hover:-translate-y-2"
+		class="max-h-[23rem] w-full max-w-[25rem] rounded-xl bg-secondary/20 p-6 shadow-lg shadow-accent/30 backdrop-blur-sm transition-transform duration-200 hover:-translate-y-2"
 		in:fly|local={{ x: 100, duration: 1500 }}
 	>
 		{#if title}

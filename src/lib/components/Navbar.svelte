@@ -1,7 +1,7 @@
 <script>
 	import ThemeToggle from "$lib/components/ThemeToggle.svelte";
 	import Navlinks from "$json/Navlinks.json";
-	import { Toast } from "$lib/helpers/toast";
+	import Button from "$lib/components/Button.svelte";
 
 	import { onMount } from "svelte";
 	import { fade } from "svelte/transition";
@@ -31,7 +31,7 @@
 		<div>
 			<a
 				href="/"
-				class="dark:hover:bg-white btn btn-ghost text-xl normal-case hover:bg-secondary hover:text-primary"
+				class="dark:hover:bg-white btn btn-ghost text-xl normal-case hover:bg-secondary/50 hover:text-secondary"
 				>Auxtal</a
 			>
 		</div>
@@ -41,8 +41,8 @@
 					<li class="mx-4">
 						<a
 							href={Navlink.route}
-							class={`hover:scale-110 hover:bg-secondary hover:text-primary ${
-								$page.url.pathname === Navlink.route ? "bg-neutral text-white" : ""
+							class={`hover:scale-110 hover:bg-secondary/50 hover:text-secondary ${
+								$page.url.pathname === Navlink.route ? "bg-neutral font-bold text-secondary" : ""
 							}`}
 							data-sveltekit-prefetch
 						>
@@ -52,14 +52,9 @@
 				{/each}
 			</ul>
 		</div>
-		<a
-			target="_blank"
-			class="btn border-2 border-accent bg-transparent text-accent hover:border-neutral hover:bg-accent hover:text-primary"
-			href="/Resume Redacted Info.pdf"
-			download>Resume</a
-		>
+		<Button href="/Resume Redacted Info.pdf" download={true} classes="px-9">Resume</Button>
 		{#if screen >= 1024}
-			<div class="ml-6">
+			<div class="ml-3">
 				<ThemeToggle />
 			</div>
 		{/if}
@@ -97,7 +92,7 @@
 			{#each Navlinks as Navlink}
 				<li
 					class={`rounded-md hover:bg-secondary hover:text-primary ${
-						$page.url.pathname === Navlink.route ? "bg-neutral text-primary" : ""
+						$page.url.pathname === Navlink.route ? "bg-neutral font-bold text-secondary" : ""
 					}`}
 					on:click={toggleNavbar}
 				>
@@ -111,11 +106,7 @@
 					<ThemeToggle />
 				</div>
 			{/if}
-			<a
-				href="/Resume Redacted Info.pdf"
-				class="btn mt-10 w-full bg-secondary text-primary"
-				download>Resume</a
-			>
+			<Button href="/Resume Redacted Info.pdf" download={true} classes="px-9">Resume</Button>
 		</ul>
 	</div>
 {/if}
