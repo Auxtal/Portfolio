@@ -31,7 +31,7 @@
 		<div>
 			<a
 				href="/"
-				class="dark:hover:bg-white btn btn-ghost text-xl normal-case hover:bg-secondary/50 hover:text-secondary"
+				class="dark:hover:bg-white btn-ghost btn text-xl normal-case hover:bg-secondary/50 hover:text-secondary"
 				>Auxtal</a
 			>
 		</div>
@@ -61,9 +61,9 @@
 	</div>
 	<div class="navbar relative lg:hidden">
 		<div class="flex-1 text-center">
-			<a href="/" class="btn btn-ghost text-xl normal-case">Auxtal</a>
+			<a href="/" class="btn-ghost btn text-xl normal-case">Auxtal</a>
 		</div>
-		<label class="swap-rotate btn swap btn-circle" on:click={toggleNavbar}>
+		<label class="swap swap-rotate btn-circle btn" on:click={toggleNavbar}>
 			<input type="checkbox" />
 			<svg
 				class="swap-off fill-current"
@@ -88,7 +88,7 @@
 	<div
 		class={`${navbar ? `` : "hidden"} absolute top-16 z-50 h-full w-full bg-primary transition-all`}
 	>
-		<ul tabindex="0" class="left-0 h-screen w-full bg-primary px-4 py-8 shadow">
+		<ul class="left-0 h-screen w-full bg-primary px-4 py-8 shadow">
 			{#each Navlinks as Navlink}
 				<li
 					class={`rounded-md hover:bg-secondary hover:text-primary ${

@@ -12,6 +12,7 @@
 			class={`btn !border-none bg-secondary/20 text-secondary backdrop-blur-sm transition-all duration-200 hover:bg-neutral hover:text-secondary focus:bg-neutral ${classes}`}
 			{href}
 			target="_blank"
+			rel="noreferrer"
 			class:loading
 			download
 		>
