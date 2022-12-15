@@ -16,7 +16,7 @@
 
 <div class="my-[5rem] flex h-screen justify-center md:my-0">
 	<div
-		class="my-auto grid grid-cols-1 place-items-center justify-items-center gap-0 gap-y-5 px-5 md:grid-cols-2 md:gap-x-20 md:gap-y-10 md:px-24 lg:px-10"
+		class="grid grid-cols-1 place-items-center justify-items-center gap-0 gap-y-5 px-5 md:my-auto md:grid-cols-2 md:gap-x-20 md:gap-y-10 md:px-24 lg:px-10"
 	>
 		{#if animate}
 			{#each Work as Work}

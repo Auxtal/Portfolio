@@ -33,7 +33,7 @@
 			</h1>
 			<p
 				transition:fade|local={{ delay: 500, duration: 1000 }}
-				class="font-secondary text-center text-sm text-accent backdrop-blur-sm md:text-left lg:text-xl"
+				class="font-secondary px-8 text-center text-sm text-accent backdrop-blur-sm md:text-left lg:text-xl"
 			>
 				{$t("about.description")}
 			</p>
