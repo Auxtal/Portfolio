@@ -14,9 +14,9 @@
 	<title>About</title>
 </svelte:head>
 
-<div class="mx-auto h-full items-center justify-center px-8 lg:flex lg:max-w-full">
+<div class="flex h-screen flex-col items-center justify-center sm:flex-row md:px-8 lg:max-w-full">
 	{#if animate}
-		<div class="">
+		<div class="px-4">
 			<img
 				transition:fade|local={{ delay: 100, duration: 300 }}
 				class="mr-20 rounded-lg shadow-md transition-all duration-300 sm:max-w-sm lg:grayscale lg:hover:grayscale-0"
@@ -33,7 +33,7 @@
 			</h1>
 			<p
 				transition:fade|local={{ delay: 500, duration: 1000 }}
-				class="font-secondary text-sm text-accent backdrop-blur-sm lg:text-xl"
+				class="font-secondary text-center text-sm text-accent backdrop-blur-sm md:text-left lg:text-xl"
 			>
 				{$t("about.description")}
 			</p>

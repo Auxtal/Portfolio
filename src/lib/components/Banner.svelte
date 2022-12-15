@@ -14,9 +14,9 @@
 {#if banner}
 	<div
 		transition:fade|local={{ delay: 500, duration: 800 }}
-		class="flex w-full flex-col items-center justify-center px-5 lg:items-end lg:px-32"
+		class="flex h-screen w-full flex-col items-center justify-center px-5 lg:items-end lg:px-32"
 	>
-		<small class="font-secondary mb-2 text-xl text-accent backdrop-blur-sm sm:text-4xl"
+		<small class="font-secondary mb-2 text-xl text-accent backdrop-blur-sm sm:text-4xl sm:font-bold"
 			>Hi, my name is</small
 		>
 		<h1

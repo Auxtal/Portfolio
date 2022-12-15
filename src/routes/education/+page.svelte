@@ -23,7 +23,7 @@
 	<title>Education</title>
 </svelte:head>
 
-<div class="flex h-full items-center">
+<div class="flex h-screen items-center">
 	<Timeline position="alternate">
 		{#each Education as Education, i}
 			<TimelineItem style="margin:15px 0">

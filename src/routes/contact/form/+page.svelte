@@ -1,7 +1,6 @@
 <script>
 	import Button from "$lib/components/Button.svelte";
 	import Icon from "@iconify/svelte";
-	import { t } from "$lib/locales/i18n";
 	import { Toast } from "$lib/helpers/toast";
 
 	import { onMount } from "svelte";
