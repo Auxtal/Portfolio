@@ -24,7 +24,7 @@
 </svelte:head>
 
 <div class="flex h-screen items-center justify-center">
-	<div class="absolute top-20 w-full lg:relative lg:top-0">
+	<div class="absolute top-20 w-full lg:top-28 xl:relative xl:top-0">
 		<Timeline position="alternate">
 			{#each Education as Education, i}
 				<TimelineItem style="margin:15px 0">
