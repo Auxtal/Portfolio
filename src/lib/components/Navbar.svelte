@@ -2,24 +2,25 @@
 	import ThemeToggle from "$lib/components/ThemeToggle.svelte";
 	import Navlinks from "$json/Navlinks.json";
 	import Button from "$lib/components/Button.svelte";
+	import { clickOutside } from "$lib/helpers/clickOutside.js";
 
 	import { onMount } from "svelte";
 	import { fade } from "svelte/transition";
 	import { page } from "$app/stores";
 
 	let navbar = false;
-	let screen;
 	let animation = false;
 
 	onMount(() => {
-		screen = window.screen.width;
 		animation = !animation;
 	});
 
 	const toggleNavbar = () => {
-		const body = document.querySelector("body");
 		navbar = !navbar;
-		navbar ? body?.classList.add("overflow-hidden") : body?.classList.remove("overflow-hidden");
+	};
+
+	const hideNavbar = () => {
+		navbar = false;
 	};
 </script>
 
@@ -64,7 +65,13 @@
 		</div>
 		<div class="flex items-center justify-end space-x-3">
 			<label class="swap-rotate swap btn-circle btn">
-				<input type="checkbox" on:click={toggleNavbar} />
+				<input
+					type="checkbox"
+					use:clickOutside
+					on:clickOutside={hideNavbar}
+					on:click={toggleNavbar}
+					bind:checked={navbar}
+				/>
 				<svg
 					class="swap-off fill-current"
 					xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +100,7 @@
 					class={`rounded-md hover:bg-secondary hover:text-primary ${
 						$page.url.pathname === Navlink.route ? "bg-neutral font-bold text-secondary" : ""
 					}`}
-					on:click={toggleNavbar}
+					on:click={hideNavbar}
 				>
 					<a
 						href={Navlink.route}

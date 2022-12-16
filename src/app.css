@@ -34,7 +34,3 @@ body {
 		transition-duration: 150ms;
 	}
 }
-
-.main-container {
-	container-type: inline-size;
-}

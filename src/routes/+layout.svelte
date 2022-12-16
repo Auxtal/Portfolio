@@ -14,7 +14,6 @@
 	import { BrowserTracing } from "@sentry/tracing";
 
 	let loading = true;
-	let options = {};
 
 	onMount(() => {
 		loading = false;
@@ -29,7 +28,7 @@
 	});
 </script>
 
-<SvelteToast {options} />
+<SvelteToast />
 {#if loading}
 	<div
 		class="flex h-screen items-center justify-center"
@@ -38,13 +37,7 @@
 		<Loader color="var(--neutral)" duration="1.5s" size="85" />
 	</div>
 {:else}
-	<div class="flex min-h-screen flex-col lg:h-screen">
-		<Navbar />
-		<div class="main-container flex h-full">
-			<LeftNavigation />
-			<main class="w-full lg:ml-20">
-				<slot />
-			</main>
-		</div>
-	</div>
+	<Navbar />
+	<LeftNavigation />
+	<slot />
 {/if}
