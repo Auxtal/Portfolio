@@ -7,6 +7,4 @@
 	<title>{$t("banner.name")}'s Portfolio</title>
 </svelte:head>
 
-<div class="flex h-full items-center justify-end">
-	<Banner />
-</div>
+<Banner />

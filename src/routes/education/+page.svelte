@@ -1,6 +1,5 @@
 <script>
 	import Education from "$json/Education.json";
-	import { t } from "$lib/locales/i18n";
 
 	import { onMount } from "svelte";
 	import { fade, fly } from "svelte/transition";
@@ -24,34 +23,38 @@
 	<title>Education</title>
 </svelte:head>
 
-<div class="flex h-full items-center">
-	<Timeline position="alternate">
-		{#each Education as Education, i}
-			<TimelineItem style="margin:15px 0">
-				<TimelineSeparator>
-					{#if animate}
-						<span in:fly|local={{ delay: 250, y: (-100 / 2) * (i + 1), duration: 1500 }}>
-							<TimelineDot
-								style={`background-color: ${i % 2 == 0 ? "var(--accent)" : "var(--light)"};`}
-							/>
-						</span>
-					{/if}
-					<TimelineConnector />
-				</TimelineSeparator>
-				<TimelineContent>
-					{#if animate}
-						<h3 in:fly|local={{ x: -150, duration: 2000 }} class="font-secondary font-bold">
-							{Education.place}
-						</h3>
-						<p in:fly|local={{ x: 100, duration: 1500 }} class="py-2 text-sm text-neutral">
-							{Education.year_start + "-" + Education.year_end}
-						</p>
-						<p in:fade|local={{ delay: 1500, duration: 1500 }} class="font-secondary text-accent">
-							{Education.description}
-						</p>
-					{/if}
-				</TimelineContent>
-			</TimelineItem>
-		{/each}
-	</Timeline>
+<div class="flex h-screen items-center justify-center">
+	<div class="absolute top-20 w-full lg:top-28 xl:relative xl:top-0">
+		<Timeline position="alternate">
+			{#each Education as Education, i}
+				<TimelineItem style="margin:15px 0">
+					<TimelineSeparator>
+						{#if animate}
+							<span in:fly|local={{ delay: 250, y: (-100 / 2) * (i + 1), duration: 1500 }}>
+								<TimelineDot
+									style={`background-color: ${
+										i % 2 == 0 ? "var(--accent)" : "var(--light)"
+									}; border: none;`}
+								/>
+							</span>
+						{/if}
+						<TimelineConnector />
+					</TimelineSeparator>
+					<TimelineContent>
+						{#if animate}
+							<h3 in:fly|local={{ x: -150, duration: 2000 }} class="font-secondary !font-extrabold">
+								{Education.place}
+							</h3>
+							<p in:fly|local={{ x: 100, duration: 1500 }} class="py-2 text-sm text-neutral">
+								{Education.year_start + "-" + Education.year_end}
+							</p>
+							<p in:fade|local={{ delay: 1500, duration: 1500 }} class="font-secondary text-accent">
+								{Education.description}
+							</p>
+						{/if}
+					</TimelineContent>
+				</TimelineItem>
+			{/each}
+		</Timeline>
+	</div>
 </div>

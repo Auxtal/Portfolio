@@ -1,5 +1,28 @@
 <script>
+	import Button from "$lib/components/Button.svelte";
+
 	import { page } from "$app/stores";
+	import { fade } from "svelte/transition";
+
+	if ($page?.status === 404) {
+		window.location.replace("/");
+	}
 </script>
 
-<h1>{$page.status}: {$page.error.message}</h1>
+<svelte:head>
+	<title>{$page?.status ? $page?.status : ""} Error</title>
+</svelte:head>
+
+<div class="flex h-full items-center">
+	<div
+		transition:fade|local={{ delay: 500, duration: 800 }}
+		class="flex w-full flex-col items-center justify-center px-5 lg:px-32"
+	>
+		<h1
+			class="font-primary mt-5 mb-10 text-3xl font-bold text-neutral backdrop-blur-sm sm:text-3xl lg:text-4xl"
+		>
+			Looks Like An Error Has Occurred
+		</h1>
+		<Button href="/contact/form">Contact Auxtal</Button>
+	</div>
+</div>

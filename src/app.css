@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,12 +10,13 @@ body {
 	padding: 0;
 	box-sizing: border-box;
 	line-height: normal;
+	font-family: "Roboto", "sans-serif";
 }
 
 body {
 	background-image: radial-gradient(var(--dots), 1px, transparent 0);
 	background-size: 40px 40px;
-	background-position: -19px -19px;
+	background-position: -20px -20px;
 }
 
 @layer base {
@@ -30,8 +33,4 @@ body {
 		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 		transition-duration: 150ms;
 	}
-}
-
-.main-container {
-	container-type: inline-size;
 }
