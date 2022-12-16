@@ -4,18 +4,18 @@
 	import { page } from "$app/stores";
 	import { fade } from "svelte/transition";
 
-	if ($page?.status === 404) {
-		window.location.replace("/");
-	}
+	// if ($page?.status === 404) {
+	// 	window.location.replace("/");
+	// }
 </script>
 
 <svelte:head>
 	<title>{$page?.status ? $page?.status : ""} Error</title>
 </svelte:head>
 
-<div class="flex h-full items-center">
+<div class="flex h-screen items-center">
 	<div
-		transition:fade|local={{ delay: 500, duration: 800 }}
+		in:fade={{ delay: 500, duration: 800 }}
 		class="flex w-full flex-col items-center justify-center px-5 lg:px-32"
 	>
 		<h1

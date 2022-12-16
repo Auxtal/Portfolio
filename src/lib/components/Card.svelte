@@ -14,7 +14,7 @@
 
 {#if animation}
 	<div
-		class="max-h-max w-full rounded-xl border border-secondary/20 bg-secondary/10 p-4 backdrop-blur-sm transition-transform duration-200 hover:-translate-y-2 sm:max-h-[15rem] md:max-h-[23rem] md:max-w-[25rem]"
+		class="max-h-max w-full rounded-xl border border-secondary/20 bg-secondary/10 p-4 backdrop-blur-sm transition-transform duration-200 hover:-translate-y-1 sm:max-h-[15rem] md:max-h-[23rem] md:max-w-[25rem]"
 		in:fly|local={{ x: 100, duration: 1500 }}
 	>
 		{#if title}

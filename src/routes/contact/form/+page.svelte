@@ -1,5 +1,6 @@
 <script>
 	import Button from "$lib/components/Button.svelte";
+	import BackButton from "$lib/components/BackButton.svelte";
 	import Icon from "@iconify/svelte";
 	import { Toast } from "$lib/helpers/toast";
 
@@ -24,9 +25,7 @@
 {#if animate}
 	<div class="mx-auto h-[90vh] max-w-xl" in:fade>
 		<div class="flex h-full w-full flex-col justify-center gap-5 rounded-md p-6">
-			<a href="/contact" class="max-w-fit transition-transform hover:scale-[0.9]">
-				<Icon height="40" width="40" icon="eva:arrow-back-outline" />
-			</a>
+			<BackButton href="/contact" />
 			<form
 				method="POST"
 				action="?/submit"
