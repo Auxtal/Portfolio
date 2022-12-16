@@ -66,7 +66,7 @@
 			<a href="/" class="btn-ghost btn text-xl normal-case hover:bg-neutral">Auxtal</a>
 		</div>
 		<div class="flex items-center justify-end space-x-3">
-			<label class="swap-rotate swap btn-circle btn">
+			<label class="swap swap-rotate btn-circle btn">
 				<input
 					type="checkbox"
 					use:clickOutside
@@ -103,7 +103,7 @@
 			{#each Navlinks as Navlink}
 				<li
 					class={`rounded-md hover:bg-secondary hover:text-primary ${
-						$page.url.pathname === Navlink.route ? "bg-neutral font-bold text-secondary" : ""
+						$page.url.pathname.includes(Navlink.route) ? "bg-neutral font-bold text-secondary" : ""
 					}`}
 					on:click={hideNavbar}
 				>
