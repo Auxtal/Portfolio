@@ -20,8 +20,8 @@
 	>
 		{#if animate}
 			{#each Work as Work}
-				<Box title={Work.place}>
-					<p class="text-center text-sm leading-6 text-secondary">
+				<Box title={Work.place} footer={Work.role}>
+					<p class="text-sm leading-6 text-secondary">
 						{Work.description}
 					</p>
 				</Box>

@@ -1,18 +1,22 @@
 [
 	{
-		"place": "P.S.I Audio [Work Experience]",
-		"description": "In 2019, during school we had to do work placement learning for 1 week, I chose to do mine at P.S.I Audio during this time I learned lots about what's it's like to work in the production industry. I thoroughly enjoyed my time."
+		"place": "P.S.I Audio",
+		"description": "In 2019, during school we had to do work placement learning for 1 week, I chose to do mine at P.S.I Audio during this time I learned lots about what's it's like to work in the production industry. I thoroughly enjoyed my time.",
+		"role": "Work Experience"
 	},
 	{
-		"place": "McDonald's [Crew Member]",
-		"description": "Yes we all need to start somewhere... McDonald's was my first ever job, I worked there for about 1 year. McDonald's provided me with many skills to prepare me for my future endeavors which I greatly appreciate."
+		"place": "McDonald's",
+		"description": "Yes we all need to start somewhere... McDonald's was my first ever job, I worked there for about 1 year. McDonald's provided me with many skills to prepare me for my future endeavors which I greatly appreciate.",
+		"role": "Crew Member"
 	},
 	{
-		"place": "Foundation Christian College [AV Technician]",
-		"description": "Foundation Christian College, I have worked as a volunteer since I was 12 years old and once I graduated I was employed as an AV technician to run events and install gear and maintain the theatre."
+		"place": "Foundation Christian College",
+		"description": "Foundation Christian College, I have worked as a volunteer since I was 12 years old and once I graduated I was employed as an AV technician to run events and install gear and maintain the theatre.",
+		"role": "AV Technician"
 	},
 	{
-		"place": "Cameo Rascale [Lighting Designer]",
-		"description": "Cameo Rascale is an internationally acclaimed acrobatic, comedy juggling act. When they come to my local area I am sometimes hired as a lighting designer for them. I have programmed and operated several of their shows including a promotional video."
+		"place": "Cameo Rascale",
+		"description": "Cameo Rascale is an internationally acclaimed acrobatic, comedy juggling act. When they come to my local area I am sometimes hired as a lighting designer for them. I have programmed and operated several of their shows including a promotional video.",
+		"role": "Lighting Designer"
 	}
 ]

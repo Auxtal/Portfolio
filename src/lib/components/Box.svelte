@@ -3,6 +3,7 @@
 	import { fade, fly } from "svelte/transition";
 
 	export let title;
+	export let footer;
 	export let animation = false;
 	export let styles = "";
 
@@ -17,7 +18,7 @@
 		in:fly|local={{ x: 100, duration: 1500 }}
 	>
 		{#if title}
-			<h2 class="text-md underline-offset-7 mb-5 text-center font-bold leading-6 text-neutral">
+			<h2 class="text-md underline-offset-7 mb-2 font-bold leading-6 text-neutral">
 				{title}
 			</h2>
 		{/if}
@@ -27,5 +28,13 @@
 		>
 			<slot />
 		</div>
+		{#if footer}
+			<div in:fade={{ delay: 1000, duration: 800 }}>
+				<div class="divider m-0 before:bg-secondary/20 after:bg-secondary/20" />
+				<p class="pt-1 text-xs font-bold">
+					{footer}
+				</p>
+			</div>
+		{/if}
 	</div>
 {/if}
