@@ -14,5 +14,9 @@
 	{
 		"name": "Contact",
 		"route": "/contact"
+	},
+	{
+		"name": "Blog",
+		"route": "/blog"
 	}
 ]

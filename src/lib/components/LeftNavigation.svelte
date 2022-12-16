@@ -14,7 +14,7 @@
 {#if animation}
 	<div
 		transition:fly|local={{ y: 200, duration: 2000 }}
-		class="fixed hidden h-screen w-24 lg:block"
+		class="fixed z-10 hidden h-screen w-24 lg:block"
 	>
 		<div class="absolute flex h-full w-full flex-col items-center justify-end px-2 ">
 			<ul class="mb-7 flex h-44 flex-col justify-between">

@@ -26,7 +26,7 @@
 
 {#if animation}
 	<div
-		class="bg-primary-100/10 fixed z-10 hidden w-full items-center justify-between px-4 py-4 backdrop-blur-sm lg:flex lg:min-h-[4rem]"
+		class="bg-primary-100/10 fixed z-20 hidden w-full items-center justify-between border-b border-secondary/10 px-4 py-4 backdrop-blur lg:flex lg:min-h-[4rem]"
 		transition:fade={{ delay: 300, duration: 800 }}
 	>
 		<div>
@@ -39,11 +39,13 @@
 		<div class="flex-1 justify-center text-sm">
 			<ul class="menu menu-horizontal mx-2 p-0">
 				{#each Navlinks as Navlink}
-					<li class="mx-4">
+					<li class="mx-2">
 						<a
 							href={Navlink.route}
-							class={`px- rounded-lg px-5 py-2 hover:scale-110 hover:bg-secondary/50 hover:text-secondary ${
-								$page.url.pathname === Navlink.route ? "bg-neutral font-bold text-secondary" : ""
+							class={`rounded-lg px-5 py-2 hover:scale-110 hover:bg-secondary/50 hover:text-secondary ${
+								$page.url.pathname.includes(Navlink.route)
+									? "bg-neutral font-bold text-secondary"
+									: ""
 							}`}
 							data-sveltekit-prefetch
 						>
@@ -59,12 +61,12 @@
 		</div>
 	</div>
 
-	<div class="navbar fixed z-20 backdrop-blur lg:hidden">
+	<div class="navbar fixed z-20 border-b border-secondary/10 backdrop-blur lg:hidden">
 		<div class="flex-1 text-center">
 			<a href="/" class="btn-ghost btn text-xl normal-case hover:bg-neutral">Auxtal</a>
 		</div>
 		<div class="flex items-center justify-end space-x-3">
-			<label class="swap-rotate swap btn-circle btn">
+			<label class="swap swap-rotate btn-circle btn">
 				<input
 					type="checkbox"
 					use:clickOutside
@@ -93,12 +95,15 @@
 			</label>
 		</div>
 	</div>
-	<div class="fixed z-50 w-full translate-y-[4rem] transition-all lg:hidden" class:hidden={!navbar}>
+	<div
+		class="fixed z-50 mt-2 w-full translate-y-[4rem] transition-all lg:hidden"
+		class:hidden={!navbar}
+	>
 		<ul id="mobile-menu" class="mx-2 rounded-xl bg-zinc-800/50 px-4 py-8 shadow backdrop-blur">
 			{#each Navlinks as Navlink}
 				<li
 					class={`rounded-md hover:bg-secondary hover:text-primary ${
-						$page.url.pathname === Navlink.route ? "bg-neutral font-bold text-secondary" : ""
+						$page.url.pathname.includes(Navlink.route) ? "bg-neutral font-bold text-secondary" : ""
 					}`}
 					on:click={hideNavbar}
 				>

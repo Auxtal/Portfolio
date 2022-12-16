@@ -1,5 +1,5 @@
 <script>
-	import Box from "$lib/components/Box.svelte";
+	import Card from "$lib/components/Card.svelte";
 	import Work from "$json/Work.json";
 
 	import { onMount } from "svelte";
@@ -20,11 +20,11 @@
 	>
 		{#if animate}
 			{#each Work as Work}
-				<Box title={Work.place} footer={Work.role}>
+				<Card title={Work.place} footer={Work.role}>
 					<p class="text-sm leading-6 text-secondary">
 						{Work.description}
 					</p>
-				</Box>
+				</Card>
 			{/each}
 		{/if}
 	</div>
