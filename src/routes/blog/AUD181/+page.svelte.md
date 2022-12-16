@@ -21,12 +21,12 @@ A song is an original piece of musical work done by either the songwriter and or
 
 Cubase! There are many professional music producers that use cubase, such as; Hans Zimmer, an Kirkpatrick, Ludwig Göransson, Cirkut, and Alan Silvestri. Why do they use it? For composers who want to incorporate numerous synthesisers and samples into their music, Cubase is a well-liked DAW that is mostly MIDI and plugin instrument based (also known as VSTi's). It is also excellent at recording audio tracks. (Zamri, 2022)
 
-### Downloads
+## Downloads
 
 <Button href="https://drive.google.com/file/d/13mdbObMFuErv1n5UE7yU46h_uLEzb1oS/view?usp=share_link">Project 1 Audio</Button>
 <Button href="https://drive.google.com/file/d/1O6fDy-H-M5U3uVKH1K3RUJAdbV2E7Ihw/view?usp=share_link">Project 2 Audio</Button>
 
-### End text references
+## End Text References
 
 - Carlos. M. (2020, June 13). What’s the difference between composition and arranging? | Wyzant Ask An Expert. Wyzant. Retrieved September 27, 2022, from [https://www.wyzant.com/resources/answers/753151/what-s-the-difference-between-composition-and-arranging#:%7E:text=Composition%20is%20an%20original%20theme,it%20in%20a%20new%20light](https://www.wyzant.com/resources/answers/753151/what-s-the-difference-between-composition-and-arranging#:%7E:text=Composition%20is%20an%20original%20theme,it%20in%20a%20new%20light).
 
