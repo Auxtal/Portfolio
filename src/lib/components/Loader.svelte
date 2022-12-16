@@ -6,7 +6,7 @@
 </script>
 
 <div
-	class="flex items-center justify-center h-screen loader"
+	class="loader flex h-screen items-center justify-center"
 	style="--size: {size}{unit}; --color:{color}; --duration: {duration};"
 >
 	<div class="sub_loader" />
@@ -16,7 +16,7 @@
 
 <style>
 	.loader {
-		--color: var(--accent);
+		--color: var(--neutral);
 		width: var(--size);
 		height: calc(var(--size) / 4);
 		position: relative;
