@@ -4,9 +4,9 @@
 	import { page } from "$app/stores";
 	import { fade } from "svelte/transition";
 
-	// if ($page?.status === 404) {
-	// 	window.location.replace("/");
-	// }
+	if ($page?.status === 404) {
+		window.location.replace("/");
+	}
 </script>
 
 <svelte:head>

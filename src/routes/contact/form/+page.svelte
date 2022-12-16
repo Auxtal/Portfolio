@@ -1,7 +1,6 @@
 <script>
 	import Button from "$lib/components/Button.svelte";
 	import BackButton from "$lib/components/BackButton.svelte";
-	import Icon from "@iconify/svelte";
 	import { Toast } from "$lib/helpers/toast";
 
 	import { onMount } from "svelte";

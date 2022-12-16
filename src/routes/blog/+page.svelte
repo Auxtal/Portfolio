@@ -1,8 +1,8 @@
 <script>
+	import Tag from "$lib/components/Tag.svelte";
+
 	import { onMount } from "svelte";
 	import { fade, fly } from "svelte/transition";
-
-	import Tag from "$lib/components/Tag.svelte";
 
 	export let data;
 
