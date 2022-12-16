@@ -12,9 +12,12 @@
 </script>
 
 {#if animation}
-	<div transition:fly|local={{ y: 200, duration: 2000 }} class="fixed hidden h-[95%] w-24 lg:block">
+	<div
+		transition:fly|local={{ y: 200, duration: 2000 }}
+		class="fixed hidden h-screen w-24 lg:block"
+	>
 		<div class="absolute flex h-full w-full flex-col items-center justify-end px-2 ">
-			<ul class="flex h-1/4 flex-col justify-between">
+			<ul class="mb-7 flex h-44 flex-col justify-between">
 				<a href={$t("github.link")} target="_blank" rel="noreferrer">
 					<li
 						class="shadow-base flex min-h-max items-center rounded-md bg-neutral p-2 text-white shadow-md transition hover:-translate-y-0.5 hover:shadow-blue-700"
