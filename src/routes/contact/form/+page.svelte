@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<title>Contact Form</title>
+	<title>Contact</title>
 </svelte:head>
 
 <Animate>
