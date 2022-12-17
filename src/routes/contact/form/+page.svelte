@@ -19,6 +19,7 @@
 	<div class="mx-auto flex h-screen w-full max-w-xl flex-col justify-center rounded-md p-6" in:fade>
 		<BackButton href="/contact" />
 		<form
+			class="mt-6"
 			method="POST"
 			action="?/submit"
 			use:enhance={({ form }) => {
@@ -43,74 +44,86 @@
 				};
 			}}
 		>
-			<div class="form-item mt-2 mb-5 ">
+			<div class="form-item relative mt-2 mb-5 ">
 				<input
 					id="name"
 					name="name"
 					value={form?.name ?? ""}
 					placeholder="Name"
 					type="text"
-					class="input-neutral font-secondary input my-2 w-full bg-white !text-sm text-primary shadow-lg {form
+					class="input my-2 block w-full bg-transparent px-4 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
 						?.errors?.name
 						? '!outline-red-500'
 						: ''}"
 				/>
 				{#if form?.errors?.name}
-					<label for="name">
+					<label
+						class="absolute left-2.5 top-[18px] z-10 px-[10px] text-[12px] font-bold text-secondary transition-all"
+						for="name"
+					>
 						<span class="text-red-500">{form?.errors?.name[0]}</span>
 					</label>
 				{/if}
 			</div>
-			<div class="form-item mt-2 mb-5 ">
+			<div class="form-item relative mt-2 mb-5 ">
 				<input
 					id="email"
 					name="email"
 					value={form?.email ?? ""}
 					placeholder="Email"
 					type="text"
-					class="input-neutral font-secondary input my-2 w-full bg-white !text-sm text-primary shadow-lg {form
+					class="input my-2 block w-full bg-transparent px-4 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
 						?.errors?.email
 						? '!outline-red-500'
 						: ''}"
 				/>
 				{#if form?.errors?.email}
-					<label for="email">
+					<label
+						class="absolute left-2.5 top-[18px] z-10 px-[10px] text-[12px] font-bold text-secondary transition-all"
+						for="email"
+					>
 						<span class="text-red-500">{form?.errors?.email[0]}</span>
 					</label>
 				{/if}
 			</div>
-			<div class="form-item mt-2 mb-5 ">
+			<div class="form-item relative mt-2 mb-5 ">
 				<input
 					id="subject"
 					name="subject"
 					value={form?.subject ?? ""}
 					placeholder="Subject"
 					type="text"
-					class="input-neutral font-secondary input my-2 w-full bg-white !text-sm text-primary shadow-lg {form
+					class="input my-2 block w-full bg-transparent px-4 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
 						?.errors?.subject
 						? '!outline-red-500'
 						: ''}"
 				/>
 				{#if form?.errors?.subject}
-					<label for="subject">
+					<label
+						class="absolute left-2.5 top-[18px] z-10 px-[10px] text-[12px] font-bold text-secondary transition-all"
+						for="subject"
+					>
 						<span class="text-red-500">{form?.errors?.subject[0]}</span>
 					</label>
 				{/if}
 			</div>
-			<div class="form-item mt-2 mb-5 ">
+			<div class="form-item relative mt-2 mb-5 ">
 				<textarea
 					id="message"
 					name="message"
 					value={form?.message ?? ""}
 					placeholder="Message"
-					class="textarea-neutral font-secondary textarea w-full bg-white !pt-3 !text-sm text-primary {form
+					class="textarea my-2 block w-full bg-transparent px-4 pt-3 !text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
 						?.errors?.message
 						? '!outline-red-500'
 						: ''}"
 					rows="5"
 				/>
 				{#if form?.errors?.message}
-					<label for="message">
+					<label
+						class="absolute left-2.5 top-[18px] z-10 px-[10px] text-[12px] font-bold text-secondary transition-all"
+						for="message"
+					>
 						<span class="text-red-500">{form?.errors?.message[0]}</span>
 					</label>
 				{/if}
@@ -121,39 +134,6 @@
 </Animate>
 
 <style>
-	.form-item {
-		position: relative;
-	}
-
-	.form-item input,
-	textarea {
-		display: block;
-		background: transparent;
-		transition: all 0.3s ease;
-		padding: 0 15px;
-		color: var(--secondary);
-		outline: 1px solid var(--secondary);
-		backdrop-filter: blur(4px);
-	}
-
-	.form-item label {
-		position: absolute;
-		cursor: text;
-		z-index: 2;
-		top: 18px;
-		left: 10px;
-		font-size: 12px;
-		font-weight: bold;
-		padding: 0 10px;
-		transition: all 0.3s ease;
-		color: var(--secondary);
-	}
-
-	.form-item input:focus,
-	textarea:focus {
-		outline: 2.5px solid var(--neutral);
-	}
-
 	.form-item input:focus + label,
 	.form-item input:valid + label,
 	.form-item textarea:focus + label,

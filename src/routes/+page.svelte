@@ -12,7 +12,7 @@
 
 <Animate>
 	<div
-		transition:fade|local={{ delay: 500, duration: 800 }}
+		transition:fade|local={{ delay: 250, duration: 800 }}
 		class="flex h-screen w-full flex-col items-center justify-center px-5 lg:items-end lg:px-32"
 	>
 		<small
@@ -27,7 +27,7 @@
 		<h2 class="line-1 p-1 text-3xl text-neutral backdrop-blur-sm lg:text-5xl">
 			I'm an {$t("banner.profession")}
 		</h2>
-		<div class="my-5" in:fly|local={{ x: 1000, duration: 1500 }}>
+		<div class="my-5" in:fly|local={{ x: 100, duration: 1000 }}>
 			<Button href="/work">Check Out My Work</Button>
 		</div>
 	</div>

@@ -9,7 +9,7 @@
 {#if href}
 	{#if download}
 		<a
-			class={`btn !border-none bg-secondary/20 text-secondary no-underline backdrop-blur-sm transition-all duration-200 hover:bg-neutral hover:text-secondary focus:bg-neutral ${classes}`}
+			class={`btn border-none bg-secondary/20 normal-case text-secondary no-underline backdrop-blur-sm transition-all duration-200 hover:bg-neutral hover:text-secondary focus:bg-neutral ${classes}`}
 			{href}
 			target="_blank"
 			rel="noreferrer"
@@ -20,7 +20,7 @@
 		</a>
 	{:else}
 		<a
-			class={`btn !border-none bg-secondary/20 text-secondary no-underline backdrop-blur-sm transition-all duration-200 hover:bg-neutral hover:text-secondary focus:bg-neutral ${classes}`}
+			class={`btn border-none bg-secondary/20 normal-case text-secondary no-underline backdrop-blur-sm transition-all duration-200 hover:bg-neutral hover:text-secondary focus:bg-neutral ${classes}`}
 			{href}
 			class:loading
 		>
@@ -29,7 +29,7 @@
 	{/if}
 {:else}
 	<button
-		class={`btn !border-none bg-secondary/20 text-secondary backdrop-blur-sm transition-all duration-200 hover:bg-neutral hover:text-secondary focus:bg-neutral ${classes}`}
+		class={`btn border-none bg-secondary/20 normal-case text-secondary backdrop-blur-sm transition-all duration-200 hover:bg-neutral hover:text-secondary focus:bg-neutral ${classes}`}
 		on:click={onClickEvent()}
 		class:loading
 	>

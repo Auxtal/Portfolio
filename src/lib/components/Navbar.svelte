@@ -55,7 +55,7 @@
 			<a href="/" class="btn-ghost btn text-xl normal-case hover:bg-neutral">Auxtal</a>
 		</div>
 		<div class="flex items-center justify-end space-x-3">
-			<label class="swap-rotate swap btn-circle btn">
+			<label class="swap swap-rotate btn-circle btn">
 				<input type="checkbox" on:click={toggleNavbar} bind:checked={navbar} />
 				<svg
 					class="swap-off fill-current"
@@ -78,10 +78,7 @@
 			</label>
 		</div>
 	</div>
-	<div
-		class="fixed z-50 mt-2 w-full translate-y-[4rem] transition-all lg:hidden"
-		class:hidden={!navbar}
-	>
+	<div class="fixed z-50 mt-2 w-full translate-y-[4rem] transition-all" class:hidden={!navbar}>
 		<ul id="mobile-menu" class="mx-2 rounded-xl bg-zinc-800/50 px-4 py-8 shadow backdrop-blur">
 			{#each Navlinks as Navlink}
 				<li

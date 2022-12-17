@@ -15,7 +15,7 @@
 	<Animate>
 		<div class="px-4">
 			<img
-				transition:fade|local={{ delay: 100, duration: 300 }}
+				transition:fade|local={{ delay: 100, duration: 250 }}
 				class="aspect-auto rounded-lg shadow-md transition-all duration-300 sm:max-w-sm lg:mr-10 lg:grayscale lg:hover:grayscale-0"
 				src="/Graduation Event.jpg"
 				alt="Graduation Event"
@@ -23,7 +23,7 @@
 		</div>
 		<div class="flex max-w-md flex-col flex-wrap items-center justify-center lg:items-start">
 			<h1
-				transition:fade|local={{ delay: 250, duration: 800 }}
+				transition:fade|local={{ delay: 250, duration: 500 }}
 				class="my-5 text-3xl font-bold text-neutral backdrop-blur-sm lg:mb-10 lg:text-5xl xl:text-6xl"
 			>
 				{$t("name")}

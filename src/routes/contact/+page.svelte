@@ -11,5 +11,5 @@
 	<p class="font-secondary mb-10 max-w-md text-center leading-6 text-secondary backdrop-blur-sm">
 		If you want to say hello or if you have any questions, my inbox is always open for queries!
 	</p>
-	<Button href="/contact/form" classes="px-14">Send me an Email</Button>
+	<Button href="/contact/form" classes="px-14">Send Me An Email</Button>
 </div>

@@ -26,11 +26,15 @@ module.exports = {
 							color: "rgba(var(--secondary-rgb), .7)",
 						},
 						blockquote: {
-							"color": "rgba(var(--secondary-rgb), .7)",
 							"border-left-color": "rgba(var(--secondary-rgb), .7)",
+							"color": "rgba(var(--secondary-rgb), .7)",
 						},
 						strong: {
 							color: "rgba(var(--secondary-rgb), 1)",
+						},
+						pre: {
+							"background": "rgba(var(--secondary-rgb), .1)",
+							color: "var(--secondary)"
 						},
 						ol: {
 							color: "rgba(var(--secondary-rgb), .7)",
@@ -57,6 +61,7 @@ module.exports = {
 					"base-100": "#4797ff",
 					"--neutral": "#006eff",
 					"--primary": "#121212",
+					"--primary-rgb": "18, 18, 18",
 					"--secondary": "#e7e7e7",
 					"--secondary-rgb": "231,231,231",
 					"--dots": "#1f1f1f",
@@ -70,6 +75,7 @@ module.exports = {
 					"--neutral": "#006eff",
 					"--base-100": "#4797ff",
 					"--primary": "#F9F7F7",
+					"--primary-rgb": "249, 247, 247",
 					"--secondary": "#121212",
 					"--secondary-rgb": "18, 18, 18",
 					"--dots": "#d1d1d1",

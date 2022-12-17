@@ -25,7 +25,7 @@
 				<TimelineItem style="margin:15px 0">
 					<TimelineSeparator>
 						<Animate>
-							<span in:fly|local={{ delay: 250, y: (-100 / 2) * (i + 1), duration: 1500 }}>
+							<span in:fly|local={{ delay: 250, y: (-100 / 2) * (i + 1), duration: 1000 }}>
 								<TimelineDot style={`background-color: var(--neutral); border: none;`} />
 							</span>
 						</Animate>
@@ -33,13 +33,13 @@
 					</TimelineSeparator>
 					<TimelineContent>
 						<Animate>
-							<h3 in:fly|local={{ x: -150, duration: 2000 }} class="font-secondary !font-extrabold">
+							<h3 in:fly|local={{ x: -150, duration: 1000 }} class="font-secondary !font-extrabold">
 								{Education.place}
 							</h3>
-							<p in:fly|local={{ x: 100, duration: 1500 }} class="py-2 text-sm text-neutral">
+							<p in:fly|local={{ x: 100, duration: 1000 }} class="py-2 text-sm text-neutral">
 								{Education.year_start + "-" + Education.year_end}
 							</p>
-							<p in:fade|local={{ delay: 1500, duration: 1500 }} class="font-secondary text-accent">
+							<p in:fade|local={{ delay: 1000, duration: 1000 }} class="font-secondary text-accent">
 								{Education.description}
 							</p>
 						</Animate>
