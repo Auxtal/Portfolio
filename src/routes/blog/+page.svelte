@@ -3,12 +3,15 @@
 	import Animate from "$components/Animate.svelte";
 	import Paginator from "$components/Paginator.svelte";
 
+	import { onMount } from "svelte";
 	import { fade } from "svelte/transition";
 	import { paginate } from "svelte-paginate";
 
 	export let data;
 
-	let screenWidth = window.innerWidth;
+	let screenWidth;
+	onMount(() => (screenWidth = window.innerWidth));
+
 	let pageSize = screenWidth >= 640 ? 4 : 3;
 	let currentPage = 1;
 	let searchTerm = "";
