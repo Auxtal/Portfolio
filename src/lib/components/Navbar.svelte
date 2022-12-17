@@ -2,7 +2,6 @@
 	import ThemeToggle from "$lib/components/ThemeToggle.svelte";
 	import Navlinks from "$json/Navlinks.json";
 	import Button from "$lib/components/Button.svelte";
-	import { clickOutside } from "$lib/helpers/clickOutside.js";
 
 	import { onMount } from "svelte";
 	import { fade } from "svelte/transition";
@@ -15,13 +14,8 @@
 		animation = !animation;
 	});
 
-	const toggleNavbar = () => {
-		navbar = !navbar;
-	};
-
-	const hideNavbar = () => {
-		navbar = false;
-	};
+	const toggleNavbar = () => (navbar = !navbar);
+	const hideNavbar = () => (navbar = false);
 </script>
 
 {#if animation}
@@ -66,14 +60,8 @@
 			<a href="/" class="btn-ghost btn text-xl normal-case hover:bg-neutral">Auxtal</a>
 		</div>
 		<div class="flex items-center justify-end space-x-3">
-			<label class="swap swap-rotate btn-circle btn">
-				<input
-					type="checkbox"
-					use:clickOutside
-					on:clickOutside={hideNavbar}
-					on:click={toggleNavbar}
-					bind:checked={navbar}
-				/>
+			<label class="swap-rotate swap btn-circle btn">
+				<input type="checkbox" on:click={toggleNavbar} bind:checked={navbar} />
 				<svg
 					class="swap-off fill-current"
 					xmlns="http://www.w3.org/2000/svg"
@@ -105,11 +93,11 @@
 					class={`rounded-md hover:bg-secondary hover:text-primary ${
 						$page.url.pathname.includes(Navlink.route) ? "bg-neutral font-bold text-secondary" : ""
 					}`}
-					on:click={hideNavbar}
 				>
 					<a
 						href={Navlink.route}
 						class="mt-1 block w-full p-3 text-center transition"
+						on:click={hideNavbar}
 						data-sveltekit-prefetch
 					>
 						{Navlink.name}

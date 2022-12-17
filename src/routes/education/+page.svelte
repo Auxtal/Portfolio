@@ -31,11 +31,7 @@
 					<TimelineSeparator>
 						{#if animate}
 							<span in:fly|local={{ delay: 250, y: (-100 / 2) * (i + 1), duration: 1500 }}>
-								<TimelineDot
-									style={`background-color: ${
-										i % 2 == 0 ? "var(--accent)" : "var(--light)"
-									}; border: none;`}
-								/>
+								<TimelineDot style={`background-color: var(--neutral); border: none;`} />
 							</span>
 						{/if}
 						<TimelineConnector />

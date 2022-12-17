@@ -59,8 +59,6 @@ module.exports = {
 					"--primary": "#121212",
 					"--secondary": "#e7e7e7",
 					"--secondary-rgb": "231,231,231",
-					"--accent": "#FFD369",
-					"--light": "#00B7C2",
 					"--dots": "#1f1f1f",
 				},
 				light: {
@@ -74,8 +72,6 @@ module.exports = {
 					"--primary": "#F9F7F7",
 					"--secondary": "#121212",
 					"--secondary-rgb": "18, 18, 18",
-					"--accent": "#FFD369",
-					"--light": "#00B7C2",
 					"--dots": "#d1d1d1",
 				}
 			}
