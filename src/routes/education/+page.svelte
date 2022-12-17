@@ -2,7 +2,7 @@
 	import Education from "$json/Education.json";
 	import Animate from "$components/Animate.svelte";
 
-	import { fade, fly } from "svelte/transition";
+	import { fade, fly, slide } from "svelte/transition";
 
 	import {
 		Timeline,
@@ -36,8 +36,11 @@
 							<h3 in:fly|local={{ x: -150, duration: 1000 }} class="font-secondary !font-extrabold">
 								{Education.place}
 							</h3>
-							<p in:fly|local={{ x: 100, duration: 1000 }} class="py-2 text-sm text-neutral">
-								{Education.year_start + "-" + Education.year_end}
+							<p
+								in:slide|local={{ y: 150, delay: 500, duration: 1000 }}
+								class="py-2 text-sm text-neutral"
+							>
+								{Education.year_start} - {Education.year_end}
 							</p>
 							<p in:fade|local={{ delay: 1000, duration: 1000 }} class="font-secondary text-accent">
 								{Education.description}
