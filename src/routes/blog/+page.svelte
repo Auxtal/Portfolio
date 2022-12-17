@@ -13,9 +13,17 @@
 	let currentPage = 1;
 	let searchTerm = "";
 
-	$: items = data?.posts.filter((post) => {
-		return post.metadata.title.toLowerCase().includes(searchTerm);
+	$: filteredPosts = data.posts.filter((post) => {
+		return (
+			post.metadata.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+			post.metadata?.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+		);
 	});
+
+	$: items = filteredPosts.sort((post1, post2) => {
+		return new Date(post2.metadata.date).getTime - new Date(post1.metadata.date).getTime;
+	});
+
 	$: paginatedPosts = paginate({ items, pageSize, currentPage });
 </script>
 
