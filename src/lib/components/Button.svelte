@@ -10,10 +10,10 @@
 	{#if download}
 		<a
 			class={`btn border-none bg-secondary/20 normal-case text-secondary no-underline backdrop-blur-sm transition-all duration-200 hover:bg-neutral hover:text-secondary focus:bg-neutral ${classes}`}
+			class:loading
 			{href}
 			target="_blank"
 			rel="noreferrer"
-			class:loading
 			download
 		>
 			<slot />
@@ -21,8 +21,8 @@
 	{:else}
 		<a
 			class={`btn border-none bg-secondary/20 normal-case text-secondary no-underline backdrop-blur-sm transition-all duration-200 hover:bg-neutral hover:text-secondary focus:bg-neutral ${classes}`}
-			{href}
 			class:loading
+			{href}
 		>
 			<slot />
 		</a>
@@ -30,8 +30,8 @@
 {:else}
 	<button
 		class={`btn border-none bg-secondary/20 normal-case text-secondary backdrop-blur-sm transition-all duration-200 hover:bg-neutral hover:text-secondary focus:bg-neutral ${classes}`}
-		on:click={onClickEvent()}
 		class:loading
+		on:click={onClickEvent()}
 	>
 		<slot />
 	</button>

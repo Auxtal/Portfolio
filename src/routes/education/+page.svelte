@@ -33,7 +33,7 @@
 					</TimelineSeparator>
 					<TimelineContent>
 						<Animate>
-							<h3 in:fly|local={{ x: -150, duration: 1000 }} class="font-secondary !font-extrabold">
+							<h3 in:fly|local={{ x: -150, duration: 1000 }} class="font-secondary font-extrabold">
 								{Education.place}
 							</h3>
 							<p

@@ -113,7 +113,7 @@
 					name="message"
 					value={form?.message ?? ""}
 					placeholder="Message"
-					class="textarea my-2 block w-full bg-transparent px-4 pt-3 !text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
+					class="textarea my-2 block w-full bg-transparent px-4 pt-3 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
 						?.errors?.message
 						? '!outline-red-500'
 						: ''}"
