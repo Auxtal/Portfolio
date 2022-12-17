@@ -3,6 +3,7 @@
 	import Button from "$components/Button.svelte";
 	import Animate from "$components/Animate.svelte";
 	import Navlinks from "$json/Navlinks.json";
+	import Icon from "@iconify/svelte";
 
 	import { fade } from "svelte/transition";
 	import { page } from "$app/stores";
@@ -44,7 +45,14 @@
 				{/each}
 			</ul>
 		</div>
-		<Button href="/Resume Redacted Info.pdf" download={true} classes="px-9">Resume</Button>
+		<Button href="/Resume Redacted Info.pdf" download={true} classes="px-9"
+			><Icon
+				height="20"
+				width="20"
+				icon="mdi:resume"
+				style="display: inline-block; margin-right: 5px;"
+			/>Resume</Button
+		>
 		<div class="ml-3">
 			<ThemeToggle />
 		</div>
@@ -55,7 +63,7 @@
 			<a href="/" class="btn-ghost btn text-xl normal-case hover:bg-neutral">Auxtal</a>
 		</div>
 		<div class="flex items-center justify-end space-x-3">
-			<label class="swap swap-rotate btn-circle btn">
+			<label class="swap-rotate swap btn-circle btn">
 				<input type="checkbox" on:click={toggleNavbar} bind:checked={navbar} />
 				<svg
 					class="swap-off fill-current"
