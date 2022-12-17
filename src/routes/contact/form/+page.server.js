@@ -32,7 +32,6 @@ export const actions = {
       emailSchema.parse(formData);
     } catch (error) {
       const { fieldErrors: errors } = error.flatten();
-
       return {
         data: formData,
         errors

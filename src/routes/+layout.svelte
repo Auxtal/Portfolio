@@ -22,7 +22,7 @@
 			integrations: [new BrowserTracing()],
 			tracesSampleRate: 1.0,
 			environment: import.meta.env.VITE_ENVVIRONMENT,
-			release: "1.1.1"
+			release: "1.1.2"
 		});
 	});
 </script>
