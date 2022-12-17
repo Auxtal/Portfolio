@@ -1,9 +1,9 @@
 <script>
 	import "../app.css";
 
-	import Loader from "$lib/components/Loader.svelte";
-	import Navbar from "$lib/components/Navbar.svelte";
-	import LeftNavigation from "$lib/components/LeftNavigation.svelte";
+	import Loader from "$components/Loader.svelte";
+	import Navbar from "$components/Navbar.svelte";
+	import LeftNavigation from "$components/LeftNavigation.svelte";
 
 	import { onMount } from "svelte";
 	import { fade } from "svelte/transition";

@@ -1,27 +1,21 @@
 <script>
-	import Button from "$lib/components/Button.svelte";
-	import BackButton from "$lib/components/BackButton.svelte";
+	import Animate from "$components/Animate.svelte";
+	import Button from "$components/Button.svelte";
+	import BackButton from "$components/BackButton.svelte";
 	import { Toast } from "$lib/helpers/toast";
 
-	import { onMount } from "svelte";
 	import { fade } from "svelte/transition";
 	import { applyAction, enhance } from "$app/forms";
 
 	export let form;
-
-	let animate = false;
 	let loading = false;
-
-	onMount(() => {
-		animate = true;
-	});
 </script>
 
 <svelte:head>
 	<title>Contact Form</title>
 </svelte:head>
 
-{#if animate}
+<Animate>
 	<div class="mx-auto flex h-screen w-full max-w-xl flex-col justify-center rounded-md p-6" in:fade>
 		<BackButton href="/contact" />
 		<form
@@ -124,7 +118,7 @@
 			<Button classes="w-full" {loading}>Send</Button>
 		</form>
 	</div>
-{/if}
+</Animate>
 
 <style>
 	.form-item {

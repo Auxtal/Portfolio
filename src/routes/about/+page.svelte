@@ -1,13 +1,8 @@
 <script>
+	import Animate from "$components/Animate.svelte";
 	import { t } from "$lib/locales/i18n";
 
-	import { onMount } from "svelte";
 	import { fade } from "svelte/transition";
-
-	let animate = false;
-	onMount(() => {
-		animate = true;
-	});
 </script>
 
 <svelte:head>
@@ -17,7 +12,7 @@
 <div
 	class="flex h-screen flex-col items-center justify-center md:px-8 lg:ml-11 lg:max-w-full lg:flex-row xl:ml-0"
 >
-	{#if animate}
+	<Animate>
 		<div class="px-4">
 			<img
 				transition:fade|local={{ delay: 100, duration: 300 }}
@@ -40,5 +35,5 @@
 				{$t("about.description")}
 			</p>
 		</div>
-	{/if}
+	</Animate>
 </div>

@@ -1,21 +1,16 @@
 <script>
-	import Button from "$lib/components/Button.svelte";
+	import Animate from "$components/Animate.svelte";
+	import Button from "$components/Button.svelte";
 	import { t } from "$lib/locales/i18n";
 
-	import { onMount } from "svelte";
 	import { fade, fly } from "svelte/transition";
-
-	let animate = false;
-	onMount(() => {
-		animate = true;
-	});
 </script>
 
 <svelte:head>
 	<title>{$t("banner.name")}'s Portfolio</title>
 </svelte:head>
 
-{#if animate}
+<Animate>
 	<div
 		transition:fade|local={{ delay: 500, duration: 800 }}
 		class="flex h-screen w-full flex-col items-center justify-center px-5 lg:items-end lg:px-32"
@@ -36,4 +31,4 @@
 			<Button href="/work">Check Out My Work</Button>
 		</div>
 	</div>
-{/if}
+</Animate>

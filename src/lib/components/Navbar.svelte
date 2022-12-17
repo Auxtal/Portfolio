@@ -1,24 +1,19 @@
 <script>
-	import ThemeToggle from "$lib/components/ThemeToggle.svelte";
+	import ThemeToggle from "$components/ThemeToggle.svelte";
+	import Button from "$components/Button.svelte";
+	import Animate from "$components/Animate.svelte";
 	import Navlinks from "$json/Navlinks.json";
-	import Button from "$lib/components/Button.svelte";
 
-	import { onMount } from "svelte";
 	import { fade } from "svelte/transition";
 	import { page } from "$app/stores";
 
 	let navbar = false;
-	let animation = false;
-
-	onMount(() => {
-		animation = !animation;
-	});
 
 	const toggleNavbar = () => (navbar = !navbar);
 	const hideNavbar = () => (navbar = false);
 </script>
 
-{#if animation}
+<Animate>
 	<div
 		class="bg-primary-100/10 fixed z-20 hidden w-full items-center justify-between border-b border-secondary/10 px-4 py-4 backdrop-blur lg:flex lg:min-h-[4rem]"
 		transition:fade={{ delay: 300, duration: 800 }}
@@ -113,7 +108,7 @@
 			</li>
 		</ul>
 	</div>
-{/if}
+</Animate>
 
 <style>
 	#mobile-menu {

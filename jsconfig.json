@@ -8,7 +8,9 @@
 			"$lib": ["src/lib"],
 			"$lib/*": ["src/lib/*"],
 			"$json": ["src/lib/assets/data"],
-			"$json/*": ["src/lib/assets/data/*"]
+			"$json/*": ["src/lib/assets/data/*"],
+			"$components": ["src/lib/components"],
+			"$components/*": ["src/lib/components/*"]
 		}
 	},
 	"include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.svelte", "src/**/*.ts", "src/**/*.json"]

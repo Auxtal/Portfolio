@@ -1,7 +1,7 @@
 <script>
 	import Education from "$json/Education.json";
+	import Animate from "$components/Animate.svelte";
 
-	import { onMount } from "svelte";
 	import { fade, fly } from "svelte/transition";
 
 	import {
@@ -12,11 +12,6 @@
 		TimelineConnector,
 		TimelineContent
 	} from "svelte-vertical-timeline";
-
-	let animate = false;
-	onMount(() => {
-		animate = true;
-	});
 </script>
 
 <svelte:head>
@@ -29,15 +24,15 @@
 			{#each Education as Education, i}
 				<TimelineItem style="margin:15px 0">
 					<TimelineSeparator>
-						{#if animate}
+						<Animate>
 							<span in:fly|local={{ delay: 250, y: (-100 / 2) * (i + 1), duration: 1500 }}>
 								<TimelineDot style={`background-color: var(--neutral); border: none;`} />
 							</span>
-						{/if}
+						</Animate>
 						<TimelineConnector />
 					</TimelineSeparator>
 					<TimelineContent>
-						{#if animate}
+						<Animate>
 							<h3 in:fly|local={{ x: -150, duration: 2000 }} class="font-secondary !font-extrabold">
 								{Education.place}
 							</h3>
@@ -47,7 +42,7 @@
 							<p in:fade|local={{ delay: 1500, duration: 1500 }} class="font-secondary text-accent">
 								{Education.description}
 							</p>
-						{/if}
+						</Animate>
 					</TimelineContent>
 				</TimelineItem>
 			{/each}

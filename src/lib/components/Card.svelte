@@ -1,18 +1,14 @@
 <script>
-	import { onMount } from "svelte";
+	import Animate from "$components/Animate.svelte";
+
 	import { fade, fly } from "svelte/transition";
 
 	export let title;
 	export let footer;
-	export let animation = false;
 	export let styles = "";
-
-	onMount(() => {
-		animation = !animation;
-	});
 </script>
 
-{#if animation}
+<Animate>
 	<div
 		class="max-h-max w-full rounded-xl border border-secondary/20 bg-secondary/10 p-4 backdrop-blur-sm transition-transform duration-200 hover:-translate-y-1 sm:max-h-[15rem] md:max-h-[23rem] md:max-w-[25rem]"
 		in:fly|local={{ x: 100, duration: 1500 }}
@@ -37,4 +33,4 @@
 			</div>
 		{/if}
 	</div>
-{/if}
+</Animate>

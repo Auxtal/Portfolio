@@ -1,22 +1,17 @@
 <script>
-	import Tag from "$lib/components/Tag.svelte";
+	import Tag from "$components/Tag.svelte";
+	import Animate from "$components/Animate.svelte";
 
-	import { onMount } from "svelte";
 	import { fade, fly } from "svelte/transition";
 
 	export let data;
-
-	let animate = false;
-	onMount(() => {
-		animate = true;
-	});
 </script>
 
 <svelte:head>
 	<title>Blog Posts</title>
 </svelte:head>
 
-{#if animate}
+<Animate>
 	<div class="absolute left-0 top-16 h-screen w-full px-6 sm:relative sm:top-5 sm:px-0 lg:top-0">
 		<h1 class="text-3xl font-bold text-neutral sm:text-4xl" in:fade={{ delay: 300, duration: 800 }}>
 			Blog Posts
@@ -50,4 +45,4 @@
 			</a>
 		{/each}
 	</div>
-{/if}
+</Animate>

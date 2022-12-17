@@ -1,17 +1,12 @@
 <script>
-	import Icon from "@iconify/svelte";
+	import Animate from "$components/Animate.svelte";
 	import { t } from "$lib/locales/i18n";
 
-	import { onMount } from "svelte";
+	import Icon from "@iconify/svelte";
 	import { fly } from "svelte/transition";
-
-	let animation = false;
-	onMount(() => {
-		animation = !animation;
-	});
 </script>
 
-{#if animation}
+<Animate>
 	<div
 		transition:fly|local={{ y: 200, duration: 2000 }}
 		class="fixed z-10 hidden h-screen w-24 lg:block"
@@ -45,4 +40,4 @@
 			</ul>
 		</div>
 	</div>
-{/if}
+</Animate>
