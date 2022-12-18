@@ -24,7 +24,7 @@
 	});
 
 	$: items = filteredPosts.sort((post1, post2) => {
-		return new Date(post2.metadata.date).getTime - new Date(post1.metadata.date).getTime;
+		return new Date(post2.metadata.date) - new Date(post1.metadata.date);
 	});
 
 	$: paginatedPosts = paginate({ items, pageSize, currentPage });
