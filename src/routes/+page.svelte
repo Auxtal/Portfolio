@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>{$t("banner.name")}'s Portfolio</title>
+	<title>{$t("name")}'s Portfolio</title>
 </svelte:head>
 
 <Animate>
@@ -22,12 +22,12 @@
 		<h1
 			class="font-primary mt-5 mb-2 text-center text-3xl font-bold text-neutral backdrop-blur-sm sm:text-5xl md:text-right lg:text-7xl"
 		>
-			{$t("name")}
+			{$t("fullName")}
 		</h1>
 		<h2
 			class="line-1 p-1 text-center text-3xl text-neutral backdrop-blur-sm md:text-right lg:text-5xl"
 		>
-			I'm an {$t("banner.profession")}
+			I'm an {$t("profession")}
 		</h2>
 		<div class="my-5" in:fly|local={{ x: 100, duration: 1000 }}>
 			<Button href="/work">Check Out My Work</Button>

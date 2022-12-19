@@ -26,13 +26,13 @@
 				transition:fade|local={{ delay: 250, duration: 500 }}
 				class="my-5 text-3xl font-bold text-neutral backdrop-blur-sm lg:mb-10 lg:text-5xl xl:text-6xl"
 			>
-				{$t("name")}
+				{$t("fullName")}
 			</h1>
 			<p
 				transition:fade|local={{ delay: 500, duration: 1000 }}
 				class="font-secondary text-md px-8 text-center text-accent backdrop-blur-sm lg:px-0 lg:text-left lg:text-lg xl:text-xl"
 			>
-				{$t("about.description")}
+				{$t("description")}
 			</p>
 		</div>
 	</Animate>

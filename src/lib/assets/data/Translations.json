@@ -1,10 +1,10 @@
 {
 	"en": {
-		"name": "Ethan Murphy",
-		"banner.name": "Ethan",
-		"banner.profession": "AV Technician",
-		"github.link": "https://github.com/Auxtal",
-		"discord.link": "https://dsc.gg/Auxtal",
-		"about.description": "Hey, I'm Ethan I'm 18 years old, and I go by \"Auxtal\" online. In my spare time, I'm a hobbyist developer who likes front and back-end development. I love to fly real aircraft and simulators. I also love flying my drone everywhere."
+		"fullName": "Ethan Murphy",
+		"name": "Ethan",
+		"profession": "AV Technician",
+		"githubLink": "https://github.com/Auxtal",
+		"discordLink": "https://dsc.gg/Auxtal",
+		"description": "Hey, I'm Ethan I'm 18 years old, and I go by \"Auxtal\" online. In my spare time, I'm a hobbyist developer who likes front and back-end development. I love to fly real aircraft and simulators. I also love flying my drone everywhere."
 	}
 }
