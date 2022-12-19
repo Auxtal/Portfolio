@@ -6,7 +6,7 @@
 		themeChange(false);
 
 		let theme = document.documentElement.getAttribute("data-theme");
-		let themeCheckbox = document.getElementById("theme-checkbox");
+		let themeCheckbox = document.getElementById("themeCheckBox");
 
 		if (theme === "light") {
 			themeCheckbox.checked = true;
@@ -19,7 +19,7 @@
 >
 	<input
 		type="checkbox"
-		id="theme-checkbox"
+		id="themeCheckBox"
 		data-toggle-theme="dark,light"
 		data-act-class="active"
 	/>

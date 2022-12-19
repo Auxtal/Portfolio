@@ -5,6 +5,7 @@
 	import Navlinks from "$json/Navlinks.json";
 	import Icon from "@iconify/svelte";
 
+	import { onMount } from "svelte";
 	import { fade } from "svelte/transition";
 	import { page } from "$app/stores";
 
@@ -12,6 +13,16 @@
 
 	const toggleNavbar = () => (navbar = !navbar);
 	const hideNavbar = () => (navbar = false);
+
+	const handleNavMenu = (e) => {
+		if (e.target.id !== "mobileMenu" && e.target.id !== "mobileMenuToggle") {
+			navbar = false;
+		}
+	};
+
+	onMount(() => {
+		document.onclick = handleNavMenu;
+	});
 </script>
 
 <Animate>
@@ -31,7 +42,6 @@
 				<p class="text-xl">Auxtal</p>
 			</div>
 		</a>
-		<!-- <div class="divider divider-horizontal mx-0 before:bg-secondary/20 after:bg-secondary/20" /> -->
 		<div class="flex-1 justify-center text-sm">
 			<ul class="menu menu-horizontal">
 				{#each Navlinks as Navlink}
@@ -65,8 +75,9 @@
 	</div>
 
 	<div class="navbar fixed z-20 border-b border-secondary/10 backdrop-blur lg:hidden">
-		<a href="/" class="flex flex-1 items-center">
-			<div
+		<dir class="m-0 flex w-full p-0">
+			<a
+				href="/"
 				class="dark:hover:bg-white btn-ghost btn mr-1.5 text-xl normal-case hover:bg-secondary/50 hover:text-secondary"
 			>
 				<img
@@ -75,11 +86,16 @@
 					alt="Auxtal Logo Round"
 				/>
 				<p class="text-xl">Auxtal</p>
-			</div>
-		</a>
+			</a>
+		</dir>
 		<div class="flex items-center space-x-3">
 			<label class="swap-rotate swap btn-circle btn">
-				<input type="checkbox" on:click={toggleNavbar} bind:checked={navbar} />
+				<input
+					type="checkbox"
+					id="mobileMenuToggle"
+					on:click={toggleNavbar}
+					bind:checked={navbar}
+				/>
 				<svg
 					class="swap-off fill-current"
 					xmlns="http://www.w3.org/2000/svg"
@@ -101,8 +117,11 @@
 			</label>
 		</div>
 	</div>
-	<div class="fixed z-50 mt-2 w-full translate-y-[4rem] transition-all" class:hidden={!navbar}>
-		<ul id="mobile-menu" class="mx-2 rounded-xl bg-zinc-800/50 px-4 py-8 shadow backdrop-blur">
+	<div
+		class="fixed z-50 mt-2 w-full translate-y-[4rem] transition-all lg:hidden"
+		class:hidden={!navbar}
+	>
+		<ul id="mobileMenu" class="mx-2 rounded-xl bg-zinc-800/50 px-4 py-8 shadow backdrop-blur">
 			{#each Navlinks as Navlink}
 				<li
 					class={`rounded-md hover:bg-secondary hover:text-primary ${
@@ -131,7 +150,7 @@
 </Animate>
 
 <style>
-	#mobile-menu {
+	#mobileMenu {
 		box-shadow: 0px 2px 2px rgba(34, 34, 34, 0.6);
 	}
 </style>
