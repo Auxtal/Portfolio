@@ -19,15 +19,21 @@
 		class="bg-primary-100/10 fixed z-20 hidden w-full items-center justify-between border-b border-secondary/10 px-4 py-4 backdrop-blur lg:flex lg:min-h-[4rem]"
 		transition:fade={{ delay: 300, duration: 800 }}
 	>
-		<div>
-			<a
-				href="/"
-				class="dark:hover:bg-white btn-ghost btn text-xl normal-case hover:bg-secondary/50 hover:text-secondary"
-				>Auxtal</a
+		<a href="/">
+			<div
+				class="dark:hover:bg-white btn-ghost btn mr-1.5 flex items-center text-xl normal-case hover:bg-secondary/50 hover:text-secondary"
 			>
-		</div>
+				<img
+					class="mr-2.5 w-9 rounded-full shadow-lg"
+					src="/Logo Round.png"
+					alt="Auxtal Logo Round"
+				/>
+				<p class="text-xl">Auxtal</p>
+			</div>
+		</a>
+		<!-- <div class="divider divider-horizontal mx-0 before:bg-secondary/20 after:bg-secondary/20" /> -->
 		<div class="flex-1 justify-center text-sm">
-			<ul class="menu menu-horizontal mx-2 p-0">
+			<ul class="menu menu-horizontal">
 				{#each Navlinks as Navlink}
 					<li class="mx-2">
 						<a
@@ -59,10 +65,19 @@
 	</div>
 
 	<div class="navbar fixed z-20 border-b border-secondary/10 backdrop-blur lg:hidden">
-		<div class="flex-1 text-center">
-			<a href="/" class="btn-ghost btn text-xl normal-case hover:bg-neutral">Auxtal</a>
-		</div>
-		<div class="flex items-center justify-end space-x-3">
+		<a href="/" class="flex flex-1 items-center">
+			<div
+				class="dark:hover:bg-white btn-ghost btn mr-1.5 text-xl normal-case hover:bg-secondary/50 hover:text-secondary"
+			>
+				<img
+					class="mr-2.5 w-9 rounded-full shadow-lg"
+					src="/Logo Round.png"
+					alt="Auxtal Logo Round"
+				/>
+				<p class="text-xl">Auxtal</p>
+			</div>
+		</a>
+		<div class="flex items-center space-x-3">
 			<label class="swap-rotate swap btn-circle btn">
 				<input type="checkbox" on:click={toggleNavbar} bind:checked={navbar} />
 				<svg
