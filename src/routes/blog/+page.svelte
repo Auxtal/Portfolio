@@ -3,16 +3,12 @@
 	import Animate from "$components/Animate.svelte";
 	import Paginator from "$components/Paginator.svelte";
 
-	import { onMount } from "svelte";
 	import { fade } from "svelte/transition";
 	import { paginate } from "svelte-paginate";
 
 	export let data;
 
-	let screenWidth;
-	onMount(() => (screenWidth = window.innerWidth));
-
-	let pageSize = screenWidth >= 640 ? 4 : 3;
+	let pageSize = 4;
 	let currentPage = 1;
 	let searchTerm = "";
 
@@ -62,7 +58,7 @@
 							<p class="m-0 p-2 text-3xl font-bold text-secondary/80">
 								{post.metadata.title}
 							</p>
-							<div class="p-2">
+							<div class="hidden p-2 sm:block">
 								{#if post.metadata?.tags}
 									{#each post.metadata?.tags as tag}
 										<Tag name={tag} />
