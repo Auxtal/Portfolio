@@ -117,36 +117,40 @@
 			</label>
 		</div>
 	</div>
-	<div
-		class="fixed z-50 mt-2 w-full translate-y-[4rem] transition-all lg:hidden"
-		class:hidden={!navbar}
-	>
-		<ul id="mobileMenu" class="mx-2 rounded-xl bg-zinc-800/50 px-4 py-8 shadow backdrop-blur">
-			{#each Navlinks as Navlink}
-				<li
-					class={`rounded-md hover:bg-secondary hover:text-primary ${
-						$page.url.pathname.includes(Navlink.route) ? "bg-neutral font-bold text-secondary" : ""
-					}`}
-				>
-					<a
-						href={Navlink.route}
-						class="mt-1 block w-full p-3 text-center transition"
-						on:click={hideNavbar}
-						data-sveltekit-prefetch
+	{#if navbar}
+		<div
+			class="fixed z-50 mt-2 w-full translate-y-[4rem] lg:hidden"
+			transition:fade={{ duration: 100 }}
+		>
+			<ul id="mobileMenu" class="mx-2 rounded-xl bg-zinc-800/50 px-4 py-8 shadow backdrop-blur">
+				{#each Navlinks as Navlink}
+					<li
+						class={`rounded-md hover:bg-secondary hover:text-primary ${
+							$page.url.pathname.includes(Navlink.route)
+								? "bg-neutral font-bold text-secondary"
+								: ""
+						}`}
 					>
-						{Navlink.name}
-					</a>
+						<a
+							href={Navlink.route}
+							class="mt-1 block w-full p-3 text-center transition"
+							on:click={hideNavbar}
+							data-sveltekit-prefetch
+						>
+							{Navlink.name}
+						</a>
+					</li>
+				{/each}
+				<li>
+					<a
+						href="/Resume Redacted Info.pdf"
+						class="mt-1 block w-full rounded-md p-3 text-center transition hover:bg-secondary hover:text-primary"
+						download>Resume</a
+					>
 				</li>
-			{/each}
-			<li>
-				<a
-					href="/Resume Redacted Info.pdf"
-					class="mt-1 block w-full rounded-md p-3 text-center transition hover:bg-secondary hover:text-primary"
-					download>Resume</a
-				>
-			</li>
-		</ul>
-	</div>
+			</ul>
+		</div>
+	{/if}
 </Animate>
 
 <style>
