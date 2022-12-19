@@ -1,5 +1,5 @@
-import { redirect } from "@sveltejs/kit";
 import { z } from "zod";
+import { redirect } from "@sveltejs/kit";
 
 const emailSchema = z.object({
   name: z

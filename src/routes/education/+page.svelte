@@ -1,8 +1,6 @@
 <script>
-	import Education from "$json/Education.json";
 	import Animate from "$components/Animate.svelte";
-
-	import { fade, fly, slide } from "svelte/transition";
+	import Education from "$json/Education.json";
 
 	import {
 		Timeline,
@@ -12,6 +10,8 @@
 		TimelineConnector,
 		TimelineContent
 	} from "svelte-vertical-timeline";
+
+	import { fade, fly, slide } from "svelte/transition";
 </script>
 
 <svelte:head>

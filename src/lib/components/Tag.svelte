@@ -1,6 +1,6 @@
 <script>
-	export let name;
 	export let selectedTag;
+	export let name;
 
 	const handleTagClick = () => (selectedTag = name);
 </script>

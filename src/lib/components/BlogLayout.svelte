@@ -1,6 +1,6 @@
 <script>
-	import BackButton from "$components/BackButton.svelte";
 	import Animate from "$components/Animate.svelte";
+	import BackButton from "$components/BackButton.svelte";
 
 	import { fade } from "svelte/transition";
 </script>

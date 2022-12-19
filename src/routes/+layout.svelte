@@ -1,11 +1,11 @@
 <script>
 	import "../app.css";
 
-	import Navbar from "$components/Navbar.svelte";
 	import LeftNavigation from "$components/LeftNavigation.svelte";
+	import Navbar from "$components/Navbar.svelte";
 
-	import { onMount } from "svelte";
 	import { SvelteToast } from "@zerodevx/svelte-toast";
+	import { onMount } from "svelte";
 
 	import * as Sentry from "@sentry/svelte";
 	import { BrowserTracing } from "@sentry/tracing";
@@ -16,7 +16,7 @@
 			integrations: [new BrowserTracing()],
 			tracesSampleRate: 1.0,
 			environment: import.meta.env.VITE_ENVVIRONMENT,
-			release: "1.2.2"
+			release: "1.2.3"
 		});
 	});
 </script>

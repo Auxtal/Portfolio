@@ -1,10 +1,10 @@
 <script>
-	import Tag from "$components/Tag.svelte";
 	import Animate from "$components/Animate.svelte";
 	import Paginator from "$components/Paginator.svelte";
+	import Tag from "$components/Tag.svelte";
 
-	import { fade } from "svelte/transition";
 	import { paginate } from "svelte-paginate";
+	import { fade } from "svelte/transition";
 
 	export let data;
 

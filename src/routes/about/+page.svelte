@@ -1,7 +1,6 @@
 <script>
 	import Animate from "$components/Animate.svelte";
 	import { t } from "$lib/locales/i18n";
-
 	import { fade } from "svelte/transition";
 </script>
 

@@ -3,9 +3,9 @@
 
 	import { fade, fly } from "svelte/transition";
 
+	export let styles = "";
 	export let title;
 	export let footer;
-	export let styles = "";
 </script>
 
 <Animate>

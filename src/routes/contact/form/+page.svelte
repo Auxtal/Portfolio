@@ -1,7 +1,8 @@
 <script>
 	import Animate from "$components/Animate.svelte";
-	import Button from "$components/Button.svelte";
 	import BackButton from "$components/BackButton.svelte";
+	import Button from "$components/Button.svelte";
+
 	import { Toast } from "$lib/helpers/toast";
 
 	import { fade } from "svelte/transition";

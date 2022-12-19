@@ -1,7 +1,8 @@
 <script>
-	import ThemeToggle from "$components/ThemeToggle.svelte";
-	import Button from "$components/Button.svelte";
 	import Animate from "$components/Animate.svelte";
+	import Button from "$components/Button.svelte";
+	import ThemeToggle from "$components/ThemeToggle.svelte";
+
 	import Navlinks from "$json/Navlinks.json";
 	import Icon from "@iconify/svelte";
 	import OutClick from "svelte-outclick";
@@ -52,14 +53,14 @@
 					{/each}
 				</ul>
 			</div>
-			<Button href="/Resume Redacted Info.pdf" download={true} classes="px-9"
-				><Icon
+			<Button href="/Resume Redacted Info.pdf" download="/Resume Redacted Info.pdf" classes="px-9">
+				<Icon
 					height="20"
 					width="20"
 					icon="mdi:resume"
 					style="display: inline-block; margin-right: 5px;"
-				/>Resume</Button
-			>
+				/>Resume
+			</Button>
 			<div class="ml-3">
 				<ThemeToggle />
 			</div>
@@ -80,7 +81,7 @@
 				</a>
 			</dir>
 			<div class="flex items-center space-x-3">
-				<label id="mobileMenuToggle" class="swap swap-rotate btn-circle btn">
+				<label id="mobileMenuToggle" class="swap-rotate swap btn-circle btn">
 					<input type="checkbox" on:click={toggleNavbar} bind:checked={navbar} />
 					<svg
 						class="swap-off fill-current"
@@ -88,18 +89,19 @@
 						width="32"
 						height="32"
 						viewBox="0 0 512 512"
-						><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" /></svg
-					>
+						><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
+					</svg>
 					<svg
 						class="swap-on fill-current"
 						xmlns="http://www.w3.org/2000/svg"
 						width="32"
 						height="32"
 						viewBox="0 0 512 512"
-						><polygon
-							points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"
-						/></svg
 					>
+						<polygon
+							points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"
+						/>
+					</svg>
 				</label>
 			</div>
 		</div>
@@ -131,9 +133,11 @@
 						<li>
 							<a
 								href="/Resume Redacted Info.pdf"
+								download="/Resume Redacted Info.pdf"
 								class="mt-1 block w-full rounded-md p-3 text-center transition hover:bg-secondary hover:text-primary"
-								download>Resume</a
 							>
+								Resume
+							</a>
 						</li>
 					</ul>
 				</OutClick>

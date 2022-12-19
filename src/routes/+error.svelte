@@ -1,9 +1,9 @@
 <script>
-	import Button from "$components/Button.svelte";
 	import Animate from "$components/Animate.svelte";
+	import Button from "$components/Button.svelte";
 
-	import { page } from "$app/stores";
 	import { fade } from "svelte/transition";
+	import { page } from "$app/stores";
 
 	if ($page?.status === 404) {
 		window.location.replace("/");

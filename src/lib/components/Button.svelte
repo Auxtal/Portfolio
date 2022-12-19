@@ -1,36 +1,41 @@
 <script>
-	export let href = "";
-	export let download = false;
-	export let loading = false;
+	import Icon from "@iconify/svelte";
+
 	export let onClickEvent = new Function();
+	export let rel = "noreferrer";
+	export let download = null;
+	export let loading = false;
+	export let target = null;
+	export let href = "";
 	export let classes;
 </script>
 
 {#if href}
-	{#if download}
-		<a
-			class={`btn border-none bg-secondary/20 normal-case text-secondary no-underline backdrop-blur-sm transition-all duration-200 hover:bg-neutral hover:text-secondary focus:bg-neutral ${classes}`}
-			class:loading
-			{href}
-			target="_blank"
-			rel="noreferrer"
-			download
-		>
-			<slot />
-		</a>
-	{:else}
-		<a
-			class={`btn border-none bg-secondary/20 normal-case text-secondary no-underline backdrop-blur-sm transition-all duration-200 hover:bg-neutral hover:text-secondary focus:bg-neutral ${classes}`}
-			class:loading
-			{href}
-		>
-			<slot />
-		</a>
-	{/if}
+	<a
+		class={`btn border-none bg-secondary/20 normal-case text-secondary no-underline backdrop-blur-sm transition-all duration-200 hover:bg-neutral hover:text-secondary focus:bg-neutral ${classes}`}
+		{rel}
+		{target}
+		{href}
+		{download}
+	>
+		<slot />
+	</a>
+{:else if loading}
+	<button
+		class={`btn border-none bg-secondary/20 normal-case text-secondary backdrop-blur-sm transition-all duration-200 hover:bg-neutral hover:text-secondary focus:bg-neutral ${classes}`}
+		class:btn-disabled={loading}
+		on:click={onClickEvent()}
+	>
+		<Icon
+			height="30"
+			width="30"
+			icon="eos-icons:loading"
+			style="display: inline-block; margin-right: 5px;"
+		/>
+	</button>
 {:else}
 	<button
 		class={`btn border-none bg-secondary/20 normal-case text-secondary backdrop-blur-sm transition-all duration-200 hover:bg-neutral hover:text-secondary focus:bg-neutral ${classes}`}
-		class:loading
 		on:click={onClickEvent()}
 	>
 		<slot />

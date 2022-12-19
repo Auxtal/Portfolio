@@ -1,8 +1,9 @@
 <script>
 	import Animate from "$components/Animate.svelte";
-	import { t } from "$lib/locales/i18n";
 
+	import { t } from "$lib/locales/i18n";
 	import Icon from "@iconify/svelte";
+
 	import { fly } from "svelte/transition";
 </script>
 
