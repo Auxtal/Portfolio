@@ -33,6 +33,7 @@
 		"prettier-plugin-tailwindcss": "^0.1.13",
 		"svelte": "^3.49.0",
 		"svelte-check": "^2.8.0",
+		"svelte-outclick": "^3.3.3",
 		"svelte-paginate": "^0.1.0",
 		"svelte-preprocess": "^4.10.7",
 		"svelte-vertical-timeline": "^0.0.2",

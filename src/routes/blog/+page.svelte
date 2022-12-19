@@ -53,10 +53,7 @@
 		<div class="divider before:bg-secondary/20 after:bg-secondary/20" />
 		{#if paginatedPosts.length}
 			{#each paginatedPosts as post, i}
-				<a
-					href="blog/{post.path.replace('.svelte.md', '').replace('+page', '')}"
-					class="m-1 no-underline"
-				>
+				<a href="blog/{post.path.replace('.svelte.md', '').replace('+page', '')}" class="m-1">
 					<div
 						class="flex h-min w-full items-center justify-between rounded border border-secondary/20 bg-secondary/10 backdrop-blur-sm transition hover:-translate-y-1"
 						in:fade={{ delay: 250 * i, duration: 1000 }}

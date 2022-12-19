@@ -4,8 +4,8 @@
 	import Animate from "$components/Animate.svelte";
 	import Navlinks from "$json/Navlinks.json";
 	import Icon from "@iconify/svelte";
+	import OutClick from "svelte-outclick";
 
-	import { onMount } from "svelte";
 	import { fade } from "svelte/transition";
 	import { page } from "$app/stores";
 
@@ -13,16 +13,6 @@
 
 	const toggleNavbar = () => (navbar = !navbar);
 	const hideNavbar = () => (navbar = false);
-
-	const handleNavMenu = (e) => {
-		if (e.target.id !== "mobileMenu" && e.target.id !== "mobileMenuToggle") {
-			navbar = false;
-		}
-	};
-
-	onMount(() => {
-		document.onclick = handleNavMenu;
-	});
 </script>
 
 <Animate>
@@ -89,13 +79,8 @@
 			</a>
 		</dir>
 		<div class="flex items-center space-x-3">
-			<label class="swap-rotate swap btn-circle btn">
-				<input
-					type="checkbox"
-					id="mobileMenuToggle"
-					on:click={toggleNavbar}
-					bind:checked={navbar}
-				/>
+			<label id="mobileMenuToggle" class="swap-rotate swap btn-circle btn">
+				<input type="checkbox" on:click={toggleNavbar} bind:checked={navbar} />
 				<svg
 					class="swap-off fill-current"
 					xmlns="http://www.w3.org/2000/svg"
@@ -122,33 +107,35 @@
 			class="fixed z-50 mt-2 w-full translate-y-[4rem] lg:hidden"
 			transition:fade={{ duration: 100 }}
 		>
-			<ul id="mobileMenu" class="mx-2 rounded-xl bg-zinc-800/50 px-4 py-8 shadow backdrop-blur">
-				{#each Navlinks as Navlink}
-					<li
-						class={`rounded-md hover:bg-secondary hover:text-primary ${
-							$page.url.pathname.includes(Navlink.route)
-								? "bg-neutral font-bold text-secondary"
-								: ""
-						}`}
-					>
-						<a
-							href={Navlink.route}
-							class="mt-1 block w-full p-3 text-center transition"
-							on:click={hideNavbar}
-							data-sveltekit-prefetch
+			<OutClick on:outclick={hideNavbar} excludeQuerySelectorAll={["#mobileMenuToggle"]}>
+				<ul id="mobileMenu" class="mx-2 rounded-xl bg-zinc-800/50 px-4 py-8 shadow backdrop-blur">
+					{#each Navlinks as Navlink}
+						<li
+							class={`rounded-md hover:bg-secondary hover:text-primary ${
+								$page.url.pathname.includes(Navlink.route)
+									? "bg-neutral font-bold text-secondary"
+									: ""
+							}`}
 						>
-							{Navlink.name}
-						</a>
+							<a
+								href={Navlink.route}
+								class="mt-1 block w-full p-3 text-center transition"
+								on:click={hideNavbar}
+								data-sveltekit-prefetch
+							>
+								{Navlink.name}
+							</a>
+						</li>
+					{/each}
+					<li>
+						<a
+							href="/Resume Redacted Info.pdf"
+							class="mt-1 block w-full rounded-md p-3 text-center transition hover:bg-secondary hover:text-primary"
+							download>Resume</a
+						>
 					</li>
-				{/each}
-				<li>
-					<a
-						href="/Resume Redacted Info.pdf"
-						class="mt-1 block w-full rounded-md p-3 text-center transition hover:bg-secondary hover:text-primary"
-						download>Resume</a
-					>
-				</li>
-			</ul>
+				</ul>
+			</OutClick>
 		</div>
 	{/if}
 </Animate>
