@@ -18,6 +18,7 @@
 
 	#paginator :global(.pagination-nav) {
 		@apply shadow-lg;
+
 		background: rgba(var(--secondary-rgb), 0.1);
 		justify-content: center;
 		max-width: fit-content;
