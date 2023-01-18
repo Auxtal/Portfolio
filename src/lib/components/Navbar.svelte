@@ -114,7 +114,7 @@
 				transition:fade={{ duration: 100 }}
 			>
 				<OutClick on:outclick={hideNavbar} excludeQuerySelectorAll={["#mobileMenuToggle"]}>
-					<ul id="mobileMenu" class="mx-2 rounded-xl bg-zinc-800/50 px-4 py-8 shadow backdrop-blur">
+					<ul id="mobileMenu" class="mx-2 rounded-xl bg-zinc-800/50 p-4 shadow backdrop-blur">
 						{#each Navlinks as Navlink}
 							<li
 								class={`rounded-md hover:bg-secondary hover:text-primary transition-bg ${
