@@ -1,4 +1,4 @@
-export interface Metadata {
+interface Metadata {
 	date: Date;
 	layout: string;
 	tags: string[];
