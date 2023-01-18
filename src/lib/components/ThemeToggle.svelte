@@ -2,20 +2,23 @@
 	import { themeChange } from "theme-change";
 	import { onMount } from "svelte";
 
+	let theme = document.documentElement.getAttribute("data-theme");
+	let themeCheckbox = document.getElementById("themeCheckBox") as HTMLInputElement;
+	let scale = false;
+
 	onMount(() => {
 		themeChange(false);
-
-		let theme = document.documentElement.getAttribute("data-theme");
-		let themeCheckbox = document.getElementById("themeCheckBox") as HTMLInputElement;
-
 		if (theme === "light") {
 			themeCheckbox.checked = true;
 		}
 	});
 </script>
 
+<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 <label
 	class="swap-rotate swap z-0 rounded-md bg-secondary/20 p-1 text-secondary transition hover:bg-neutral"
+	on:mouseenter={() => (scale = true)}
+	on:mouseleave={() => (scale = false)}
 >
 	<input
 		type="checkbox"
@@ -24,7 +27,8 @@
 		data-act-class="active"
 	/>
 	<svg
-		class="swap-on z-10 h-10 w-10 fill-current p-1 hover:scale-[0.9]"
+		class="swap-on z-10 h-10 w-10 fill-current p-1"
+		class:scale
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 0 24 24"
 		><path
@@ -32,7 +36,8 @@
 		/></svg
 	>
 	<svg
-		class="swap-off z-10 h-10 w-10 fill-current p-1 hover:scale-[0.9]"
+		class="swap-off z-10 h-10 w-10 fill-current p-1"
+		class:scale
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 0 24 24"
 		><path
@@ -40,3 +45,9 @@
 		/></svg
 	>
 </label>
+
+<style lang="postcss">
+	.scale {
+		@apply scale-[0.9];
+	}
+</style>
