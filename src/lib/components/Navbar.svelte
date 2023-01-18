@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Animate from "$components/Animate.svelte";
 	import Button from "$components/Button.svelte";
 	import ThemeToggle from "$components/ThemeToggle.svelte";
@@ -24,11 +24,11 @@
 		>
 			<a href="/">
 				<div
-					class="dark:hover:bg-white btn-ghost btn mr-1.5 flex items-center text-xl normal-case hover:bg-secondary/50 hover:text-secondary"
+					class="dark:hover:bg-white btn-ghost btn mr-1.5 flex items-center justify-center text-xl normal-case hover:bg-secondary/50 hover:text-secondary"
 				>
 					<img
 						class="mr-2.5 w-9 rounded-full shadow-lg"
-						src="/Logo Round.png"
+						src="/images/Logo Round.png"
 						alt="Auxtal Logo Round"
 					/>
 					<p class="text-xl">Auxtal</p>
@@ -45,7 +45,6 @@
 										? "bg-neutral font-bold text-secondary"
 										: ""
 								}`}
-								data-sveltekit-prefetch
 							>
 								{Navlink.name}
 							</a>
@@ -53,7 +52,11 @@
 					{/each}
 				</ul>
 			</div>
-			<Button href="/Resume Redacted Info.pdf" download="/Resume Redacted Info.pdf" classes="px-9">
+			<Button
+				href="/pdf/Resume Redacted Info.pdf"
+				download="/pdf/Resume Redacted Info.pdf"
+				classes="px-9"
+			>
 				<Icon
 					height="20"
 					width="20"
@@ -74,14 +77,14 @@
 				>
 					<img
 						class="mr-2.5 w-9 rounded-full shadow-lg"
-						src="/Logo Round.png"
+						src="/images/Logo Round.png"
 						alt="Auxtal Logo Round"
 					/>
 					<p class="text-xl">Auxtal</p>
 				</a>
 			</dir>
 			<div class="flex items-center space-x-3">
-				<label id="mobileMenuToggle" class="swap swap-rotate btn-circle btn">
+				<label id="mobileMenuToggle" class="swap-rotate swap btn-circle btn">
 					<input type="checkbox" on:click={toggleNavbar} bind:checked={navbar} />
 					<svg
 						class="swap-off fill-current"
@@ -114,7 +117,7 @@
 					<ul id="mobileMenu" class="mx-2 rounded-xl bg-zinc-800/50 px-4 py-8 shadow backdrop-blur">
 						{#each Navlinks as Navlink}
 							<li
-								class={`rounded-md hover:bg-secondary hover:text-primary ${
+								class={`rounded-md hover:bg-secondary hover:text-primary transition-bg ${
 									$page.url.pathname.includes(Navlink.route)
 										? "bg-neutral font-bold text-secondary"
 										: ""
@@ -124,7 +127,6 @@
 									href={Navlink.route}
 									class="mt-1 block w-full p-3 text-center transition"
 									on:click={hideNavbar}
-									data-sveltekit-prefetch
 								>
 									{Navlink.name}
 								</a>
@@ -132,8 +134,8 @@
 						{/each}
 						<li>
 							<a
-								href="/Resume Redacted Info.pdf"
-								download="/Resume Redacted Info.pdf"
+								href="/pdf/Resume Redacted Info.pdf"
+								download="/pdf/Resume Redacted Info.pdf"
 								class="mt-1 block w-full rounded-md p-3 text-center transition hover:bg-secondary hover:text-primary"
 							>
 								Resume

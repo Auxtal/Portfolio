@@ -1,6 +1,5 @@
-<script>
+<script lang="ts">
 	import Animate from "$components/Animate.svelte";
-	import { t } from "$lib/locales/i18n";
 	import { fade } from "svelte/transition";
 </script>
 
@@ -16,7 +15,7 @@
 			<img
 				transition:fade|local={{ delay: 100, duration: 250 }}
 				class="aspect-auto rounded-lg shadow-md transition-all duration-300 sm:max-w-sm lg:mr-10 lg:grayscale lg:hover:grayscale-0"
-				src="/Graduation Event.jpg"
+				src="/images/Graduation Event.jpg"
 				alt="Graduation Event"
 			/>
 		</div>
@@ -25,13 +24,15 @@
 				transition:fade|local={{ delay: 250, duration: 500 }}
 				class="my-5 text-3xl font-bold text-neutral backdrop-blur-sm lg:mb-10 lg:text-5xl xl:text-6xl"
 			>
-				{$t("fullName")}
+				Ethan Murphy
 			</h1>
 			<p
-				transition:fade|local={{ delay: 500, duration: 1000 }}
-				class="font-secondary text-md px-8 text-center text-accent backdrop-blur-sm lg:px-0 lg:text-left lg:text-lg xl:text-xl"
+				transition:fade|local={{ delay: 500, duration: 800 }}
+				class="font-secondary text-md px-8 text-center leading-6 lg:leading-normal text-accent backdrop-blur-sm lg:px-0 lg:text-left lg:text-lg xl:text-xl"
 			>
-				{$t("description")}
+				Hey, I'm Ethan, I'm 18 years old and I go by Auxtal online. In my spare time, I'm a hobbyist
+				developer who likes full-stack development. I love to fly real and simulated aircraft I also
+				love flying my drone everywhere.
 			</p>
 		</div>
 	</Animate>

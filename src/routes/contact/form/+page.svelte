@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Animate from "$components/Animate.svelte";
 	import BackButton from "$components/BackButton.svelte";
 	import Button from "$components/Button.svelte";
@@ -6,10 +6,48 @@
 	import { Toast } from "$lib/helpers/toast";
 
 	import { fade } from "svelte/transition";
-	import { applyAction, enhance } from "$app/forms";
+	import { applyAction, enhance, type SubmitFunction } from "$app/forms";
 
-	export let form;
+	import type { ActionData } from "./$types";
+	import type { ActionResult } from "@sveltejs/kit";
+
+	type ActionResultData = ActionResult & {
+		data: { errors: string[] };
+	};
+
+	type ActionFormData = ActionData & {
+		name: string;
+		email: string;
+		subject: string;
+		message: string;
+	};
+
+	export let form: ActionFormData;
 	let loading = false;
+
+	const contactSubmit: SubmitFunction = ({ form }) => {
+		loading = true;
+		return async ({ result }) => {
+			const resultData = result as ActionResultData;
+
+			if (resultData?.data?.errors) {
+				setTimeout(() => {
+					loading = false;
+				}, 500);
+				return await applyAction(resultData);
+			}
+
+			if (resultData.type === "success") {
+				Toast("Email Sent Successfully");
+				setTimeout(() => {
+					loading = false;
+				}, 500);
+
+				form.reset();
+				await applyAction(resultData);
+			}
+		};
+	};
 </script>
 
 <svelte:head>
@@ -19,32 +57,7 @@
 <Animate>
 	<div class="mx-auto flex h-screen w-full max-w-xl flex-col justify-center rounded-md p-6" in:fade>
 		<BackButton href="/contact" />
-		<form
-			class="mt-6"
-			method="POST"
-			action="?/submit"
-			use:enhance={({ form }) => {
-				loading = true;
-				return async ({ result }) => {
-					if (result?.data?.errors) {
-						setTimeout(() => {
-							loading = false;
-						}, 1000);
-						return await applyAction(result);
-					}
-					if (result.type === "success") {
-						Toast(
-							"<strong>Email Sent Successfully</strong><br>I will get back to you as soon as possible"
-						);
-						setTimeout(() => {
-							loading = false;
-						}, 1000);
-						form.reset();
-						await applyAction(result);
-					}
-				};
-			}}
-		>
+		<form class="mt-6" method="POST" action="?/contact" use:enhance={contactSubmit}>
 			<div class="form-item relative mt-2 mb-5 ">
 				<input
 					id="name"

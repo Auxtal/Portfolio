@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { themeChange } from "theme-change";
 	import { onMount } from "svelte";
 
@@ -6,7 +6,7 @@
 		themeChange(false);
 
 		let theme = document.documentElement.getAttribute("data-theme");
-		let themeCheckbox = document.getElementById("themeCheckBox");
+		let themeCheckbox = document.getElementById("themeCheckBox") as HTMLInputElement;
 
 		if (theme === "light") {
 			themeCheckbox.checked = true;

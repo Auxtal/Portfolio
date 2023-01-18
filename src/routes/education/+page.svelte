@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Animate from "$components/Animate.svelte";
 	import Education from "$json/Education.json";
 
@@ -25,7 +25,7 @@
 				<TimelineItem style="margin:15px 0">
 					<TimelineSeparator>
 						<Animate>
-							<span in:fly|local={{ delay: 250, y: (-100 / 2) * (i + 1), duration: 1000 }}>
+							<span in:fly|local={{ delay: 250, y: (-100 / 2) * (i + 1), duration: 800 }}>
 								<TimelineDot style={`background-color: var(--neutral); border: none;`} />
 							</span>
 						</Animate>
@@ -33,16 +33,13 @@
 					</TimelineSeparator>
 					<TimelineContent>
 						<Animate>
-							<h3 in:fly|local={{ x: -150, duration: 1000 }} class="font-secondary font-extrabold">
+							<h3 in:fly|local={{ x: -150, duration: 800 }} class="font-secondary font-extrabold">
 								{Education.place}
 							</h3>
-							<p
-								in:slide|local={{ y: 150, delay: 500, duration: 1000 }}
-								class="py-2 text-sm text-neutral"
-							>
+							<p in:slide|local={{ delay: 500, duration: 800 }} class="py-2 text-sm text-neutral">
 								{Education.year_start} - {Education.year_end}
 							</p>
-							<p in:fade|local={{ delay: 1000, duration: 1000 }} class="font-secondary text-accent">
+							<p in:fade|local={{ delay: 1000, duration: 800 }} class="font-secondary text-accent">
 								{Education.description}
 							</p>
 						</Animate>

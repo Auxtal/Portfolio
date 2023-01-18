@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Animate from "$components/Animate.svelte";
 
 	import { PaginationNav } from "svelte-paginate";
@@ -11,7 +11,7 @@
 	</div>
 </Animate>
 
-<style>
+<style lang="postcss">
 	#paginator {
 		z-index: 30;
 	}
@@ -20,6 +20,7 @@
 		@apply shadow-lg;
 
 		background: rgba(var(--secondary-rgb), 0.1);
+		backdrop-filter: blur(4px);
 		justify-content: center;
 		max-width: fit-content;
 		align-items: center;

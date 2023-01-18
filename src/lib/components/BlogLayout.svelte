@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Animate from "$components/Animate.svelte";
 	import BackButton from "$components/BackButton.svelte";
 

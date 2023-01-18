@@ -5,7 +5,7 @@ date: 2022-12-16
 tags: [University, Unit, Trimester 3]
 ---
 
-<script>
+<script lang="ts">
   import Button from "$lib/components/Button.svelte";
 </script>
 

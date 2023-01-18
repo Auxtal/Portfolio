@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Animate from "$components/Animate.svelte";
 	import Paginator from "$components/Paginator.svelte";
 	import Tag from "$components/Tag.svelte";
@@ -6,21 +6,24 @@
 	import { paginate } from "svelte-paginate";
 	import { fade } from "svelte/transition";
 
-	export let data;
+	import type { PageData } from "./$types";
+	import type { Post } from "./+page";
+
+	export let data: PageData;
 
 	let pageSize = 4;
 	let currentPage = 1;
 	let searchTerm = "";
 
-	$: filteredPosts = data.posts.filter((post) => {
+	$: filteredPosts = data.posts.filter((post: Post) => {
 		return (
 			post.metadata.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
 			post.metadata?.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()))
 		);
 	});
 
-	$: items = filteredPosts.sort((post1, post2) => {
-		return new Date(post2.metadata.date) - new Date(post1.metadata.date);
+	$: items = filteredPosts.sort((post1: Post, post2: Post) => {
+		return new Date(post2.metadata.date).valueOf() - new Date(post1.metadata.date).valueOf();
 	});
 
 	$: paginatedPosts = paginate({ items, pageSize, currentPage });
@@ -52,7 +55,7 @@
 				<a href="blog/{post.path.replace('.svelte.md', '').replace('+page', '')}" class="m-1">
 					<div
 						class="flex h-min w-full items-center justify-between rounded border border-secondary/20 bg-secondary/10 backdrop-blur-sm transition hover:-translate-y-1"
-						in:fade={{ delay: 250 * i, duration: 1000 }}
+						in:fade={{ delay: 250 * i, duration: 800 }}
 					>
 						<div>
 							<p class="m-0 p-2 text-3xl font-bold text-secondary/80">

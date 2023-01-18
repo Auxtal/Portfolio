@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
 	import Icon from "@iconify/svelte";
 
-	export let href;
+	export let href: string;
 </script>
 
 <a
