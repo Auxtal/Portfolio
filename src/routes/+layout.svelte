@@ -1,7 +1,7 @@
 <script lang="ts">
 	import "$src/app.postcss";
 
-	import LeftNavigation from "$components/LeftNavigation.svelte";
+	import ActionButtons from "$components/ActionButtons.svelte";
 	import Navbar from "$components/Navbar.svelte";
 
 	import { onMount } from "svelte";
@@ -23,5 +23,5 @@
 
 <Toaster />
 <Navbar />
-<LeftNavigation />
+<ActionButtons />
 <slot />

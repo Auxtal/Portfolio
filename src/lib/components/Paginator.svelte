@@ -53,7 +53,7 @@
 
 	#paginator :global(.option.number),
 	#paginator :global(.option.ellipsis) {
-		padding: 10px 15px;
+		padding: 15px 15px;
 	}
 
 	#paginator :global(.option:hover) {
