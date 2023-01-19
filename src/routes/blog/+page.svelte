@@ -16,8 +16,11 @@
 	let currentPage = 1;
 	let searchTerm = "";
 
-	const handleClick = async (post: Post) => {
-		await goto(`blog/${post.path.replace(".svelte.md", "").replace("+page", "")}`);
+	const handleClick = async (post: Post, event: MouseEvent) => {
+		const target = event.target as Element;
+		if (!target.classList.contains("tag")) {
+			await goto(`blog/${post.path.replace(".svelte.md", "").replace("+page", "")}`);
+		}
 	};
 
 	$: filteredPosts = data.posts.filter((post: Post) => {
@@ -60,7 +63,7 @@
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<div
 					class="my-3 flex h-min w-full cursor-pointer items-center justify-between rounded border border-secondary/20 bg-secondary/10 backdrop-blur-sm transition first:mt-0 last:mb-0 hover:-translate-y-1"
-					on:click={() => handleClick(post)}
+					on:click={(event) => handleClick(post, event)}
 					in:fade={{ delay: 250 * i, duration: 800 }}
 				>
 					<div>
