@@ -24,7 +24,7 @@
 		<div class="flex max-w-md flex-col flex-wrap items-center justify-center lg:items-start">
 			<h1
 				transition:fade|local={{ delay: 100, duration: 800, easing: quintOut }}
-				class="my-5 text-3xl font-bold text-neutral backdrop-blur-sm lg:mb-10 lg:text-5xl xl:text-6xl"
+				class="my-5 text-3xl font-bold text-neutral backdrop-blur-sm lg:my-0 lg:mb-5 lg:text-5xl xl:text-6xl"
 			>
 				Ethan Murphy
 			</h1>
