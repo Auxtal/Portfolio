@@ -10,7 +10,7 @@
 
 <Animate>
 	<div
-		class="max-h-max w-full rounded-xl border flex flex-col justify-between border-secondary/20 bg-secondary/10 p-4 backdrop-blur-sm transition-transform duration-200 hover:-translate-y-1 sm:max-h-[15rem] md:max-h-[23rem] md:max-w-[25rem] lg:min-h-full"
+		class="flex max-h-max w-full flex-col justify-between rounded-xl border border-secondary/20 bg-secondary/10 p-4 backdrop-blur-sm transition-transform duration-200 hover:-translate-y-1 sm:max-h-[15rem] md:max-h-[23rem] md:max-w-[25rem] lg:min-h-full"
 		in:fly|local={{ x: 50, duration: 800 }}
 	>
 		<div>

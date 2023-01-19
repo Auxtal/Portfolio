@@ -28,7 +28,7 @@
 			</h1>
 			<p
 				transition:fade|local={{ delay: 500, duration: 800 }}
-				class="font-secondary text-md px-8 text-center leading-6 lg:leading-normal text-accent backdrop-blur-sm lg:px-0 lg:text-left lg:text-lg xl:text-xl"
+				class="font-secondary text-md px-8 text-center leading-6 text-accent backdrop-blur-sm lg:px-0 lg:text-left lg:text-lg lg:leading-normal xl:text-xl"
 			>
 				Hey, I'm Ethan, I'm 18 years old and I go by Auxtal online. In my spare time, I'm a hobbyist
 				developer who likes full-stack development. I love to fly real and simulated aircraft I also

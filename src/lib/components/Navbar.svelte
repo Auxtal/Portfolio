@@ -84,7 +84,7 @@
 				</a>
 			</dir>
 			<div class="flex items-center space-x-3">
-				<label id="mobileMenuToggle" class="swap-rotate swap btn-circle btn">
+				<label id="mobileMenuToggle" class="swap swap-rotate btn-circle btn">
 					<input type="checkbox" on:click={toggleNavbar} bind:checked={navbar} />
 					<svg
 						class="swap-off fill-current"
@@ -117,7 +117,7 @@
 					<ul id="mobileMenu" class="mx-2 rounded-xl bg-zinc-800/50 p-4 shadow backdrop-blur">
 						{#each Navlinks as Navlink}
 							<li
-								class={`rounded-md hover:bg-secondary hover:text-primary transition-bg ${
+								class={`transition-bg rounded-md hover:bg-secondary hover:text-primary ${
 									$page.url.pathname.includes(Navlink.route)
 										? "bg-neutral font-bold text-secondary"
 										: ""
