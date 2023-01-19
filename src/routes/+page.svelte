@@ -20,7 +20,7 @@
 			Hi, my name is
 		</h2>
 		<h1
-			class="font-primary mt-5 mb-2 text-center text-3xl font-bold text-neutral backdrop-blur-sm sm:text-5xl md:text-right lg:text-7xl"
+			class="font-primary z-20 mt-5 mb-2 text-center text-3xl font-bold text-neutral backdrop-blur-sm sm:text-5xl md:text-right lg:text-7xl"
 		>
 			Ethan Murphy
 		</h1>
