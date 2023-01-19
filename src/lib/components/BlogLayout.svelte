@@ -3,11 +3,15 @@
 	import BackButton from "$components/BackButton.svelte";
 
 	import { fade } from "svelte/transition";
+	import { quintOut } from "svelte/easing";
 </script>
 
 <Animate>
 	<BackButton href="/blog" />
-	<article class="prose w-full max-w-full pt-7" in:fade|local={{ delay: 200, duration: 800 }}>
+	<article
+		class="prose w-full max-w-full pt-7"
+		transition:fade|local={{ duration: 800, easing: quintOut }}
+	>
 		<slot />
 	</article>
 </Animate>

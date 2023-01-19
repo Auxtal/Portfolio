@@ -35,6 +35,7 @@
 		"prettier-plugin-tailwindcss": "^0.2.1",
 		"svelte": "^3.55.0",
 		"svelte-check": "^3.0.1",
+		"svelte-confetti": "^1.2.2",
 		"svelte-french-toast": "^1.0.3",
 		"svelte-outclick": "^3.3.3",
 		"svelte-paginate": "^0.1.0",

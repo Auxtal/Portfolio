@@ -3,10 +3,11 @@
 
 	import { PaginationNav } from "svelte-paginate";
 	import { fade } from "svelte/transition";
+	import { quintOut } from "svelte/easing";
 </script>
 
 <Animate>
-	<div id="paginator" in:fade>
+	<div id="paginator" transition:fade|local={{ duration: 800, easing: quintOut }}>
 		<PaginationNav {...$$props} on:setPage />
 	</div>
 </Animate>
@@ -30,7 +31,7 @@
 	}
 
 	#paginator :global(.option) {
-		transition: 0.2s all ease-out;
+		transition: all 200ms ease-out;
 		color: var(--secondary);
 		justify-content: center;
 		align-items: center;

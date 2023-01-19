@@ -1,6 +1,8 @@
 <script lang="ts">
 	import Animate from "$components/Animate.svelte";
-	import { fade } from "svelte/transition";
+
+	import { fade, fly } from "svelte/transition";
+	import { quintOut } from "svelte/easing";
 </script>
 
 <svelte:head>
@@ -13,7 +15,7 @@
 	<Animate>
 		<div class="px-4">
 			<img
-				transition:fade|local={{ delay: 100, duration: 250 }}
+				transition:fly|local={{ x: 50, duration: 500, easing: quintOut }}
 				class="aspect-auto rounded-lg shadow-md transition-all duration-300 sm:max-w-sm lg:mr-10 lg:grayscale lg:hover:grayscale-0"
 				src="/images/Graduation Event.jpg"
 				alt="Graduation Event"
@@ -21,13 +23,13 @@
 		</div>
 		<div class="flex max-w-md flex-col flex-wrap items-center justify-center lg:items-start">
 			<h1
-				transition:fade|local={{ delay: 250, duration: 500 }}
+				transition:fade|local={{ delay: 100, duration: 800, easing: quintOut }}
 				class="my-5 text-3xl font-bold text-neutral backdrop-blur-sm lg:mb-10 lg:text-5xl xl:text-6xl"
 			>
 				Ethan Murphy
 			</h1>
 			<p
-				transition:fade|local={{ delay: 500, duration: 800 }}
+				transition:fade|local={{ delay: 100, duration: 800, easing: quintOut }}
 				class="font-secondary text-md px-8 text-center leading-6 text-accent backdrop-blur-sm lg:px-0 lg:text-left lg:text-lg lg:leading-normal xl:text-xl"
 			>
 				Hey, I'm Ethan, I'm 18 years old and I go by Auxtal online. In my spare time, I'm a hobbyist

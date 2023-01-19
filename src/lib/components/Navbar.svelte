@@ -2,25 +2,29 @@
 	import Animate from "$components/Animate.svelte";
 	import Button from "$components/Button.svelte";
 	import ThemeToggle from "$components/ThemeToggle.svelte";
+	import ConfettiToggle from "$components/ConfettiToggle.svelte";
 
 	import Navlinks from "$json/Navlinks.json";
+
 	import Icon from "@iconify/svelte";
 	import OutClick from "svelte-outclick";
+	import { Confetti } from "svelte-confetti";
 
 	import { fade } from "svelte/transition";
+	import { quintOut } from "svelte/easing";
 	import { page } from "$app/stores";
 
-	let navbar = false;
+	let mobileMenu = false;
 
-	const toggleNavbar = () => (navbar = !navbar);
-	const hideNavbar = () => (navbar = false);
+	const toggleMobileMenu = () => (mobileMenu = !mobileMenu);
+	const hideMobileMenu = () => (mobileMenu = false);
 </script>
 
 <Animate>
 	<nav>
 		<div
 			class="bg-primary-100/10 fixed z-20 hidden w-full items-center justify-between border-b border-secondary/10 px-4 py-4 backdrop-blur lg:flex lg:min-h-[4rem]"
-			transition:fade={{ delay: 300, duration: 800 }}
+			transition:fade={{ duration: 800, easing: quintOut }}
 		>
 			<a href="/">
 				<div
@@ -52,18 +56,23 @@
 					{/each}
 				</ul>
 			</div>
-			<Button
-				href="/pdf/Resume Redacted Info.pdf"
-				download="/pdf/Resume Redacted Info.pdf"
-				classes="px-9"
-			>
-				<Icon
-					height="20"
-					width="20"
-					icon="mdi:resume"
-					style="display: inline-block; margin-right: 5px;"
-				/>Resume
-			</Button>
+			<ConfettiToggle>
+				<svelte:fragment slot="content">
+					<Button
+						href="/pdf/Resume Redacted Info.pdf"
+						download="/pdf/Resume Redacted Info.pdf"
+						classes="px-9"
+					>
+						<Icon
+							height="20"
+							width="20"
+							icon="mdi:resume"
+							style="display: inline-block; margin-right: 5px;"
+						/>Resume
+					</Button>
+				</svelte:fragment>
+				<Confetti noGravity x={[-0.5, 0.5]} y={[-0.5, 0.5]} delay={[0, 250]} duration="400" />
+			</ConfettiToggle>
 			<div class="ml-3">
 				<ThemeToggle />
 			</div>
@@ -84,8 +93,8 @@
 				</a>
 			</dir>
 			<div class="flex items-center space-x-3">
-				<label id="mobileMenuToggle" class="swap swap-rotate btn-circle btn">
-					<input type="checkbox" on:click={toggleNavbar} bind:checked={navbar} />
+				<label id="mobileMenuToggle" class="swap-rotate swap btn-circle btn">
+					<input type="checkbox" on:click={toggleMobileMenu} bind:checked={mobileMenu} />
 					<svg
 						class="swap-off fill-current"
 						xmlns="http://www.w3.org/2000/svg"
@@ -108,13 +117,13 @@
 				</label>
 			</div>
 		</div>
-		{#if navbar}
+		{#if mobileMenu}
 			<div
-				class="fixed z-50 mt-2 w-full translate-y-[4rem] lg:hidden"
-				transition:fade={{ duration: 100 }}
+				class="fixed z-50 mt-2 w-full translate-y-[4rem] backdrop-blur lg:hidden"
+				transition:fade={{ duration: 100, easing: quintOut }}
 			>
-				<OutClick on:outclick={hideNavbar} excludeQuerySelectorAll={["#mobileMenuToggle"]}>
-					<ul id="mobileMenu" class="mx-2 rounded-xl bg-zinc-800/50 p-4 shadow backdrop-blur">
+				<OutClick on:outclick={hideMobileMenu} excludeQuerySelectorAll={["#mobileMenuToggle"]}>
+					<ul id="mobileMenu" class="mx-2 rounded-xl bg-zinc-800/50 p-4 shadow">
 						{#each Navlinks as Navlink}
 							<li
 								class={`transition-bg rounded-md hover:bg-secondary hover:text-primary ${
@@ -126,7 +135,7 @@
 								<a
 									href={Navlink.route}
 									class="mt-1 block w-full p-3 text-center transition"
-									on:click={hideNavbar}
+									on:click={hideMobileMenu}
 								>
 									{Navlink.name}
 								</a>

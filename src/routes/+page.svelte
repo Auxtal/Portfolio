@@ -3,6 +3,7 @@
 	import Button from "$components/Button.svelte";
 
 	import { fade, fly } from "svelte/transition";
+	import { quintOut } from "svelte/easing";
 </script>
 
 <svelte:head>
@@ -11,7 +12,7 @@
 
 <Animate>
 	<div
-		transition:fade|local={{ delay: 250, duration: 800 }}
+		transition:fade|local={{ duration: 800, easing: quintOut }}
 		class="flex h-screen w-full flex-col items-center justify-center px-5 lg:items-end lg:px-32"
 	>
 		<h2
@@ -29,7 +30,7 @@
 		>
 			I'm an AV Technician
 		</h1>
-		<div class="mt-5" in:fly|local={{ x: 100, duration: 800 }}>
+		<div class="mt-5" transition:fly|local={{ x: 50, delay: 100, duration: 500, easing: quintOut }}>
 			<Button href="/work">Check Out My Work</Button>
 		</div>
 	</div>

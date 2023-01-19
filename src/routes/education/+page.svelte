@@ -12,6 +12,7 @@
 	} from "svelte-vertical-timeline";
 
 	import { fade, fly, slide } from "svelte/transition";
+	import { quintOut } from "svelte/easing";
 </script>
 
 <svelte:head>
@@ -25,7 +26,14 @@
 				<TimelineItem style="margin:15px 0">
 					<TimelineSeparator>
 						<Animate>
-							<span in:fly|local={{ delay: 250, y: (-100 / 2) * (i + 1), duration: 800 }}>
+							<span
+								transition:fly|local={{
+									delay: 100,
+									y: (-100 / 2) * (i + 1),
+									duration: 500,
+									easing: quintOut
+								}}
+							>
 								<TimelineDot style={`background-color: var(--neutral); border: none;`} />
 							</span>
 						</Animate>
@@ -33,13 +41,22 @@
 					</TimelineSeparator>
 					<TimelineContent>
 						<Animate>
-							<h3 in:fly|local={{ x: -150, duration: 800 }} class="font-secondary font-extrabold">
+							<h3
+								transition:fly|local={{ x: -150, duration: 500, easing: quintOut }}
+								class="font-secondary font-extrabold"
+							>
 								{Education.place}
 							</h3>
-							<p in:slide|local={{ delay: 500, duration: 800 }} class="py-2 text-sm text-neutral">
+							<p
+								transition:slide|local={{ delay: 250, duration: 500, easing: quintOut }}
+								class="py-2 text-sm text-neutral"
+							>
 								{Education.year_start} - {Education.year_end}
 							</p>
-							<p in:fade|local={{ delay: 1000, duration: 800 }} class="font-secondary text-accent">
+							<p
+								transition:fade|local={{ delay: 500, duration: 800, easing: quintOut }}
+								class="font-secondary text-accent"
+							>
 								{Education.description}
 							</p>
 						</Animate>

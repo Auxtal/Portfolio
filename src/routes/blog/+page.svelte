@@ -5,6 +5,7 @@
 
 	import { paginate } from "svelte-paginate";
 	import { fade } from "svelte/transition";
+	import { quintOut } from "svelte/easing";
 	import { goto } from "$app/navigation";
 
 	import type { PageData } from "./$types";
@@ -43,13 +44,11 @@
 
 <Animate>
 	<div class="absolute left-0 top-16 w-full px-6 sm:relative sm:top-5 sm:px-0 lg:top-0">
-		<div class="flex flex-wrap items-center justify-between">
-			<h1
-				class="mr-4 text-3xl font-bold text-neutral sm:mr-0 sm:text-4xl"
-				in:fade={{ delay: 100, duration: 800 }}
-			>
-				Blog Posts
-			</h1>
+		<div
+			class="flex flex-wrap items-center justify-between"
+			transition:fade|local={{ duration: 800, easing: quintOut }}
+		>
+			<h1 class="mr-4 text-3xl font-bold text-neutral sm:mr-0 sm:text-4xl">Blog Posts</h1>
 			<input
 				placeholder="Search"
 				type="text"
@@ -59,12 +58,12 @@
 		</div>
 		<div class="divider before:bg-secondary/20 after:bg-secondary/20" />
 		{#if paginatedPosts.length}
-			{#each paginatedPosts as post, i}
+			{#each paginatedPosts as post, i (post.metadata.id)}
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<div
-					class="my-3 flex h-min w-full cursor-pointer items-center justify-between rounded border border-secondary/20 bg-secondary/10 backdrop-blur-sm transition first:mt-0 last:mb-0 hover:-translate-y-1"
+					class="my-4 flex h-min w-full cursor-pointer items-center justify-between rounded border border-secondary/20 bg-secondary/10 backdrop-blur-sm transition first:mt-0 last:mb-0 hover:-translate-y-1"
 					on:click={(event) => handleClick(post, event)}
-					in:fade={{ delay: 250 * i, duration: 800 }}
+					in:fade={{ delay: 150 * i, duration: 800, easing: quintOut }}
 				>
 					<div>
 						<p class="m-0 p-2 text-3xl font-bold text-secondary/80">
@@ -79,23 +78,24 @@
 						</div>
 					</div>
 					<div>
-						<p class="pr-2 text-secondary">{new Date(post.metadata.date).toDateString()}</p>
+						<p class="pr-4 text-secondary">{new Date(post.metadata.date).toDateString()}</p>
 					</div>
 				</div>
 			{/each}
-			{#if paginatedPosts.length}
-				<Paginator
-					totalItems={items.length}
-					{pageSize}
-					{currentPage}
-					limit={1}
-					showStepOptions={true}
-					on:setPage={(e) => (currentPage = e.detail.page)}
-				/>
-			{/if}
+			<Paginator
+				totalItems={items.length}
+				{pageSize}
+				{currentPage}
+				limit={1}
+				showStepOptions={true}
+				on:setPage={(e) => (currentPage = e.detail.page)}
+			/>
 		{:else}
 			<div class="flex items-center justify-center">
-				<p class="m-12 max-w-fit text-center text-4xl font-bold backdrop-blur-sm" in:fade>
+				<p
+					class="m-12 max-w-fit text-center text-4xl font-bold backdrop-blur-sm"
+					in:fade={{ duration: 800, easing: quintOut }}
+				>
 					No Posts Found
 				</p>
 			</div>

@@ -12,11 +12,11 @@
 		"route": "/work"
 	},
 	{
-		"name": "Contact",
-		"route": "/contact"
-	},
-	{
 		"name": "Blog",
 		"route": "/blog"
+	},
+	{
+		"name": "Contact",
+		"route": "/contact"
 	}
 ]

@@ -6,6 +6,7 @@
 	import { Toast } from "$lib/helpers/toast";
 
 	import { fade } from "svelte/transition";
+	import { quintOut } from "svelte/easing";
 	import { applyAction, enhance, type SubmitFunction } from "$app/forms";
 
 	import type { ActionData } from "./$types";
@@ -55,7 +56,10 @@
 </svelte:head>
 
 <Animate>
-	<div class="mx-auto flex h-screen w-full max-w-xl flex-col justify-center rounded-md p-6" in:fade>
+	<div
+		class="mx-auto flex h-screen w-full max-w-xl flex-col justify-center rounded-md p-6"
+		transition:fade|local={{ duration: 800, easing: quintOut }}
+	>
 		<BackButton href="/contact" />
 		<form class="mt-6" method="POST" action="?/contact" use:enhance={contactSubmit}>
 			<div class="form-item relative mt-2 mb-5 ">

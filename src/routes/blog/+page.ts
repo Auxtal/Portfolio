@@ -1,8 +1,9 @@
 interface Metadata {
-	date: Date;
 	layout: string;
-	tags: string[];
+	id: number;
 	title: string;
+	date: Date;
+	tags: string[];
 }
 
 export type Post = {
