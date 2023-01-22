@@ -52,7 +52,7 @@
 			<input
 				placeholder="Search"
 				type="text"
-				class="input my-2 mt-4 w-72 bg-transparent text-sm text-secondary shadow-lg outline outline-1 outline-secondary/20 backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral sm:mt-0"
+				class="input my-2 mt-4 w-72 !rounded-md bg-transparent text-sm text-secondary shadow-lg outline outline-1 outline-secondary/20 backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral sm:mt-0"
 				bind:value={searchTerm}
 			/>
 		</div>
@@ -61,7 +61,7 @@
 			{#each paginatedPosts as post, i (post.metadata.id)}
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<div
-					class="my-4 flex h-min w-full cursor-pointer items-center justify-between rounded border border-secondary/20 bg-secondary/5 backdrop-blur-sm transition first:mt-0 last:mb-0 hover:-translate-y-1 dark:bg-secondary/10"
+					class="my-4 flex h-min w-full cursor-pointer items-center justify-between rounded-md border border-secondary/20 bg-secondary/5 backdrop-blur-sm transition first:mt-0 last:mb-0 hover:-translate-y-1 dark:bg-secondary/10"
 					on:click={(event) => handleClick(post, event)}
 					in:fade={{ delay: 150 * i, duration: 800, easing: quintOut }}
 				>

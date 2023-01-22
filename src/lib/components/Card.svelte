@@ -11,7 +11,7 @@
 
 <Animate>
 	<div
-		class="flex max-h-max w-full flex-col justify-between rounded-xl border border-secondary/20 bg-secondary/5 p-4 backdrop-blur-sm transition-transform duration-200 hover:-translate-y-1 dark:bg-secondary/10 sm:max-h-[15rem] md:max-h-[23rem] md:max-w-[25rem] lg:min-h-full"
+		class="flex max-h-max w-full flex-col justify-between rounded-xl border border-secondary/20 bg-secondary/5 p-4 backdrop-blur-sm transition-transform duration-200 dark:bg-secondary/10 sm:max-h-[15rem] md:max-h-[23rem] md:max-w-[25rem] md:hover:-translate-y-1 lg:min-h-full"
 		transition:fly|local={{ x: 50, duration: 500, easing: quintOut }}
 	>
 		<div>

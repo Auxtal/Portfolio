@@ -57,7 +57,7 @@
 
 <Animate>
 	<div
-		class="mx-auto flex h-screen w-full max-w-xl flex-col justify-center rounded-md p-6"
+		class="mx-auto flex h-screen w-full max-w-xl flex-col justify-center p-6"
 		transition:fade|local={{ duration: 800, easing: quintOut }}
 	>
 		<BackButton href="/contact" />
@@ -69,7 +69,7 @@
 					value={form?.name ?? ""}
 					placeholder="Name"
 					type="text"
-					class="peer input my-2 block w-full bg-transparent px-4 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
+					class="peer input my-2 block w-full !rounded-md bg-transparent px-4 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
 						?.errors?.name
 						? '!outline-red-500'
 						: ''}"
@@ -90,7 +90,7 @@
 					value={form?.email ?? ""}
 					placeholder="Email"
 					type="text"
-					class="peer input my-2 block w-full bg-transparent px-4 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
+					class="peer input my-2 block w-full !rounded-md bg-transparent px-4 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
 						?.errors?.email
 						? '!outline-red-500'
 						: ''}"
@@ -111,7 +111,7 @@
 					value={form?.subject ?? ""}
 					placeholder="Subject"
 					type="text"
-					class="peer input my-2 block w-full bg-transparent px-4 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
+					class="peer input my-2 block w-full !rounded-md bg-transparent px-4 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
 						?.errors?.subject
 						? '!outline-red-500'
 						: ''}"
@@ -131,7 +131,7 @@
 					name="message"
 					value={form?.message ?? ""}
 					placeholder="Message"
-					class="peer textarea my-2 block w-full bg-transparent px-4 pt-3 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
+					class="peer textarea my-2 block w-full !rounded-md bg-transparent px-4 pt-3 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
 						?.errors?.message
 						? '!outline-red-500'
 						: ''}"

@@ -39,7 +39,7 @@
 				/>
 				<p class="text-xl">Auxtal</p>
 			</a>
-			<div class="flex-1 justify-center text-sm">
+			<div class="justify-center text-sm">
 				<ul class="menu menu-horizontal">
 					{#each Navlinks as Navlink}
 						<li class="mx-2">
@@ -58,24 +58,24 @@
 					{/each}
 				</ul>
 			</div>
-			<ConfettiToggle>
-				<svelte:fragment slot="content">
-					<Button
-						href="/pdf/Resume Redacted Info.pdf"
-						download="/pdf/Resume Redacted Info.pdf"
-						classes="px-9 hover:text-primary hover:dark:text-secondary"
-					>
-						<Icon
-							height="20"
-							width="20"
-							icon="mdi:resume"
-							style="display: inline-block; margin-right: 5px;"
-						/>Resume
-					</Button>
-				</svelte:fragment>
-				<Confetti noGravity x={[-0.5, 0.5]} y={[-0.5, 0.5]} delay={[0, 250]} duration="400" />
-			</ConfettiToggle>
-			<div class="ml-3">
+			<div class="flex items-center justify-center">
+				<ConfettiToggle>
+					<svelte:fragment slot="content">
+						<Button
+							href="/pdf/Resume Redacted Info.pdf"
+							download="/pdf/Resume Redacted Info.pdf"
+							classes="px-9 hover:text-primary hover:dark:text-secondary mr-3"
+						>
+							<Icon
+								height="20"
+								width="20"
+								icon="mdi:resume"
+								style="display: inline-block; margin-right: 5px;"
+							/>Resume
+						</Button>
+					</svelte:fragment>
+					<Confetti noGravity x={[-0.5, 0.5]} y={[-0.5, 0.5]} delay={[0, 250]} duration="400" />
+				</ConfettiToggle>
 				<ThemeToggle />
 			</div>
 		</div>
