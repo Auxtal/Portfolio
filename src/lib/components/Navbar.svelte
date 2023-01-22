@@ -130,7 +130,7 @@
 		{#if mobileMenu}
 			<div
 				class="fixed z-50 mt-2 w-full translate-y-[4rem] lg:hidden"
-				transition:fade={{ duration: 800, easing: quintOut }}
+				transition:fade={{ duration: 300, easing: quintOut }}
 			>
 				<OutClick on:outclick={hideMobileMenu} excludeQuerySelectorAll={["#mobileMenuToggle"]}>
 					<ul class="mx-2 rounded-xl bg-zinc-800/50 p-4 shadow backdrop-blur transition">
