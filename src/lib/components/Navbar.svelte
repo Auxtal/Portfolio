@@ -130,7 +130,7 @@
 		{#if mobileMenu}
 			<div
 				class="fixed z-50 mt-2 w-full translate-y-[4rem] lg:hidden"
-				transition:fade={{ duration: 100, easing: quintOut }}
+				transition:fade={{ duration: 800, easing: quintOut }}
 			>
 				<OutClick on:outclick={hideMobileMenu} excludeQuerySelectorAll={["#mobileMenuToggle"]}>
 					<ul class="mx-2 rounded-xl bg-zinc-800/50 p-4 shadow backdrop-blur transition">
@@ -156,7 +156,7 @@
 							<a
 								href="/pdf/Resume Redacted Info.pdf"
 								download="/pdf/Resume Redacted Info.pdf"
-								class="mt-1 block w-full rounded-md p-3 text-center text-primary transition hover:bg-primary/50 dark:text-secondary hover:dark:bg-secondary/50"
+								class="mt-1 block w-full rounded-md p-3 text-center text-primary transition active:bg-primary/50 dark:text-secondary active:dark:bg-secondary/50"
 							>
 								Resume
 							</a>
