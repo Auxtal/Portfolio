@@ -5,7 +5,6 @@
 
 	import type { SubmitFunction } from "$app/forms";
 
-	let scale = false;
 	let theme: string | null;
 
 	onMount(() => {
@@ -34,14 +33,11 @@
 	use:enhance={submitToggleTheme}
 >
 	<button
-		class="swap-rotate swap rounded-md bg-secondary/20 p-1 text-secondary transition hover:bg-neutral"
+		class="swap-rotate group swap rounded-md bg-secondary/20 p-1 text-secondary transition focus:text-primary active:bg-neutral  active:text-primary focus:dark:text-secondary active:dark:text-secondary md:hover:bg-neutral md:hover:text-primary md:focus:bg-neutral md:focus:outline-none md:hover:dark:text-secondary"
 		class:swap-active={theme === "light"}
-		on:mouseenter={() => (scale = true)}
-		on:mouseleave={() => (scale = false)}
 	>
 		<svg
-			class="swap-on z-10 h-10 w-10 fill-current p-1"
-			class:scale
+			class="swap-on z-10 h-10 w-10 fill-current p-1 group-hover:scale-[0.9]"
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 24 24"
 			><path
@@ -49,8 +45,7 @@
 			/></svg
 		>
 		<svg
-			class="swap-off z-10 h-10 w-10 fill-current p-1"
-			class:scale
+			class="swap-off z-10 h-10 w-10 fill-current p-1 group-hover:scale-[0.9]"
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 24 24"
 			><path
@@ -59,9 +54,3 @@
 		>
 	</button>
 </form>
-
-<style lang="postcss">
-	.scale {
-		@apply scale-[0.9];
-	}
-</style>

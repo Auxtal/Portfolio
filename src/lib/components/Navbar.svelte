@@ -22,21 +22,22 @@
 
 <Animate>
 	<nav>
+		<!-- Desktop Navbar -->
 		<div
 			class="bg-primary-100/10 fixed z-20 hidden w-full items-center justify-between border-b border-secondary/10 px-4 py-4 backdrop-blur lg:flex lg:min-h-[4rem]"
 			transition:fade={{ duration: 800, easing: quintOut }}
 		>
-			<a href="/" data-sveltekit-preload-data>
-				<div
-					class="dark:hover:bg-white btn-ghost btn mr-1.5 flex items-center justify-center text-xl normal-case hover:bg-secondary/50 hover:text-secondary"
-				>
-					<img
-						class="mr-2.5 w-9 rounded-full shadow-lg"
-						src="/images/Logo Round.png"
-						alt="Auxtal Logo Round"
-					/>
-					<p class="text-xl">Auxtal</p>
-				</div>
+			<a
+				href="/"
+				class="btn-ghost btn flex items-center justify-center rounded-md text-xl normal-case transition-colors hover:bg-secondary/50 hover:text-primary focus:bg-secondary/50 focus:text-primary focus:outline-none hover:dark:text-secondary focus:dark:text-secondary"
+				data-sveltekit-preload-data
+			>
+				<img
+					class="mr-2.5 w-9 rounded-full shadow-lg"
+					src="/images/Logo Round.png"
+					alt="Auxtal Logo Round"
+				/>
+				<p class="text-xl">Auxtal</p>
 			</a>
 			<div class="flex-1 justify-center text-sm">
 				<ul class="menu menu-horizontal">
@@ -44,9 +45,9 @@
 						<li class="mx-2">
 							<a
 								href={Navlink.route}
-								class={`rounded-lg px-5 py-2 hover:scale-110 hover:bg-secondary/50 hover:text-secondary focus:scale-110 focus:bg-secondary/50 focus:text-secondary ${
+								class={`rounded-md px-5 py-2 hover:scale-110 hover:bg-secondary/50 hover:text-primary focus:scale-110 focus:bg-secondary/50 focus:bg-neutral focus:font-bold focus:text-primary active:text-primary hover:dark:text-secondary focus:dark:text-secondary ${
 									$page.url.pathname.includes(Navlink.route)
-										? "bg-neutral font-bold text-secondary"
+										? "!bg-neutral font-bold text-primary active:text-primary dark:text-secondary"
 										: ""
 								}`}
 								data-sveltekit-preload-data
@@ -62,7 +63,7 @@
 					<Button
 						href="/pdf/Resume Redacted Info.pdf"
 						download="/pdf/Resume Redacted Info.pdf"
-						classes="px-9"
+						classes="px-9 hover:text-primary hover:dark:text-secondary"
 					>
 						<Icon
 							height="20"
@@ -79,11 +80,14 @@
 			</div>
 		</div>
 
-		<div class="navbar fixed z-20 border-b border-secondary/10 backdrop-blur lg:hidden">
-			<dir class="m-0 flex w-full p-0">
+		<!-- Mobile Navbar -->
+		<div
+			class="navbar fixed z-20 justify-between border-b border-secondary/10 backdrop-blur lg:hidden"
+		>
+			<div class="m-0 flex w-full p-0">
 				<a
 					href="/"
-					class="dark:hover:bg-white btn-ghost btn mr-1.5 text-xl normal-case hover:bg-secondary/50 hover:text-secondary"
+					class="btn-ghost btn flex items-center justify-center rounded-md text-xl normal-case transition-colors hover:bg-transparent active:bg-secondary/50 active:text-primary active:outline-none active:dark:text-secondary"
 					data-sveltekit-preload-data
 				>
 					<img
@@ -93,9 +97,13 @@
 					/>
 					<p class="text-xl">Auxtal</p>
 				</a>
-			</dir>
+			</div>
 			<div class="flex items-center space-x-3">
-				<label id="mobileMenuToggle" class="swap-rotate swap btn-circle btn">
+				<ThemeToggle />
+				<label
+					id="mobileMenuToggle"
+					class="swap-rotate swap btn h-[48px] w-[48px] rounded-md border-none bg-secondary/20 text-secondary hover:bg-secondary/20 active:bg-neutral active:text-primary active:dark:text-secondary"
+				>
 					<input type="checkbox" on:click={toggleMobileMenu} bind:checked={mobileMenu} />
 					<svg
 						class="swap-off fill-current"
@@ -121,16 +129,16 @@
 		</div>
 		{#if mobileMenu}
 			<div
-				class="fixed z-50 mt-2 w-full translate-y-[4rem] backdrop-blur lg:hidden"
+				class="fixed z-50 mt-2 w-full translate-y-[4rem] lg:hidden"
 				transition:fade={{ duration: 100, easing: quintOut }}
 			>
 				<OutClick on:outclick={hideMobileMenu} excludeQuerySelectorAll={["#mobileMenuToggle"]}>
-					<ul id="mobileMenu" class="mx-2 rounded-xl bg-zinc-800/50 p-4 shadow">
+					<ul class="mx-2 rounded-xl bg-zinc-800/50 p-4 shadow backdrop-blur transition">
 						{#each Navlinks as Navlink}
 							<li
-								class={`transition-bg rounded-md hover:bg-secondary hover:text-primary ${
+								class={`transition-bg rounded-md text-primary hover:bg-primary/50 dark:text-secondary hover:dark:bg-secondary/50 ${
 									$page.url.pathname.includes(Navlink.route)
-										? "bg-neutral font-bold text-secondary"
+										? "bg-neutral font-bold text-primary dark:text-secondary"
 										: ""
 								}`}
 							>
@@ -148,7 +156,7 @@
 							<a
 								href="/pdf/Resume Redacted Info.pdf"
 								download="/pdf/Resume Redacted Info.pdf"
-								class="mt-1 block w-full rounded-md p-3 text-center transition hover:bg-secondary hover:text-primary"
+								class="mt-1 block w-full rounded-md p-3 text-center text-primary transition hover:bg-primary/50 dark:text-secondary hover:dark:bg-secondary/50"
 							>
 								Resume
 							</a>
@@ -159,9 +167,3 @@
 		{/if}
 	</nav>
 </Animate>
-
-<style>
-	#mobileMenu {
-		box-shadow: 0px 2px 2px rgba(34, 34, 34, 0.6);
-	}
-</style>

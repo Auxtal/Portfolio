@@ -30,7 +30,7 @@ module.exports = {
 			}
 		]
 	},
-	darkMode: '[data-theme="dark"]',
+	darkMode: ["class", '[data-theme="dark"]'],
 	plugins: [require("daisyui"), require("@tailwindcss/typography")],
 	theme: {
 		extend: {

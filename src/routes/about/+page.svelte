@@ -13,7 +13,7 @@
 	class="flex h-screen flex-col items-center justify-center md:px-8 lg:ml-11 lg:max-w-full lg:flex-row xl:ml-0"
 >
 	<Animate>
-		<div class="px-4">
+		<div class="overflow-hidden px-4 md:overflow-auto">
 			<img
 				transition:fly|local={{ x: 50, duration: 500, easing: quintOut }}
 				class="aspect-auto rounded-lg shadow-md transition-all duration-300 sm:max-w-sm lg:mr-10 lg:grayscale lg:hover:grayscale-0"

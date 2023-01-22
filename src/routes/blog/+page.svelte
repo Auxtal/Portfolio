@@ -61,7 +61,7 @@
 			{#each paginatedPosts as post, i (post.metadata.id)}
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<div
-					class="my-4 flex h-min w-full cursor-pointer items-center justify-between rounded border border-secondary/20 bg-secondary/10 backdrop-blur-sm transition first:mt-0 last:mb-0 hover:-translate-y-1"
+					class="my-4 flex h-min w-full cursor-pointer items-center justify-between rounded border border-secondary/20 bg-secondary/5 backdrop-blur-sm transition first:mt-0 last:mb-0 hover:-translate-y-1 dark:bg-secondary/10"
 					on:click={(event) => handleClick(post, event)}
 					in:fade={{ delay: 150 * i, duration: 800, easing: quintOut }}
 				>

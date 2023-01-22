@@ -69,14 +69,14 @@
 					value={form?.name ?? ""}
 					placeholder="Name"
 					type="text"
-					class="input my-2 block w-full bg-transparent px-4 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
+					class="peer input my-2 block w-full bg-transparent px-4 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
 						?.errors?.name
 						? '!outline-red-500'
 						: ''}"
 				/>
 				{#if form?.errors?.name}
 					<label
-						class="absolute left-2.5 top-[18px] z-10 px-[10px] text-[12px] font-bold text-secondary transition-all"
+						class="absolute left-2.5 top-[18px] z-10 px-[10px] text-[12px] font-bold text-secondary transition-all peer-valid:top-[-9px] peer-valid:bg-primary peer-focus:top-[-9px] peer-focus:bg-primary"
 						for="name"
 					>
 						<span class="text-red-500">{form?.errors?.name[0]}</span>
@@ -90,14 +90,14 @@
 					value={form?.email ?? ""}
 					placeholder="Email"
 					type="text"
-					class="input my-2 block w-full bg-transparent px-4 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
+					class="peer input my-2 block w-full bg-transparent px-4 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
 						?.errors?.email
 						? '!outline-red-500'
 						: ''}"
 				/>
 				{#if form?.errors?.email}
 					<label
-						class="absolute left-2.5 top-[18px] z-10 px-[10px] text-[12px] font-bold text-secondary transition-all"
+						class="absolute left-2.5 top-[18px] z-10 px-[10px] text-[12px] font-bold text-secondary transition-all peer-valid:top-[-9px] peer-valid:bg-primary peer-focus:top-[-9px] peer-focus:bg-primary"
 						for="email"
 					>
 						<span class="text-red-500">{form?.errors?.email[0]}</span>
@@ -111,14 +111,14 @@
 					value={form?.subject ?? ""}
 					placeholder="Subject"
 					type="text"
-					class="input my-2 block w-full bg-transparent px-4 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
+					class="peer input my-2 block w-full bg-transparent px-4 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
 						?.errors?.subject
 						? '!outline-red-500'
 						: ''}"
 				/>
 				{#if form?.errors?.subject}
 					<label
-						class="absolute left-2.5 top-[18px] z-10 px-[10px] text-[12px] font-bold text-secondary transition-all"
+						class="absolute left-2.5 top-[18px] z-10 px-[10px] text-[12px] font-bold text-secondary transition-all peer-valid:top-[-9px] peer-valid:bg-primary peer-focus:top-[-9px] peer-focus:bg-primary"
 						for="subject"
 					>
 						<span class="text-red-500">{form?.errors?.subject[0]}</span>
@@ -131,7 +131,7 @@
 					name="message"
 					value={form?.message ?? ""}
 					placeholder="Message"
-					class="textarea my-2 block w-full bg-transparent px-4 pt-3 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
+					class="peer textarea my-2 block w-full bg-transparent px-4 pt-3 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
 						?.errors?.message
 						? '!outline-red-500'
 						: ''}"
@@ -139,7 +139,7 @@
 				/>
 				{#if form?.errors?.message}
 					<label
-						class="absolute left-2.5 top-[18px] z-10 px-[10px] text-[12px] font-bold text-secondary transition-all"
+						class="absolute left-2.5 top-[18px] z-10 px-[10px] text-[12px] font-bold text-secondary transition-all peer-valid:top-[-9px] peer-valid:bg-primary peer-focus:top-[-9px] peer-focus:bg-primary"
 						for="message"
 					>
 						<span class="text-red-500">{form?.errors?.message[0]}</span>
@@ -150,13 +150,3 @@
 		</form>
 	</div>
 </Animate>
-
-<style>
-	.form-item input:focus + label,
-	.form-item input:valid + label,
-	.form-item textarea:focus + label,
-	.form-item textarea:valid + label {
-		background: var(--primary);
-		top: -9px;
-	}
-</style>
