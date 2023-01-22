@@ -16,7 +16,7 @@
 			integrations: [new BrowserTracing()],
 			tracesSampleRate: 1.0,
 			environment: import.meta.env.VITE_ENVIRONMENT,
-			release: "2.2.5"
+			release: "2.3.5"
 		});
 	});
 </script>

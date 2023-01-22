@@ -1,5 +1,7 @@
 /// <reference types="@sveltejs/kit" />
 
-// declare global {
-// 	declare namespace App {}
-// }
+declare namespace App {
+	interface Locals {
+		theme: string | undefined;
+	}
+}

@@ -1,6 +1,6 @@
 {
 	"name": "portfolio",
-	"version": "2.2.5",
+	"version": "2.3.5",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
@@ -42,7 +42,6 @@
 		"svelte-preprocess": "^5.0.0",
 		"svelte-vertical-timeline": "^0.0.2",
 		"tailwindcss": "^3.2.4",
-		"theme-change": "^2.2.0",
 		"tslib": "^2.4.1",
 		"typescript": "^4.9.4",
 		"vite": "^4.0.3",

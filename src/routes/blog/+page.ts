@@ -1,3 +1,5 @@
+import type { ServerLoad } from "@sveltejs/kit";
+
 interface Metadata {
 	layout: string;
 	id: number;
@@ -11,7 +13,7 @@ export type Post = {
 	metadata: Metadata;
 };
 
-export const load = () => {
+export const load: ServerLoad = () => {
 	const body = [];
 	const allPosts = import.meta.glob("./**/*.svelte.md") as Record<
 		string,

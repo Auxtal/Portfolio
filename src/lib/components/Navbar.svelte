@@ -26,7 +26,7 @@
 			class="bg-primary-100/10 fixed z-20 hidden w-full items-center justify-between border-b border-secondary/10 px-4 py-4 backdrop-blur lg:flex lg:min-h-[4rem]"
 			transition:fade={{ duration: 800, easing: quintOut }}
 		>
-			<a href="/">
+			<a href="/" data-sveltekit-preload-data>
 				<div
 					class="dark:hover:bg-white btn-ghost btn mr-1.5 flex items-center justify-center text-xl normal-case hover:bg-secondary/50 hover:text-secondary"
 				>
@@ -49,6 +49,7 @@
 										? "bg-neutral font-bold text-secondary"
 										: ""
 								}`}
+								data-sveltekit-preload-data
 							>
 								{Navlink.name}
 							</a>
@@ -83,6 +84,7 @@
 				<a
 					href="/"
 					class="dark:hover:bg-white btn-ghost btn mr-1.5 text-xl normal-case hover:bg-secondary/50 hover:text-secondary"
+					data-sveltekit-preload-data
 				>
 					<img
 						class="mr-2.5 w-9 rounded-full shadow-lg"
@@ -136,6 +138,7 @@
 									href={Navlink.route}
 									class="mt-1 block w-full p-3 text-center transition"
 									on:click={hideMobileMenu}
+									data-sveltekit-preload-data
 								>
 									{Navlink.name}
 								</a>
