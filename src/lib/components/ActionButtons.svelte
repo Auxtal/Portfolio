@@ -1,11 +1,11 @@
 <script lang="ts">
 	import Animate from "$components/Animate.svelte";
-	import Icon from "@iconify/svelte";
-
 	import ActionButtons from "$json/ActionButtons.json";
 
 	import { fly } from "svelte/transition";
 	import { quintOut } from "svelte/easing";
+
+	import Icon from "@iconify/svelte";
 </script>
 
 <Animate>

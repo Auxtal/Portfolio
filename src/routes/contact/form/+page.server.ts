@@ -1,7 +1,7 @@
 import { z } from "zod";
 import type { Actions } from "@sveltejs/kit";
 
-import { error } from "@sveltejs/kit";
+import { error, fail } from "@sveltejs/kit";
 import { ZodError } from "zod";
 
 const contactSchema = z.object({
@@ -44,7 +44,7 @@ export const actions: Actions = {
 		}
 
 		try {
-			await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+			const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({
@@ -60,9 +60,12 @@ export const actions: Actions = {
 					accessToken: import.meta.env.VITE_EMAILJS_PRIVATE_KEY
 				})
 			});
+
+			if (response.status !== 200) {
+				return fail(response.status, { formData, errorMessage: "Email Failed To Send" });
+			}
 		} catch (err) {
-			console.log("EmailJS API Send Email Failed", err);
-			throw error(500, "/");
+			throw error(500, "Unexpected Error Occurred");
 		}
 	}
 };

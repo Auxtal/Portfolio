@@ -7,10 +7,11 @@
 
 	import { fade } from "svelte/transition";
 	import { quintOut } from "svelte/easing";
-	import { applyAction, enhance, type SubmitFunction } from "$app/forms";
+	import { applyAction, enhance } from "$app/forms";
 
 	import type { ActionData } from "./$types";
 	import type { ActionResult } from "@sveltejs/kit";
+	import type { SubmitFunction } from "$app/forms";
 
 	type ActionResultData = ActionResult & {
 		data: { errors: string[] };
@@ -34,16 +35,23 @@
 			if (resultData?.data?.errors) {
 				setTimeout(() => {
 					loading = false;
-				}, 500);
+				}, 300);
 				return await applyAction(resultData);
 			}
 
+			if (resultData.type === "failure") {
+				Toast.error(resultData?.data?.errorMessage);
+				setTimeout(() => {
+					loading = false;
+				}, 300);
+				await applyAction(resultData);
+			}
+
 			if (resultData.type === "success") {
-				Toast("Email Sent Successfully");
+				Toast.success("Email Sent Successfully");
 				setTimeout(() => {
 					loading = false;
 				}, 500);
-
 				form.reset();
 				await applyAction(resultData);
 			}
