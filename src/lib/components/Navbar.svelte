@@ -64,7 +64,7 @@
 						<Button
 							href="/pdf/Resume Redacted Info.pdf"
 							download="/pdf/Resume Redacted Info.pdf"
-							classes="px-9 hover:text-primary hover:dark:text-secondary mr-3"
+							classes="px-9 mr-3"
 						>
 							<Icon
 								height="20"
