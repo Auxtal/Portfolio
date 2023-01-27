@@ -4,6 +4,7 @@ export const Toast = {
 	success: (message: string) => {
 		toast.success(message, {
 			style: `background-color: rgba(var(--secondary-rgb), 0.2);
+							backdrop-filter: blur(8px);
 							color: var(--secondary);
 							transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 							transition-property: background-color, color;
@@ -15,6 +16,7 @@ export const Toast = {
 	error: (message: string) => {
 		toast.error(message, {
 			style: `background-color: rgba(var(--secondary-rgb), 0.2);
+							backdrop-filter: blur(8px);
 							color: var(--secondary);
 							transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 							transition-property: background-color, color;

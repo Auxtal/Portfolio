@@ -8,7 +8,3 @@
 {#if animate}
 	<slot />
 {/if}
-
-<noscript>
-	<slot />
-</noscript>
