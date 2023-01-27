@@ -6,11 +6,11 @@ import adapter from "@sveltejs/adapter-vercel";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	extensions: [".svelte", ...mdsvexConfig.extensions],
-	kit: {
-		adapter: adapter({ edge: true })
-	},
-	preprocess: [sveltePreprocess(), mdsvex(mdsvexConfig)]
+  extensions: [".svelte", ...mdsvexConfig.extensions],
+  kit: {
+    adapter: adapter({ edge: true })
+  },
+  preprocess: [sveltePreprocess(), mdsvex(mdsvexConfig)]
 };
 
 export default config;

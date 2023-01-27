@@ -1,32 +1,32 @@
 [
-	{
-		"place": "Tranby College",
-		"description": "I have just recently started working at Tranby College as an AV Technician, I am responsible for running events and installing and maintaining equipment and other various systems.",
-		"role": "AV Technician"
-	},
-	{
-		"place": "Foundation Christian College",
-		"description": "I have worked as a volunteer since I was 12 years old and once I graduated I was employed as an AV technician to run events and install equipment and maintain the theatre.",
-		"role": "AV Technician"
-	},
-	{
-		"place": "Cameo Rascale",
-		"description": "Cameo Rascale is an internationally acclaimed acrobatic, comedy juggling act. When they come to my local area I am sometimes hired as a Lighting Designer for them. I have programmed and operated several of their shows including 2 promotional videos.",
-		"role": "Lighting Designer"
-	},
-	{
-		"place": "Awaken City Church",
-		"description": "I have been volunteering on the creative team at Awaken City Church for a while now, I volunteer there as a FOH & Monitor sound engineer, I love what I do! Fun fact this church is where my career started.",
-		"role": "Sound Engineer"
-	},
-	{
-		"place": "P.S.I Audio",
-		"description": "In 2019, during school we had to do work placement learning for 1 week, I chose to do mine at P.S.I Audio during this time I learned a lot about what's it's like to work in the production industry. I thoroughly enjoyed my time.",
-		"role": "Work Experience"
-	},
-	{
-		"place": "McDonald's",
-		"description": "Yes, we all need to start somewhere... McDonald's was my first ever job, I worked there for about 1 year. McDonald's provided me with many skills to prepare me for my future endeavours which I greatly appreciate.",
-		"role": "Crew Member"
-	}
+  {
+    "place": "Tranby College",
+    "description": "I have just recently started working at Tranby College as an AV Technician, I am responsible for running events and installing and maintaining equipment and other various systems.",
+    "role": "AV Technician"
+  },
+  {
+    "place": "Foundation Christian College",
+    "description": "I have worked as a volunteer since I was 12 years old and once I graduated I was employed as an AV technician to run events and install equipment and maintain the theatre.",
+    "role": "AV Technician"
+  },
+  {
+    "place": "Cameo Rascale",
+    "description": "Cameo Rascale is an internationally acclaimed acrobatic, comedy juggling act. When they come to my local area I am sometimes hired as a Lighting Designer for them. I have programmed and operated several of their shows including 2 promotional videos.",
+    "role": "Lighting Designer"
+  },
+  {
+    "place": "Awaken City Church",
+    "description": "I have been volunteering on the creative team at Awaken City Church for a while now, I volunteer there as a FOH & Monitor sound engineer, I love what I do! Fun fact this church is where my career started.",
+    "role": "Sound Engineer"
+  },
+  {
+    "place": "P.S.I Audio",
+    "description": "In 2019, during school we had to do work placement learning for 1 week, I chose to do mine at P.S.I Audio during this time I learned a lot about what's it's like to work in the production industry. I thoroughly enjoyed my time.",
+    "role": "Work Experience"
+  },
+  {
+    "place": "McDonald's",
+    "description": "Yes, we all need to start somewhere... McDonald's was my first ever job, I worked there for about 1 year. McDonald's provided me with many skills to prepare me for my future endeavours which I greatly appreciate.",
+    "role": "Crew Member"
+  }
 ]
