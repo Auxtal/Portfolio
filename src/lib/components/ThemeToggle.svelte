@@ -37,7 +37,7 @@
     class:swap-active={theme === "light"}
   >
     <svg
-      class="swap-on z-10 h-10 w-10 fill-current p-1 group-hover:scale-[0.9]"
+      class="swap-on h-10 w-10 fill-current p-1 group-hover:scale-[0.9]"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       ><path
@@ -45,7 +45,7 @@
       /></svg
     >
     <svg
-      class="swap-off z-10 h-10 w-10 fill-current p-1 group-hover:scale-[0.9]"
+      class="swap-off h-10 w-10 fill-current p-1 group-hover:scale-[0.9]"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       ><path

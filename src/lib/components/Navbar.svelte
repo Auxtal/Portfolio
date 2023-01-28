@@ -24,7 +24,7 @@
   <nav>
     <!-- Desktop Navbar -->
     <div
-      class="bg-primary-100/10 fixed z-20 hidden w-full items-center justify-between border-b border-secondary/10 px-4 py-4 backdrop-blur lg:flex lg:min-h-[4rem]"
+      class="bg-primary-100/10 fixed z-10 hidden w-full items-center justify-between border-b border-secondary/10 px-4 py-4 backdrop-blur lg:flex lg:min-h-[4rem]"
       transition:fade={{ duration: 800, easing: quintOut }}
     >
       <a
@@ -34,7 +34,7 @@
       >
         <img
           class="mr-2.5 w-9 rounded-full shadow-lg"
-          src="/images/Logo Round.png"
+          src="/images/Logo Round.webp"
           alt="Auxtal Logo Round"
         />
         <p class="text-xl">Auxtal</p>
@@ -82,7 +82,7 @@
 
     <!-- Mobile Navbar -->
     <div
-      class="navbar fixed z-20 justify-between border-b border-secondary/10 backdrop-blur lg:hidden"
+      class="navbar fixed z-10 justify-between border-b border-secondary/10 backdrop-blur lg:hidden"
     >
       <div class="m-0 flex w-full p-0">
         <a
@@ -92,7 +92,7 @@
         >
           <img
             class="mr-2.5 w-9 rounded-full shadow-lg"
-            src="/images/Logo Round.png"
+            src="/images/Logo Round.webp"
             alt="Auxtal Logo Round"
           />
           <p class="text-xl">Auxtal</p>
@@ -102,7 +102,7 @@
         <ThemeToggle />
         <label
           id="mobileMenuToggle"
-          class="swap swap-rotate btn h-[48px] w-[48px] rounded-md border-none bg-secondary/20 text-secondary hover:bg-secondary/20 active:bg-neutral active:text-primary active:dark:text-secondary"
+          class="swap-rotate swap btn h-[48px] w-[48px] rounded-md border-none bg-secondary/20 text-secondary hover:bg-secondary/20 active:bg-neutral active:text-primary active:dark:text-secondary"
         >
           <input type="checkbox" on:click={toggleMobileMenu} bind:checked={mobileMenu} />
           <svg
@@ -129,7 +129,7 @@
     </div>
     {#if mobileMenu}
       <div
-        class="fixed z-50 mt-2 w-full translate-y-[4rem] lg:hidden"
+        class="fixed mt-2 w-full translate-y-[4rem] lg:hidden"
         transition:fade={{ duration: 300, easing: quintOut }}
       >
         <OutClick on:outclick={hideMobileMenu} excludeQuerySelectorAll={["#mobileMenuToggle"]}>

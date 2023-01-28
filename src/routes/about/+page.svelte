@@ -17,7 +17,7 @@
       <img
         transition:fly|local={{ x: 50, duration: 500, easing: quintOut }}
         class="aspect-auto rounded-lg shadow-md transition-all duration-300 sm:max-w-sm lg:mr-10 lg:grayscale lg:hover:grayscale-0"
-        src="/images/Graduation Event.jpg"
+        src="/images/Graduation Event.webp"
         alt="Graduation Event"
       />
     </div>

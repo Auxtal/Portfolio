@@ -13,10 +13,6 @@
 </Animate>
 
 <style lang="postcss">
-  #paginator {
-    z-index: 30;
-  }
-
   #paginator :global(.pagination-nav) {
     @apply shadow-lg;
 
@@ -36,8 +32,8 @@
     justify-content: center;
     align-items: center;
     user-select: none;
-    padding: 10px;
     display: flex;
+    padding: 10px;
   }
 
   #paginator :global(.option svg path) {
