@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "2.3.5",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite dev",
