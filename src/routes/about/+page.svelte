@@ -3,6 +3,13 @@
 
   import { fade, fly } from "svelte/transition";
   import { quintOut } from "svelte/easing";
+
+  const birthday = import.meta.env.VITE_BIRTHDAY;
+  const getAge = () => {
+    const ageDifMs = Date.now().valueOf() - new Date(birthday).valueOf();
+    const ageDate = new Date(ageDifMs);
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+  };
 </script>
 
 <svelte:head>
@@ -32,9 +39,9 @@
         transition:fade|local={{ delay: 100, duration: 800, easing: quintOut }}
         class="font-secondary text-md px-8 text-center leading-6 text-accent backdrop-blur-sm lg:px-0 lg:text-left lg:text-lg lg:leading-normal xl:text-xl"
       >
-        Hey, I'm Ethan, I'm 18 years old and I go by Auxtal online. In my spare time, I'm a hobbyist
-        developer who likes full-stack development. I love to fly real and simulated aircraft I also
-        love flying my drone everywhere.
+        Hey, I'm Ethan, {birthday ? `I'm ${getAge()} years old and` : ""} I go by Auxtal online. In my
+        spare time, I'm a hobbyist developer who likes full-stack development. I love to fly real and
+        simulated aircraft I also love flying my drone everywhere.
       </p>
     </div>
   </Animate>
