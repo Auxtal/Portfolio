@@ -29,7 +29,7 @@
     >
       <a
         href="/"
-        class="btn-ghost btn flex items-center justify-center rounded-md text-xl normal-case transition-colors hover:bg-secondary/50 hover:text-primary focus:bg-secondary/50 focus:text-primary focus:outline-none hover:dark:text-secondary focus:dark:text-secondary"
+        class="btn-ghost no-animation btn flex items-center justify-center rounded-md text-xl normal-case outline-none transition-colors hover:bg-secondary/50 hover:text-primary focus:bg-secondary/50 focus:text-primary focus:outline-none hover:dark:text-secondary focus:dark:text-secondary"
         data-sveltekit-preload-data
       >
         <img
@@ -64,7 +64,7 @@
             <Button
               href="/pdf/Resume Redacted Info.pdf"
               download="/pdf/Resume Redacted Info.pdf"
-              classes="px-9 mr-3"
+              classes="px-9"
             >
               <Icon
                 height="20"
@@ -76,7 +76,7 @@
           </svelte:fragment>
           <Confetti noGravity x={[-0.5, 0.5]} y={[-0.5, 0.5]} delay={[0, 250]} duration="400" />
         </ConfettiToggle>
-        <ThemeToggle />
+        <ThemeToggle classes="ml-3" />
       </div>
     </div>
 
@@ -87,7 +87,7 @@
       <div class="m-0 flex w-full p-0">
         <a
           href="/"
-          class="btn-ghost btn flex items-center justify-center rounded-md text-xl normal-case transition-colors hover:bg-transparent active:bg-secondary/50 active:text-primary active:outline-none active:dark:text-secondary"
+          class="btn-ghost no-animation btn flex items-center justify-center rounded-md text-xl normal-case outline-none transition-colors hover:bg-transparent active:bg-secondary/50 active:text-primary active:outline-none active:dark:text-secondary"
           data-sveltekit-preload-data
         >
           <img
@@ -102,7 +102,7 @@
         <ThemeToggle />
         <label
           id="mobileMenuToggle"
-          class="swap swap-rotate btn h-[48px] w-[48px] rounded-md border-none bg-secondary/20 text-secondary hover:bg-secondary/20 active:bg-neutral active:text-primary active:dark:text-secondary"
+          class="swap-rotate swap no-animation btn h-[48px] w-[48px] rounded-md border-none bg-secondary/20 text-secondary hover:bg-secondary/20 active:bg-neutral active:text-primary active:dark:text-secondary"
         >
           <input type="checkbox" on:click={toggleMobileMenu} bind:checked={mobileMenu} />
           <svg

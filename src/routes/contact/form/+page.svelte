@@ -9,7 +9,7 @@
   import { quintOut } from "svelte/easing";
   import { applyAction, enhance } from "$app/forms";
 
-  import type { ActionData } from "./$types";
+  import type { ActionData, Snapshot } from "./$types";
   import type { ActionResult } from "@sveltejs/kit";
   import type { SubmitFunction } from "$app/forms";
 
@@ -25,7 +25,19 @@
   };
 
   export let form: ActionFormData;
+
   let loading = false;
+  let formData = {
+    name: form?.name ?? "",
+    email: form?.email ?? "",
+    subject: form?.subject ?? "",
+    message: form?.message ?? ""
+  };
+
+  export const snapshot: Snapshot = {
+    capture: () => formData,
+    restore: (value) => (formData = value)
+  };
 
   const contactSubmit: SubmitFunction = ({ form }) => {
     loading = true;
@@ -74,9 +86,9 @@
         <input
           id="name"
           name="name"
-          value={form?.name ?? ""}
           placeholder="Name"
           type="text"
+          bind:value={formData.name}
           class="peer input my-2 block w-full !rounded-md bg-transparent px-4 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
             ?.errors?.name
             ? '!outline-red-500'
@@ -95,9 +107,9 @@
         <input
           id="email"
           name="email"
-          value={form?.email ?? ""}
           placeholder="Email"
           type="text"
+          bind:value={formData.email}
           class="peer input my-2 block w-full !rounded-md bg-transparent px-4 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
             ?.errors?.email
             ? '!outline-red-500'
@@ -116,9 +128,9 @@
         <input
           id="subject"
           name="subject"
-          value={form?.subject ?? ""}
           placeholder="Subject"
           type="text"
+          bind:value={formData.subject}
           class="peer input my-2 block w-full !rounded-md bg-transparent px-4 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
             ?.errors?.subject
             ? '!outline-red-500'
@@ -137,8 +149,8 @@
         <textarea
           id="message"
           name="message"
-          value={form?.message ?? ""}
           placeholder="Message"
+          bind:value={formData.message}
           class="peer textarea my-2 block w-full !rounded-md bg-transparent px-4 pt-3 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
             ?.errors?.message
             ? '!outline-red-500'

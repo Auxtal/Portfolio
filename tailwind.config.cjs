@@ -53,6 +53,11 @@ module.exports = {
             },
             "strong, li::marker": {
               color: "rgba(var(--secondary-rgb), 1)"
+            },
+            img: {
+              "border-radius": "10px",
+              "margin-left": "auto",
+              "margin-right": "auto"
             }
           }
         }

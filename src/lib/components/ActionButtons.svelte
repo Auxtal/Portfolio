@@ -23,7 +23,7 @@
             class="group focus:outline-none"
           >
             <li
-              class="flex min-h-max items-center rounded-md bg-neutral p-2 text-white shadow-md transition hover:-translate-y-0.5 hover:shadow-blue-700 group-focus:-translate-y-0.5 group-focus:shadow-blue-700 group-focus:outline-none"
+              class="flex min-h-max items-center rounded-md bg-neutral p-2 text-white shadow-md outline-none transition hover:-translate-y-0.5 hover:shadow-blue-700 group-focus:-translate-y-0.5 group-focus:shadow-blue-700 group-focus:outline-none"
               in:fly={{
                 x: ActionButton.x,
                 duration: ActionButton.duration,

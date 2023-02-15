@@ -12,7 +12,8 @@
 
 {#if href}
   <a
-    class={`btn border-none bg-secondary/20 normal-case text-secondary no-underline backdrop-blur-sm transition-colors duration-200 hover:bg-neutral hover:text-primary focus:text-primary focus:outline-none active:bg-neutral hover:dark:text-secondary focus:dark:text-secondary md:focus:bg-neutral ${classes}`}
+    class={`no-animation btn rounded-md border-none bg-secondary/20 normal-case text-secondary no-underline outline-none !ring-0 backdrop-blur-sm transition-colors duration-200 hover:bg-neutral hover:text-primary focus:text-primary focus:outline-none active:bg-neutral hover:dark:text-secondary focus:dark:text-secondary md:focus:bg-neutral
+     ${classes}`}
     {rel}
     {target}
     {href}
@@ -22,7 +23,8 @@
   </a>
 {:else if loading}
   <button
-    class={`btn border-none bg-secondary/20 normal-case text-secondary backdrop-blur-sm transition-colors duration-200 hover:bg-neutral hover:text-primary focus:text-primary focus:outline-none active:bg-neutral hover:dark:text-secondary focus:dark:text-secondary md:focus:bg-neutral ${classes}`}
+    class={`no-animation btn rounded-md border-none bg-secondary/20 normal-case text-secondary outline-none !ring-0 backdrop-blur-sm transition-colors duration-200 hover:bg-neutral hover:text-primary focus:text-primary focus:outline-none active:bg-neutral hover:dark:text-secondary focus:dark:text-secondary md:focus:bg-neutral
+     ${classes}`}
     class:btn-disabled={loading}
     on:click={onClickEvent()}
   >
@@ -35,7 +37,8 @@
   </button>
 {:else}
   <button
-    class={`btn border-none bg-secondary/20 normal-case text-secondary backdrop-blur-sm transition-colors duration-200 hover:bg-neutral hover:text-primary focus:text-primary focus:outline-none active:bg-neutral hover:dark:text-secondary focus:dark:text-secondary md:focus:bg-neutral ${classes}`}
+    class={`no-animation btn rounded-md border-none bg-secondary/20 normal-case text-secondary outline-none !ring-0 backdrop-blur-sm transition-colors duration-200 hover:bg-neutral hover:text-primary focus:text-primary focus:outline-none active:bg-neutral hover:dark:text-secondary focus:dark:text-secondary md:focus:bg-neutral
+     ${classes}`}
     on:click={onClickEvent()}
   >
     <slot />

@@ -6,6 +6,7 @@
   import type { SubmitFunction } from "$app/forms";
 
   let theme: string | null;
+  export let classes: string | null = null;
 
   onMount(() => {
     const doc = document.documentElement;
@@ -33,7 +34,7 @@
   use:enhance={submitToggleTheme}
 >
   <button
-    class="swap-rotate group swap rounded-md bg-secondary/20 p-1 text-secondary transition focus:text-primary active:bg-neutral  active:text-primary focus:dark:text-secondary active:dark:text-secondary md:hover:bg-neutral md:hover:text-primary md:focus:bg-neutral md:focus:outline-none md:hover:dark:text-secondary"
+    class="swap-rotate group swap rounded-md bg-secondary/20 p-1 text-secondary outline-none transition focus:text-primary  active:bg-neutral active:text-primary focus:dark:text-secondary active:dark:text-secondary md:hover:bg-neutral md:hover:text-primary md:focus:bg-neutral md:focus:outline-none md:hover:dark:text-secondary {classes}"
     class:swap-active={theme === "light"}
   >
     <svg
