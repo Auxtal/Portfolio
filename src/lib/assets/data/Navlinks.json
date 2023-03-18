@@ -1,22 +1,22 @@
 [
-	{
-		"name": "About",
-		"route": "/about"
-	},
-	{
-		"name": "Education",
-		"route": "/education"
-	},
-	{
-		"name": "Work",
-		"route": "/work"
-	},
-	{
-		"name": "Contact",
-		"route": "/contact"
-	},
-	{
-		"name": "Blog",
-		"route": "/blog"
-	}
+  {
+    "name": "About",
+    "route": "/about"
+  },
+  {
+    "name": "Education",
+    "route": "/education"
+  },
+  {
+    "name": "Work",
+    "route": "/work"
+  },
+  {
+    "name": "Blog",
+    "route": "/blog"
+  },
+  {
+    "name": "Contact",
+    "route": "/contact"
+  }
 ]

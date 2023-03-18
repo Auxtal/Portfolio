@@ -1,11 +1,13 @@
 ---
 layout: blog
+id: 1
 title: AUD181
-date: 2022-12-16
-tags: [University, Unit, Trimester 3]
+date: 2022-12-17
+tags: [University, "2022"]
+hidden: true
 ---
 
-<script>
+<script lang="ts">
   import Button from "$lib/components/Button.svelte";
 </script>
 
@@ -23,10 +25,10 @@ Cubase! There are many professional music producers that use cubase, such as; Ha
 
 ## Downloads
 
-<Button href="https://drive.google.com/file/d/13mdbObMFuErv1n5UE7yU46h_uLEzb1oS/view?usp=share_link">
+<Button href="https://drive.google.com/file/d/13mdbObMFuErv1n5UE7yU46h_uLEzb1oS/view?usp=share_link" target="_blank">
   Project 1 Audio
 </Button>
-<Button href="https://drive.google.com/file/d/1O6fDy-H-M5U3uVKH1K3RUJAdbV2E7Ihw/view?usp=share_link">
+<Button href="https://drive.google.com/file/d/1O6fDy-H-M5U3uVKH1K3RUJAdbV2E7Ihw/view?usp=share_link" target="_blank">
   Project 2 Audio
 </Button>
 

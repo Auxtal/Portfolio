@@ -1,26 +1,26 @@
 [
-	{
-		"place": "SAE Qantm Creative Media Institute",
-		"description": "Bachelor's Degree Of Audio",
-		"year_start": "2022",
-		"year_end": "2024"
-	},
-	{
-		"place": "Mount Pleasant College",
-		"description": "Certificate III In Music Industry",
-		"year_start": "2020",
-		"year_end": "2021"
-	},
-	{
-		"place": "Mount Pleasant College",
-		"description": "Certificate II In Music Industry",
-		"year_start": "2019",
-		"year_end": "2019"
-	},
-	{
-		"place": "Foundation Christian College",
-		"description": "Student",
-		"year_start": "2013",
-		"year_end": "2021"
-	}
+  {
+    "place": "SAE Qantm Creative Media Institute",
+    "description": "Bachelor's Degree Of Audio",
+    "year_start": "2022",
+    "year_end": "2024"
+  },
+  {
+    "place": "Mount Pleasant College",
+    "description": "Certificate III In Music Industry",
+    "year_start": "2020",
+    "year_end": "2021"
+  },
+  {
+    "place": "Mount Pleasant College",
+    "description": "Certificate II In Music Industry",
+    "year_start": "2019",
+    "year_end": "2019"
+  },
+  {
+    "place": "Foundation Christian College",
+    "description": "Student",
+    "year_start": "2013",
+    "year_end": "2021"
+  }
 ]

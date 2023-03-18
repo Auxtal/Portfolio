@@ -1,26 +1,38 @@
-<script>
-	import Button from "$lib/components/Button.svelte";
+<script lang="ts">
+  import Animate from "$components/Animate.svelte";
+  import Button from "$components/Button.svelte";
 
-	import { page } from "$app/stores";
-	import { fade } from "svelte/transition";
+  import { page } from "$app/stores";
 
-	if ($page?.status === 404) {
-		window.location.replace("/");
-	}
+  interface StatusMessages {
+    [key: number]: string;
+  }
+
+  const statusMessages: StatusMessages = {
+    404: "Oops, Looks like you're lost! The page you're trying to access doesn't exist"
+  };
 </script>
 
 <svelte:head>
-	<title>{$page?.status ? $page?.status : ""} Error</title>
+  <title>{$page.status ?? ""} Error</title>
 </svelte:head>
 
-<div
-	class="flex h-screen w-full flex-col items-center justify-center px-5 lg:px-32"
-	in:fade={{ delay: 500, duration: 800 }}
->
-	<h1
-		class="font-primary mt-5 mb-10 text-center text-3xl font-bold text-neutral backdrop-blur-sm sm:text-3xl lg:text-4xl"
-	>
-		Looks Like An Error Has Occurred
-	</h1>
-	<Button href="/contact/form">Contact Auxtal</Button>
-</div>
+<Animate>
+  <div class="flex h-screen w-full flex-col items-center justify-center px-8 lg:px-0">
+    <h1 class="mb-3 text-center text-5xl font-bold text-neutral backdrop-blur-sm">
+      Sorry An Error Occurred
+    </h1>
+    {#if $page.error?.errorId && !($page.status in statusMessages)}
+      <p class="mb-2 max-w-md text-center leading-6 text-secondary backdrop-blur-sm">
+        <strong>Error ID:</strong>
+        {$page.error?.errorId}
+      </p>
+    {/if}
+    {#if $page.status in statusMessages}
+      <p class="mb-2 max-w-md text-center leading-6 text-secondary backdrop-blur-sm">
+        {statusMessages[$page.status]}
+      </p>
+    {/if}
+    <Button href="/" classes="px-14 mt-5">Go Home</Button>
+  </div>
+</Animate>

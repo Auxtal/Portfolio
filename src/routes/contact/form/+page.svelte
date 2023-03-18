@@ -1,170 +1,172 @@
-<script>
-	import Button from "$lib/components/Button.svelte";
-	import BackButton from "$lib/components/BackButton.svelte";
-	import { Toast } from "$lib/helpers/toast";
+<script lang="ts">
+  import Animate from "$components/Animate.svelte";
+  import BackButton from "$components/BackButton.svelte";
+  import Button from "$components/Button.svelte";
 
-	import { onMount } from "svelte";
-	import { fade } from "svelte/transition";
-	import { applyAction, enhance } from "$app/forms";
+  import { Toast } from "$lib/helpers/toast";
 
-	export let form;
+  import { fade } from "svelte/transition";
+  import { quintOut } from "svelte/easing";
+  import { applyAction, enhance } from "$app/forms";
 
-	let animate = false;
-	let loading = false;
+  import type { ActionData, Snapshot } from "./$types";
+  import type { ActionResult } from "@sveltejs/kit";
+  import type { SubmitFunction } from "$app/forms";
 
-	onMount(() => {
-		animate = true;
-	});
+  type ActionResultData = ActionResult & {
+    data: { errors: string[] };
+  };
+
+  type ActionFormData = ActionData & {
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+  };
+
+  export let form: ActionFormData;
+
+  let loading = false;
+  let formData = {
+    name: form?.name ?? "",
+    email: form?.email ?? "",
+    subject: form?.subject ?? "",
+    message: form?.message ?? ""
+  };
+
+  export const snapshot: Snapshot = {
+    capture: () => formData,
+    restore: (value) => (formData = value)
+  };
+
+  const contactSubmit: SubmitFunction = ({ form }) => {
+    loading = true;
+    return async ({ result }) => {
+      const resultData = result as ActionResultData;
+
+      if (resultData?.data?.errors) {
+        setTimeout(() => {
+          loading = false;
+        }, 500);
+        return await applyAction(resultData);
+      }
+
+      if (resultData.type === "failure") {
+        Toast.error(resultData?.data?.errorMessage);
+        setTimeout(() => {
+          loading = false;
+        }, 500);
+        await applyAction(resultData);
+      }
+
+      if (resultData.type === "success") {
+        Toast.success("Email Sent Successfully");
+        setTimeout(() => {
+          loading = false;
+        }, 500);
+        form.reset();
+        await applyAction(resultData);
+      }
+    };
+  };
 </script>
 
 <svelte:head>
-	<title>Contact Form</title>
+  <title>Contact</title>
 </svelte:head>
 
-{#if animate}
-	<div class="mx-auto flex h-screen w-full max-w-xl flex-col justify-center rounded-md p-6" in:fade>
-		<BackButton href="/contact" />
-		<form
-			method="POST"
-			action="?/submit"
-			use:enhance={({ form }) => {
-				loading = true;
-				return async ({ result }) => {
-					if (result?.data?.errors) {
-						setTimeout(() => {
-							loading = false;
-						}, 1000);
-						return await applyAction(result);
-					}
-					if (result.type === "success") {
-						Toast(
-							"<strong>Email Sent Successfully</strong><br>I will get back to you as soon as possible"
-						);
-						setTimeout(() => {
-							loading = false;
-						}, 1000);
-						form.reset();
-						await applyAction(result);
-					}
-				};
-			}}
-		>
-			<div class="form-item mt-2 mb-5 ">
-				<input
-					id="name"
-					name="name"
-					value={form?.name ?? ""}
-					placeholder="Name"
-					type="text"
-					class="input-neutral font-secondary input my-2 w-full bg-white !text-sm text-primary shadow-lg {form
-						?.errors?.name
-						? '!outline-red-500'
-						: ''}"
-				/>
-				{#if form?.errors?.name}
-					<label for="name">
-						<span class="text-red-500">{form?.errors?.name[0]}</span>
-					</label>
-				{/if}
-			</div>
-			<div class="form-item mt-2 mb-5 ">
-				<input
-					id="email"
-					name="email"
-					value={form?.email ?? ""}
-					placeholder="Email"
-					type="text"
-					class="input-neutral font-secondary input my-2 w-full bg-white !text-sm text-primary shadow-lg {form
-						?.errors?.email
-						? '!outline-red-500'
-						: ''}"
-				/>
-				{#if form?.errors?.email}
-					<label for="email">
-						<span class="text-red-500">{form?.errors?.email[0]}</span>
-					</label>
-				{/if}
-			</div>
-			<div class="form-item mt-2 mb-5 ">
-				<input
-					id="subject"
-					name="subject"
-					value={form?.subject ?? ""}
-					placeholder="Subject"
-					type="text"
-					class="input-neutral font-secondary input my-2 w-full bg-white !text-sm text-primary shadow-lg {form
-						?.errors?.subject
-						? '!outline-red-500'
-						: ''}"
-				/>
-				{#if form?.errors?.subject}
-					<label for="subject">
-						<span class="text-red-500">{form?.errors?.subject[0]}</span>
-					</label>
-				{/if}
-			</div>
-			<div class="form-item mt-2 mb-5 ">
-				<textarea
-					id="message"
-					name="message"
-					value={form?.message ?? ""}
-					placeholder="Message"
-					class="textarea-neutral font-secondary textarea w-full bg-white !pt-3 !text-sm text-primary {form
-						?.errors?.message
-						? '!outline-red-500'
-						: ''}"
-					rows="5"
-				/>
-				{#if form?.errors?.message}
-					<label for="message">
-						<span class="text-red-500">{form?.errors?.message[0]}</span>
-					</label>
-				{/if}
-			</div>
-			<Button classes="w-full" {loading}>Send</Button>
-		</form>
-	</div>
-{/if}
-
-<style>
-	.form-item {
-		position: relative;
-	}
-
-	.form-item input,
-	textarea {
-		display: block;
-		background: transparent;
-		transition: all 0.3s ease;
-		padding: 0 15px;
-		color: var(--secondary);
-		outline: 1px solid var(--secondary);
-		backdrop-filter: blur(4px);
-	}
-
-	.form-item label {
-		position: absolute;
-		cursor: text;
-		z-index: 2;
-		top: 18px;
-		left: 10px;
-		font-size: 12px;
-		font-weight: bold;
-		padding: 0 10px;
-		transition: all 0.3s ease;
-		color: var(--secondary);
-	}
-
-	.form-item input:focus,
-	textarea:focus {
-		outline: 2.5px solid var(--neutral);
-	}
-
-	.form-item input:focus + label,
-	.form-item input:valid + label,
-	.form-item textarea:focus + label,
-	.form-item textarea:valid + label {
-		background: var(--primary);
-		top: -9px;
-	}
-</style>
+<Animate>
+  <div
+    class="mx-auto flex h-screen w-full max-w-xl flex-col justify-center p-6"
+    transition:fade|local={{ duration: 800, easing: quintOut }}
+  >
+    <BackButton href="/contact" />
+    <form class="mt-6" method="POST" action="?/contact" use:enhance={contactSubmit}>
+      <div class="form-item relative mt-2 mb-5 ">
+        <input
+          id="name"
+          name="name"
+          placeholder="Name"
+          type="text"
+          bind:value={formData.name}
+          class="peer input my-2 block w-full !rounded-md bg-transparent px-4 text-sm text-secondary shadow-sm outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
+            ?.errors?.name
+            ? '!outline-red-500'
+            : ''}"
+        />
+        {#if form?.errors?.name}
+          <label
+            class="absolute left-2.5 top-[18px] z-10 px-[10px] text-[12px] font-bold text-secondary transition-all peer-valid:top-[-9px] peer-valid:bg-primary peer-focus:top-[-9px] peer-focus:bg-primary"
+            for="name"
+          >
+            <span class="text-red-500">{form?.errors?.name[0]}</span>
+          </label>
+        {/if}
+      </div>
+      <div class="form-item relative mt-2 mb-5 ">
+        <input
+          id="email"
+          name="email"
+          placeholder="Email"
+          type="text"
+          bind:value={formData.email}
+          class="peer input my-2 block w-full !rounded-md bg-transparent px-4 text-sm text-secondary shadow-sm outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
+            ?.errors?.email
+            ? '!outline-red-500'
+            : ''}"
+        />
+        {#if form?.errors?.email}
+          <label
+            class="absolute left-2.5 top-[18px] z-10 px-[10px] text-[12px] font-bold text-secondary transition-all peer-valid:top-[-9px] peer-valid:bg-primary peer-focus:top-[-9px] peer-focus:bg-primary"
+            for="email"
+          >
+            <span class="text-red-500">{form?.errors?.email[0]}</span>
+          </label>
+        {/if}
+      </div>
+      <div class="form-item relative mt-2 mb-5 ">
+        <input
+          id="subject"
+          name="subject"
+          placeholder="Subject"
+          type="text"
+          bind:value={formData.subject}
+          class="peer input my-2 block w-full !rounded-md bg-transparent px-4 text-sm text-secondary shadow-sm outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
+            ?.errors?.subject
+            ? '!outline-red-500'
+            : ''}"
+        />
+        {#if form?.errors?.subject}
+          <label
+            class="absolute left-2.5 top-[18px] z-10 px-[10px] text-[12px] font-bold text-secondary transition-all peer-valid:top-[-9px] peer-valid:bg-primary peer-focus:top-[-9px] peer-focus:bg-primary"
+            for="subject"
+          >
+            <span class="text-red-500">{form?.errors?.subject[0]}</span>
+          </label>
+        {/if}
+      </div>
+      <div class="form-item relative mt-2 mb-5 ">
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Message"
+          bind:value={formData.message}
+          class="peer textarea my-2 block w-full resize-none !rounded-md bg-transparent px-4 pt-3 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
+            ?.errors?.message
+            ? '!outline-red-500'
+            : ''}"
+          rows="5"
+        />
+        {#if form?.errors?.message}
+          <label
+            class="absolute left-2.5 top-[18px] z-10 px-[10px] text-[12px] font-bold text-secondary transition-all peer-valid:top-[-9px] peer-valid:bg-primary peer-focus:top-[-9px] peer-focus:bg-primary"
+            for="message"
+          >
+            <span class="text-red-500">{form?.errors?.message[0]}</span>
+          </label>
+        {/if}
+      </div>
+      <Button classes="w-full" {loading}>Send</Button>
+    </form>
+  </div>
+</Animate>

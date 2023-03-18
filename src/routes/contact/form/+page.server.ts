@@ -1,7 +1,10 @@
-import { redirect } from "@sveltejs/kit";
 import { z } from "zod";
+import type { Actions } from "@sveltejs/kit";
 
-const emailSchema = z.object({
+import { error, fail } from "@sveltejs/kit";
+import { ZodError } from "zod";
+
+const contactSchema = z.object({
   name: z
     .string({ required_error: "Name is required" })
     .min(1, { message: "Name is required" })
@@ -24,22 +27,24 @@ const emailSchema = z.object({
     .trim()
 });
 
-export const actions = {
-  submit: async ({ request }) => {
+export const actions: Actions = {
+  contact: async ({ request }) => {
     const formData = Object.fromEntries(await request.formData());
 
     try {
-      emailSchema.parse(formData);
+      contactSchema.parse(formData);
     } catch (error) {
-      const { fieldErrors: errors } = error.flatten();
-      return {
-        data: formData,
-        errors
-      };
+      if (error instanceof ZodError) {
+        const { fieldErrors: errors } = error.flatten();
+        return {
+          data: formData,
+          errors
+        };
+      }
     }
 
     try {
-      await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+      const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -55,9 +60,12 @@ export const actions = {
           accessToken: import.meta.env.VITE_EMAILJS_PRIVATE_KEY
         })
       });
-    } catch (error) {
-      console.log("EmailJS API Send Email Failed", error);
-      throw redirect(500, "/");
+
+      if (response.status !== 200) {
+        return fail(response.status, { formData, errorMessage: "Email Failed To Send" });
+      }
+    } catch (err) {
+      throw error(500, "Unexpected Error Occurred");
     }
   }
 };

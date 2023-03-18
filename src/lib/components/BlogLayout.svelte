@@ -1,18 +1,17 @@
-<script>
-	import BackButton from "$lib/components/BackButton.svelte";
+<script lang="ts">
+  import Animate from "$components/Animate.svelte";
+  import BackButton from "$components/BackButton.svelte";
 
-	import { onMount } from "svelte";
-	import { fade } from "svelte/transition";
-
-	let animate = false;
-	onMount(() => {
-		animate = true;
-	});
+  import { fade } from "svelte/transition";
+  import { quintOut } from "svelte/easing";
 </script>
 
-{#if animate}
-	<BackButton href="/blog" />
-	<article class="prose w-full max-w-full pt-14" in:fade|local={{ delay: 200, duration: 800 }}>
-		<slot />
-	</article>
-{/if}
+<Animate>
+  <BackButton href="/blog" />
+  <article
+    class="prose w-full max-w-full pt-7"
+    transition:fade|local={{ duration: 800, easing: quintOut }}
+  >
+    <slot />
+  </article>
+</Animate>

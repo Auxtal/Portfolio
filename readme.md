@@ -15,7 +15,7 @@
         <br>
         <br>
         <a href="https://github.com/Auxtal/Portfolio">
-            <img src="https://github.com/Auxtal/Portfolio/actions/workflows/publish%20docker%20image.yml/badge.svg?branch=main">
+            <img src="https://api.netlify.com/api/v1/badges/77c4da2c-a473-448e-b0b8-13aaf2f47d78/deploy-status">
         </a>
     </p>
 </div>
