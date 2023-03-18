@@ -24,7 +24,7 @@
   <nav>
     <!-- Desktop Navbar -->
     <div
-      class="bg-primary-100/10 fixed z-20 hidden w-full items-center justify-between border-b border-secondary/10 px-4 py-4 backdrop-blur-md lg:flex lg:min-h-[4rem]"
+      class="bg-primary-100 fixed z-20 hidden w-full items-center justify-between border-b border-secondary/10 px-4 py-4 backdrop-blur-lg lg:flex lg:min-h-[4rem]"
       transition:fade={{ duration: 800, easing: quintOut }}
     >
       <a
@@ -132,7 +132,7 @@
         class="fixed z-20 mt-2 w-full translate-y-[4rem] lg:hidden"
         transition:fade={{ duration: 300, easing: quintOut }}
       >
-        <OutClick on:outclick={hideMobileMenu} excludeQuerySelectorAll={["#mobileMenuToggle"]}>
+        <OutClick on:outclick={hideMobileMenu} excludeQuerySelectorAll={"#mobileMenuToggle"}>
           <ul class="mx-2 rounded-xl bg-zinc-800/50 p-4 shadow backdrop-blur transition">
             {#each Navlinks as Navlink}
               <li

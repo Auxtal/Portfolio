@@ -6,6 +6,7 @@ interface Metadata {
   title: string;
   date: Date;
   tags: string[];
+  hidden: boolean;
 }
 
 export type Post = {

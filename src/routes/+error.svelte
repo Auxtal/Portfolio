@@ -19,14 +19,20 @@
 
 <Animate>
   <div class="flex h-screen w-full flex-col items-center justify-center px-8 lg:px-0">
-    <h1 class="mb-10 text-center text-5xl font-bold text-neutral backdrop-blur-sm">
-      An Error Occurred
+    <h1 class="mb-3 text-center text-5xl font-bold text-neutral backdrop-blur-sm">
+      Sorry An Error Occurred
     </h1>
-    <p class="font-secondary mb-10 max-w-md text-center leading-6 text-secondary backdrop-blur-sm">
-      {$page.status in statusMessages
-        ? statusMessages[$page.status]
-        : "Oops, an unexpected error occurred"}
-    </p>
-    <Button href="/" classes="px-14">Go Home</Button>
+    {#if $page.error?.errorId && !($page.status in statusMessages)}
+      <p class="mb-2 max-w-md text-center leading-6 text-secondary backdrop-blur-sm">
+        <strong>Error ID:</strong>
+        {$page.error?.errorId}
+      </p>
+    {/if}
+    {#if $page.status in statusMessages}
+      <p class="mb-2 max-w-md text-center leading-6 text-secondary backdrop-blur-sm">
+        {statusMessages[$page.status]}
+      </p>
+    {/if}
+    <Button href="/" classes="px-14 mt-5">Go Home</Button>
   </div>
 </Animate>

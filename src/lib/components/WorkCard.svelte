@@ -7,16 +7,20 @@
   export let styles = "";
   export let title: string;
   export let footer: string;
+  export let current: boolean;
 </script>
 
 <Animate>
   <div
-    class="flex max-h-max w-full flex-col justify-between rounded-xl border border-secondary/20 bg-secondary/5 p-4 backdrop-blur-sm transition-transform duration-200 dark:bg-secondary/10 sm:max-h-[15rem] md:max-h-[23rem] md:max-w-[25rem] md:hover:-translate-y-1 lg:min-h-full"
-    transition:fly|local={{ x: 50, duration: 500, easing: quintOut }}
+    class="indicator flex max-h-max w-full flex-col justify-between rounded-xl border border-secondary/20 bg-secondary/5 p-4 backdrop-blur-sm transition-transform duration-200 dark:bg-secondary/10 sm:max-h-[15rem] md:max-h-[23rem] md:max-w-[35rem] lg:min-h-full lg:hover:-translate-y-1"
+    transition:fly|local={{ y: 50, duration: 500, easing: quintOut }}
   >
+    {#if current}
+      <span class="badge-neutral badge indicator-item" />
+    {/if}
     <div>
       {#if title}
-        <h2 class="text-md underline-offset-7 mb-2 font-bold leading-6 text-neutral">
+        <h2 class="underline-offset-7 text-md mb-3 font-bold leading-6 text-neutral">
           {title}
         </h2>
       {/if}

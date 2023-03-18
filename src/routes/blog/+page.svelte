@@ -26,8 +26,9 @@
 
   $: filteredPosts = data.posts.filter((post: Post) => {
     return (
-      post.metadata.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      post.metadata?.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+      post.metadata?.hidden === false &&
+      (post.metadata.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.metadata?.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase())))
     );
   });
 

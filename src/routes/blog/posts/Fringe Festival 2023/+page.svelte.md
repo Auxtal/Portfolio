@@ -4,6 +4,7 @@ id: 3
 title: Fringe Festival 2023
 date: 2023-02-6
 tags: [Event, "2023"]
+hidden: false
 ---
 
 # Fringe Festival 2023

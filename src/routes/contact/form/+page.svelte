@@ -47,7 +47,7 @@
       if (resultData?.data?.errors) {
         setTimeout(() => {
           loading = false;
-        }, 300);
+        }, 500);
         return await applyAction(resultData);
       }
 
@@ -55,7 +55,7 @@
         Toast.error(resultData?.data?.errorMessage);
         setTimeout(() => {
           loading = false;
-        }, 300);
+        }, 500);
         await applyAction(resultData);
       }
 
@@ -151,7 +151,7 @@
           name="message"
           placeholder="Message"
           bind:value={formData.message}
-          class="peer textarea my-2 block w-full !rounded-md bg-transparent px-4 pt-3 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
+          class="peer textarea my-2 block w-full resize-none !rounded-md bg-transparent px-4 pt-3 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
             ?.errors?.message
             ? '!outline-red-500'
             : ''}"

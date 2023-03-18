@@ -26,7 +26,7 @@
       Ethan Murphy
     </h1>
     <h1
-      class="line-1 p-1 text-center text-3xl text-neutral backdrop-blur-sm md:text-right lg:text-5xl"
+      class="py-1 text-center text-3xl text-neutral backdrop-blur-sm md:text-right lg:text-[3.05rem]"
     >
       I'm an AV Technician
     </h1>
