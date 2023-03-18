@@ -89,7 +89,7 @@
           placeholder="Name"
           type="text"
           bind:value={formData.name}
-          class="peer input my-2 block w-full !rounded-md bg-transparent px-4 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
+          class="peer input my-2 block w-full !rounded-md bg-transparent px-4 text-sm text-secondary shadow-sm outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
             ?.errors?.name
             ? '!outline-red-500'
             : ''}"
@@ -110,7 +110,7 @@
           placeholder="Email"
           type="text"
           bind:value={formData.email}
-          class="peer input my-2 block w-full !rounded-md bg-transparent px-4 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
+          class="peer input my-2 block w-full !rounded-md bg-transparent px-4 text-sm text-secondary shadow-sm outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
             ?.errors?.email
             ? '!outline-red-500'
             : ''}"
@@ -131,7 +131,7 @@
           placeholder="Subject"
           type="text"
           bind:value={formData.subject}
-          class="peer input my-2 block w-full !rounded-md bg-transparent px-4 text-sm text-secondary shadow-lg outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
+          class="peer input my-2 block w-full !rounded-md bg-transparent px-4 text-sm text-secondary shadow-sm outline outline-1 outline-secondary backdrop-blur-sm transition-all focus:outline-[2.5px] focus:outline-neutral {form
             ?.errors?.subject
             ? '!outline-red-500'
             : ''}"
