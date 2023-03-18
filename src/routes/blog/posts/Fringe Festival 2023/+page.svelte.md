@@ -9,7 +9,7 @@ hidden: false
 
 # Fringe Festival 2023
 
-<img src="/images/Fringe Festival 2023.webp" width="450" />
+<img src="/images/Fringe Festival 2023.webp" alt="Fringe Festival" width="450" />
 
 ## Description
 
