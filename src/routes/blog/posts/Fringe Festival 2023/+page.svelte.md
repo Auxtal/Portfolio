@@ -7,9 +7,13 @@ tags: [Event, "2023"]
 hidden: false
 ---
 
+<script>
+  import FringeFestival from "$images/Fringe Festival 2023.webp?w=300;400;500&format=webp,avif&srcset";
+</script>
+
 # Fringe Festival 2023
 
-<img src="/images/Fringe Festival 2023.webp" alt="Fringe Festival" width="450" />
+<img srcset={FringeFestival} alt="Fringe Festival" width="450" />
 
 ## Description
 

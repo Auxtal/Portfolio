@@ -11,10 +11,12 @@
     "paths": {
       "$components": ["./src/lib/components/"],
       "$components/*": ["./src/lib/components/*"],
+      "$images": ["./src/images/"],
+      "$images/*": ["./src/images/*"],
       "$json": ["./src/lib/assets/data/"],
       "$json/*": ["./src/lib/assets/data/*"],
-      "$lib": ["src/lib"],
-      "$lib/*": ["src/lib/*"],
+      "$lib": ["./src/lib"],
+      "$lib/*": ["./src/lib/*"],
       "$src": ["./src/"],
       "$src/*": ["./src/*"]
     },

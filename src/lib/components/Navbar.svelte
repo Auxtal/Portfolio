@@ -8,11 +8,15 @@
 
   import Icon from "@iconify/svelte";
   import OutClick from "svelte-outclick";
+  // @ts-expect-error
   import { Confetti } from "svelte-confetti";
 
   import { fade } from "svelte/transition";
   import { quintOut } from "svelte/easing";
   import { page } from "$app/stores";
+
+  // @ts-expect-error
+  import Logo from "$images/Logo Round.webp?w=300;400;500&format=webp,avif&srcset";
 
   let mobileMenu = false;
 
@@ -32,11 +36,7 @@
         class="btn-ghost no-animation btn flex items-center justify-center rounded-md text-xl normal-case outline-none transition-colors hover:bg-secondary/50 hover:text-primary focus:bg-secondary/50 focus:text-primary focus:outline-none hover:dark:text-secondary focus:dark:text-secondary"
         data-sveltekit-preload-data
       >
-        <img
-          class="mr-2.5 w-9 rounded-full shadow-lg"
-          src="/images/Logo Round.webp"
-          alt="Auxtal Logo Round"
-        />
+        <img class="mr-2.5 h-9 w-9 rounded-full shadow-lg" srcset={Logo} alt="Auxtal Logo Round" />
         <p class="text-xl">Auxtal</p>
       </a>
       <div class="justify-center text-sm">
@@ -90,11 +90,7 @@
           class="btn-ghost no-animation btn flex items-center justify-center rounded-md text-xl normal-case outline-none transition-colors hover:bg-transparent active:bg-secondary/50 active:text-primary active:outline-none active:dark:text-secondary"
           data-sveltekit-preload-data
         >
-          <img
-            class="mr-2.5 w-9 rounded-full shadow-lg"
-            src="/images/Logo Round.webp"
-            alt="Auxtal Logo Round"
-          />
+          <img class="mr-2.5 w-9 rounded-full shadow-lg" srcset={Logo} alt="Auxtal Logo Round" />
           <p class="text-xl">Auxtal</p>
         </a>
       </div>
