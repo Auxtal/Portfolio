@@ -17,6 +17,7 @@
     "@sentry/node": "^7.40.0",
     "@sentry/svelte": "^7.28.1",
     "@sentry/tracing": "^7.28.1",
+    "@sveltejs/adapter-cloudflare": "^2.2.0",
     "@sveltejs/adapter-netlify": "^2.0.6",
     "@sveltejs/kit": "^1.8.3",
     "@tailwindcss/typography": "^0.5.8",
