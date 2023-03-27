@@ -8,14 +8,14 @@
 
   import Icon from "@iconify/svelte";
   import OutClick from "svelte-outclick";
-  // @ts-expect-error
+  // @ts-expect-error Resolve declaration issue
   import { Confetti } from "svelte-confetti";
 
   import { fade } from "svelte/transition";
   import { quintOut } from "svelte/easing";
   import { page } from "$app/stores";
 
-  // @ts-expect-error
+  // @ts-expect-error Resolve declaration issue
   import Logo from "$images/Logo Round.webp?w=300;400;500&format=webp,avif&srcset";
 
   let mobileMenu = false;

@@ -1,4 +1,5 @@
 import * as SentryNode from "@sentry/node";
+// @ts-expect-error Resolve declaration issue
 import crypto from "crypto";
 
 import type { Handle, HandleServerError } from "@sveltejs/kit";
