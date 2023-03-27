@@ -6,7 +6,7 @@ import type { Handle, HandleServerError } from "@sveltejs/kit";
 SentryNode.init({
   dsn: import.meta.env.VITE_SENTRY_DSN,
   environment: import.meta.env.VITE_ENVIRONMENT,
-  release: "1.2.0"
+  release: "1.2.1"
 });
 
 export const handleError: HandleServerError = ({ error, event }) => {

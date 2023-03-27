@@ -7,16 +7,16 @@
     "duration": 1100
   },
   {
-    "icon": "akar-icons:discord-fill",
-    "url": "https://dsc.gg/Auxtal",
+    "icon": "ion:logo-linkedin",
+    "url": "https://www.linkedin.com/in/Auxtal",
     "external": true,
     "x": -150,
     "duration": 1200
   },
   {
-    "icon": "fluent:mail-16-filled",
-    "url": "/contact/form",
-    "external": false,
+    "icon": "akar-icons:discord-fill",
+    "url": "https://dsc.gg/Auxtal",
+    "external": true,
     "x": -200,
     "duration": 1300
   }
