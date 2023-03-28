@@ -16,7 +16,7 @@
   import { page } from "$app/stores";
 
   // @ts-expect-error Resolve declaration issue
-  import Logo from "$images/Logo Round.webp?w=300;400;500&format=webp,avif&srcset";
+  import Logo from "$images/Logo-Round.webp?w=300;400;500&format=webp,avif&srcset";
 
   let mobileMenu = false;
 

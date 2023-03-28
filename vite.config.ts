@@ -5,7 +5,7 @@ import path from "path";
 import type { UserConfig } from "vite";
 
 const config: UserConfig = {
-  plugins: [sveltekit(), imagetools()],
+  plugins: [imagetools(), sveltekit()],
   resolve: {
     alias: {
       $components: path.resolve("./src/lib/components/"),

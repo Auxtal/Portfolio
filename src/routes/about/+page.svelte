@@ -5,7 +5,7 @@
   import { quintOut } from "svelte/easing";
 
   // @ts-expect-error Resolve declaration issue
-  import GraduationEvent from "$images/Graduation Event.webp?w=300;400;500&format=webp,avif&srcset";
+  import GraduationEvent from "$images/Graduation-Event.webp?w=300;400;500&format=webp,avif&srcset";
 
   const birthday = import.meta.env.VITE_BIRTHDAY;
   const getAge = () => {
