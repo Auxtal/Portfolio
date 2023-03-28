@@ -4,11 +4,20 @@
 
   import { fade, fly } from "svelte/transition";
   import { quintOut } from "svelte/easing";
+
+  const images = import.meta.glob("../images/*");
+  const preloadImages: string[] = [];
+  for (const path in images) {
+    preloadImages.push(images[path].name.replace("../images/", ""));
+  }
 </script>
 
 <svelte:head>
   <title>Ethan's Portfolio</title>
   <meta name="description" content="Auxtal's Portfolio site home page." />
+  {#each preloadImages as image}
+    <link rel="preload" as="image" href="../images/{image}" />
+  {/each}
 </svelte:head>
 
 <Animate>
