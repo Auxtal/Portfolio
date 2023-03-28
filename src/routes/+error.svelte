@@ -15,6 +15,7 @@
 
 <svelte:head>
   <title>{$page.status ?? ""} Error</title>
+  <meta name="description" content="Auxtal's Portfolio site error page." />
 </svelte:head>
 
 <Animate>

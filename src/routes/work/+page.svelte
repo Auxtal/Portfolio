@@ -7,6 +7,7 @@
 
 <svelte:head>
   <title>Work</title>
+  <meta name="description" content="Auxtal's Portfolio site work page." />
 </svelte:head>
 
 <div

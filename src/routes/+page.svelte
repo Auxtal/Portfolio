@@ -8,6 +8,7 @@
 
 <svelte:head>
   <title>Ethan's Portfolio</title>
+  <meta name="description" content="Auxtal's Portfolio site home page." />
 </svelte:head>
 
 <Animate>

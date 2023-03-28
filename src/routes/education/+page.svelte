@@ -17,6 +17,7 @@
 
 <svelte:head>
   <title>Education</title>
+  <meta name="description" content="Auxtal's Portfolio site education page." />
 </svelte:head>
 
 <Animate>

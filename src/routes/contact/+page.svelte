@@ -8,6 +8,7 @@
 
 <svelte:head>
   <title>Contact</title>
+  <meta name="description" content="Auxtal's Portfolio site contact page." />
 </svelte:head>
 
 <Animate>

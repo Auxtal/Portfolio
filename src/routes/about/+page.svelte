@@ -17,6 +17,7 @@
 
 <svelte:head>
   <title>About</title>
+  <meta name="description" content="Auxtal's Portfolio site about me page." />
 </svelte:head>
 
 <div

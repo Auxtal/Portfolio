@@ -41,6 +41,7 @@
 
 <svelte:head>
   <title>Blog Posts</title>
+  <meta name="description" content="Auxtal's Portfolio site blog post page." />
 </svelte:head>
 
 <Animate>

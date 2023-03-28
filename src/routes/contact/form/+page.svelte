@@ -73,6 +73,7 @@
 
 <svelte:head>
   <title>Contact</title>
+  <meta name="description" content="Auxtal's Portfolio site contact form page." />
 </svelte:head>
 
 <Animate>
@@ -82,7 +83,7 @@
   >
     <BackButton href="/contact" />
     <form class="mt-6" method="POST" action="?/contact" use:enhance={contactSubmit}>
-      <div class="form-item relative mt-2 mb-5 ">
+      <div class="form-item relative mt-2 mb-5">
         <input
           id="name"
           name="name"
@@ -103,7 +104,7 @@
           </label>
         {/if}
       </div>
-      <div class="form-item relative mt-2 mb-5 ">
+      <div class="form-item relative mt-2 mb-5">
         <input
           id="email"
           name="email"
@@ -124,7 +125,7 @@
           </label>
         {/if}
       </div>
-      <div class="form-item relative mt-2 mb-5 ">
+      <div class="form-item relative mt-2 mb-5">
         <input
           id="subject"
           name="subject"
@@ -145,7 +146,7 @@
           </label>
         {/if}
       </div>
-      <div class="form-item relative mt-2 mb-5 ">
+      <div class="form-item relative mt-2 mb-5">
         <textarea
           id="message"
           name="message"
