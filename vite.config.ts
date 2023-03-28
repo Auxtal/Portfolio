@@ -9,7 +9,7 @@ const config: UserConfig = {
   resolve: {
     alias: {
       $components: path.resolve("./src/lib/components/"),
-      $images: path.resolve("./src/images/"),
+      $images: path.resolve("./static/images/"),
       $json: path.resolve("./src/lib/assets/data/"),
       $src: path.resolve("./src/")
     }

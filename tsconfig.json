@@ -11,8 +11,8 @@
     "paths": {
       "$components": ["./src/lib/components/"],
       "$components/*": ["./src/lib/components/*"],
-      "$images": ["./src/images/"],
-      "$images/*": ["./src/images/*"],
+      "$images": ["./src/static/"],
+      "$images/*": ["./src/static/*"],
       "$json": ["./src/lib/assets/data/"],
       "$json/*": ["./src/lib/assets/data/*"],
       "$lib": ["./src/lib"],
