@@ -64,7 +64,7 @@
           <svelte:fragment slot="content">
             <Button
               href="/pdf/Resume Redacted Info.pdf"
-              download="/pdf/Resume Redacted Info.pdf"
+              download="Resume Redacted Info.pdf"
               classes="px-9"
             >
               <Icon
@@ -103,7 +103,7 @@
         <ThemeToggle />
         <label
           id="mobileMenuToggle"
-          class="swap swap-rotate no-animation btn h-[48px] w-[48px] rounded-md border-none bg-secondary/20 text-secondary hover:bg-secondary/20 active:bg-neutral active:text-primary active:dark:text-secondary"
+          class="swap-rotate swap no-animation btn h-[48px] w-[48px] rounded-md border-none bg-secondary/20 text-secondary hover:bg-secondary/20 active:bg-neutral active:text-primary active:dark:text-secondary"
         >
           <input type="checkbox" on:click={toggleMobileMenu} bind:checked={mobileMenu} />
           <svg
@@ -156,7 +156,7 @@
             <li>
               <a
                 href="/pdf/Resume Redacted Info.pdf"
-                download="/pdf/Resume Redacted Info.pdf"
+                download="Resume Redacted Info.pdf"
                 class="mt-1 block w-full rounded-md p-3 text-center text-primary transition hover:bg-primary/50 active:bg-primary/50 dark:text-secondary hover:dark:bg-secondary/50 active:dark:bg-secondary/50"
               >
                 Resume
