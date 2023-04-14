@@ -9,6 +9,8 @@
   import { quintOut } from "svelte/easing";
   import { applyAction, enhance } from "$app/forms";
 
+  import { persist } from "svelte-use-persist";
+
   import type { ActionData, Snapshot } from "./$types";
   import type { ActionResult } from "@sveltejs/kit";
   import type { SubmitFunction } from "$app/forms";
@@ -82,7 +84,13 @@
     transition:fade|local={{ duration: 800, easing: quintOut }}
   >
     <BackButton href="/contact" />
-    <form class="mt-6" method="POST" action="?/contact" use:enhance={contactSubmit}>
+    <form
+      class="mt-6"
+      method="POST"
+      action="?/contact"
+      use:persist={{ key: "contactForm" }}
+      use:enhance={contactSubmit}
+    >
       <div class="form-item relative mb-5 mt-2">
         <input
           id="name"

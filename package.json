@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "type": "module",
   "scripts": {
     "dev": "vite dev",
@@ -42,6 +42,7 @@
     "svelte-outclick": "^3.3.3",
     "svelte-paginate": "^0.1.0",
     "svelte-preprocess": "^5.0.0",
+    "svelte-use-persist": "^0.4.0",
     "svelte-vertical-timeline": "^0.0.2",
     "tailwindcss": "^3.2.4",
     "tslib": "^2.4.1",
