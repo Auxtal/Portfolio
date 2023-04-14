@@ -15,6 +15,7 @@
 <svelte:head>
   <title>About</title>
   <meta name="description" content="Auxtal's Portfolio site about me page." />
+  <link rel="preload" as="image" href="/images/Graduation-Event.webp" />
 </svelte:head>
 
 <div

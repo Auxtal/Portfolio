@@ -12,7 +12,7 @@
 
 <Animate>
   <div
-    class="indicator flex max-h-max w-full flex-col justify-between rounded-xl border border-secondary/20 bg-secondary/5 p-4 backdrop-blur-sm transition-transform duration-200 dark:bg-secondary/10 sm:max-h-[15rem] md:max-h-[23rem] md:max-w-[35rem] lg:min-h-full lg:hover:-translate-y-1"
+    class="indicator flex max-h-max w-full flex-col justify-between rounded-xl border border-secondary/20 bg-secondary/5 p-4 backdrop-blur-sm transition-transform duration-200 dark:bg-secondary/10 sm:max-h-[15rem] md:max-h-[23rem] md:max-w-[35rem] lg:min-h-full lg:hover:-translate-y-0.5"
     transition:fly|local={{ y: 50, duration: 500, easing: quintOut }}
   >
     {#if current}
