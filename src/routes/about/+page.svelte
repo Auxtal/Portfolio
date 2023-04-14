@@ -4,9 +4,6 @@
   import { fade, fly } from "svelte/transition";
   import { quintOut } from "svelte/easing";
 
-  // @ts-expect-error Resolve declaration issue
-  import GraduationEvent from "$images/Graduation-Event.webp?w=300;400;500&format=webp,avif&srcset";
-
   const birthday = import.meta.env.VITE_BIRTHDAY;
   const getAge = () => {
     const ageDifMs = Date.now().valueOf() - new Date(birthday).valueOf();
@@ -28,7 +25,7 @@
       <img
         transition:fly|local={{ x: 50, duration: 500, easing: quintOut }}
         class="aspect-auto rounded-lg shadow-md transition-all duration-200 sm:max-w-sm lg:mr-10 lg:grayscale lg:hover:grayscale-0"
-        srcset={GraduationEvent}
+        src="/images/Graduation-Event.webp"
         alt="Graduation Event"
       />
     </div>

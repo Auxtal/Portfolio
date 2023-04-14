@@ -4,7 +4,7 @@ import type { HandleClientError } from "@sveltejs/kit";
 SentrySvelte.init({
   dsn: import.meta.env.VITE_SENTRY_DSN,
   environment: import.meta.env.VITE_ENVIRONMENT,
-  release: "1.2.2"
+  release: "1.2.3"
 });
 
 export const handleError: HandleClientError = ({ error, event }) => {

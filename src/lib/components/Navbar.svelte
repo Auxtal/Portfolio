@@ -15,9 +15,6 @@
   import { quintOut } from "svelte/easing";
   import { page } from "$app/stores";
 
-  // @ts-expect-error Resolve declaration issue
-  import Logo from "$images/Logo-Round.webp?w=300;400;500&format=webp,avif&srcset";
-
   let mobileMenu = false;
 
   const toggleMobileMenu = () => (mobileMenu = !mobileMenu);
@@ -36,7 +33,11 @@
         class="btn-ghost no-animation btn flex items-center justify-center rounded-md text-xl normal-case outline-none transition-colors hover:bg-secondary/50 hover:text-primary focus:bg-secondary/50 focus:text-primary focus:outline-none hover:dark:text-secondary focus:dark:text-secondary"
         data-sveltekit-preload-data
       >
-        <img class="mr-2.5 h-9 w-9 rounded-full shadow-lg" srcset={Logo} alt="Auxtal Logo Round" />
+        <img
+          class="mr-2.5 h-9 w-9 rounded-full shadow-lg"
+          src="/images/Logo-Round.webp"
+          alt="Auxtal Logo Round"
+        />
         <p class="text-xl">Auxtal</p>
       </a>
       <div class="justify-center text-sm">
@@ -45,7 +46,7 @@
             <li class="mx-2">
               <a
                 href={Navlink.route}
-                class={`rounded-md px-5 py-2 hover:scale-110 hover:bg-secondary/50 hover:text-primary focus:scale-110 focus:bg-secondary/50 focus:bg-neutral focus:font-bold focus:text-primary active:text-primary hover:dark:text-secondary focus:dark:text-secondary ${
+                class={`rounded-md px-5 py-2 hover:scale-110 hover:bg-secondary/50 hover:text-primary focus:scale-110 focus:bg-neutral focus:bg-secondary/50 focus:font-bold focus:text-primary active:text-primary hover:dark:text-secondary focus:dark:text-secondary ${
                   $page.url.pathname.includes(Navlink.route)
                     ? "!bg-neutral font-bold text-primary active:text-primary dark:text-secondary"
                     : ""
@@ -90,7 +91,11 @@
           class="btn-ghost no-animation btn flex items-center justify-center rounded-md text-xl normal-case outline-none transition-colors hover:bg-transparent active:bg-secondary/50 active:text-primary active:outline-none active:dark:text-secondary"
           data-sveltekit-preload-data
         >
-          <img class="mr-2.5 w-9 rounded-full shadow-lg" srcset={Logo} alt="Auxtal Logo Round" />
+          <img
+            class="mr-2.5 w-9 rounded-full shadow-lg"
+            src="/images/Logo-Round.webp"
+            alt="Auxtal Logo Round"
+          />
           <p class="text-xl">Auxtal</p>
         </a>
       </div>

@@ -83,7 +83,7 @@
   >
     <BackButton href="/contact" />
     <form class="mt-6" method="POST" action="?/contact" use:enhance={contactSubmit}>
-      <div class="form-item relative mt-2 mb-5">
+      <div class="form-item relative mb-5 mt-2">
         <input
           id="name"
           name="name"
@@ -104,7 +104,7 @@
           </label>
         {/if}
       </div>
-      <div class="form-item relative mt-2 mb-5">
+      <div class="form-item relative mb-5 mt-2">
         <input
           id="email"
           name="email"
@@ -125,7 +125,7 @@
           </label>
         {/if}
       </div>
-      <div class="form-item relative mt-2 mb-5">
+      <div class="form-item relative mb-5 mt-2">
         <input
           id="subject"
           name="subject"
@@ -146,7 +146,7 @@
           </label>
         {/if}
       </div>
-      <div class="form-item relative mt-2 mb-5">
+      <div class="form-item relative mb-5 mt-2">
         <textarea
           id="message"
           name="message"

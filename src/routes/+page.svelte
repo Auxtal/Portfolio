@@ -4,20 +4,11 @@
 
   import { fade, fly } from "svelte/transition";
   import { quintOut } from "svelte/easing";
-
-  const images = import.meta.glob("../../static/images/*");
-  const preloadImages: string[] = [];
-  for (const path in images) {
-    preloadImages.push(images[path].name.replace("../../static/images/", ""));
-  }
 </script>
 
 <svelte:head>
   <title>Ethan's Portfolio</title>
   <meta name="description" content="Auxtal's Portfolio site home page." />
-  {#each preloadImages as image}
-    <link rel="preload" as="image" href="/images/{image}" />
-  {/each}
 </svelte:head>
 
 <Animate>
@@ -31,7 +22,7 @@
       Hi, my name is
     </h2>
     <h1
-      class="font-primary z-10 mt-1 mb-2 text-center text-3xl font-bold text-neutral backdrop-blur-sm sm:text-5xl md:text-right lg:text-7xl"
+      class="font-primary z-10 mb-2 mt-1 text-center text-3xl font-bold text-neutral backdrop-blur-sm sm:text-5xl md:text-right lg:text-7xl"
     >
       Ethan Murphy
     </h1>
