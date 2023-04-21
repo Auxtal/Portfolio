@@ -1,3 +1,11 @@
+html {
+  --punctuation: #242424;
+}
+
+html[data-theme="dark"] {
+  --punctuation: #d4d4d4;
+}
+
 pre[class*="language-"],
 code[class*="language-"] {
   color: #d4d4d4;
@@ -72,7 +80,8 @@ pre[class*="language-"] {
 .token.punctuation,
 .language-html .language-css .token.punctuation,
 .language-html .language-javascript .token.punctuation {
-  color: #fff;
+  color: var(--punctuation);
+  @apply transition-colors;
 }
 
 .token.property,

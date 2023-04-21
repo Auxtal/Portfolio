@@ -4,12 +4,11 @@
   export let href: string;
 </script>
 
-<a
-  {href}
-  class="inline-block max-h-min -translate-x-2 text-secondary transition-transform hover:scale-[0.9] focus:scale-[0.9] focus:outline-none"
->
-  <div class="inline-block">
-    <Icon height="40" width="40" icon="eva:arrow-back-outline" style="display: inline-block;" />
-    <p class="inline-block translate-y-0.5">Back</p>
+<a {href} class="group flex w-min items-center text-secondary no-underline focus:outline-none">
+  <div class="transition-transform group-hover:-translate-x-0.5">
+    <Icon height="40" width="40" icon="eva:arrow-back-outline" />
+  </div>
+  <div>
+    <p class="-translate-y-0.5 translate-x-1">Back</p>
   </div>
 </a>

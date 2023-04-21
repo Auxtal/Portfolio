@@ -66,7 +66,7 @@
       {#each paginatedPosts as post, i (post.id)}
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <div
-          class="my-4 flex h-min w-full cursor-pointer items-center justify-between rounded-md border border-secondary/20 bg-secondary/5 backdrop-blur-sm transition first:mt-0 last:mb-0 hover:-translate-y-0.5 dark:bg-secondary/10"
+          class="my-4 flex h-min w-full cursor-pointer items-center justify-between rounded-md border border-secondary/20 bg-secondary/5 backdrop-blur-sm transition first:mt-0 last:mb-0 dark:bg-secondary/10 lg:hover:-translate-y-0.5"
           on:click={(event) => handleClick(post, event)}
           in:fade={{ delay: 150 * i, duration: 800, easing: quintOut }}
         >
@@ -98,7 +98,7 @@
     {:else}
       <div class="flex items-center justify-center">
         <p
-          class="m-12 max-w-fit text-center text-4xl font-bold backdrop-blur-sm"
+          class="m-12 max-w-fit text-center text-4xl font-bold text-secondary/80 backdrop-blur-sm"
           in:fade={{ duration: 800, easing: quintOut }}
         >
           No Posts Found
