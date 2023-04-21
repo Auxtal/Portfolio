@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Animate from "$components/Animate.svelte";
-  import WorkCard from "$components/WorkCard.svelte";
+  import Animate from "$components/atoms/Animate.svelte";
+  import WorkCard from "$components/molecules/WorkCard.svelte";
 
   import Work from "$json/Work.json";
 </script>

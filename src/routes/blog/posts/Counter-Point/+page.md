@@ -1,19 +1,22 @@
 ---
-layout: blog
 id: 4
+slug: Counter-Point
 title: Counter Point
-date: 2023-04-14
+published: 2023-04-14
+updated: 2023-04-19
 tags: [University, "2023"]
-hidden: true
+hidden: false
 ---
 
-# Counter Point
-
-<img src="/images/Counter-Point-Episode-1.webp" alt="Fringe Festival" width="450" />
+<script>
+  import CounterPoint from "./Counter-Point-Episode-1.webp?w=500;700;900;1200;1600&avif&srcset"
+</script>
 
 ## Description
 
 Counter Point is a three-episode series of opposing opinions coming together to chat. The series is part of a university project called Live To Drive. For this project audio and film students work in tandem with one another to create the outcome you will see below. For this project, I mixed the audio for episode one and my fellow audio students mixed the rest of the episodes. The Episodes themselves are recorded live hence "Live To Drive".
+
+<img srcset={CounterPoint} alt="Fringe Festival" width="450" />
 
 ## Setup
 
@@ -24,5 +27,11 @@ For the Counter Point show, we needed to create pre-recordings that we could pla
 In terms of technology, I can only speak for audio and not film, for the pre-recordings we used a Neumann TLM 103 as the vocal mic. The guitars, all were electric acoustic guitars so we had a DI Box for that. We also used a stereo pair of Rode NT5s as our guitar microphones. We placed these microphones in what's called "The Forbidden Technique". You put one mic on top of the twelfth fret and one on the bottom. Then in Pro Tools, we inverted the polarity of the bottom mic as they weren't perfectly in phase with each other. We then panned them left and right accordingly. We also set up a foldback for the talent so they could hear what they were doing.
 
 For the actual episodes themselves, it was a very simple setup we had 4 Sennheiser EW 100-ENG G3 wireless lav mics, one was for the host and the others were for the guest speakers, and one was for redundancy just in case something went wrong.
+
+## Episode 1
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/L4Kx_xvajBU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+> The rest of the episodes are yet to be completed. This post will be updated as soon as they're completed.
 
 <br/>

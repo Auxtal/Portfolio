@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Animate from "$components/Animate.svelte";
-  import Button from "$components/Button.svelte";
+  import Animate from "$components/atoms/Animate.svelte";
+  import Button from "$components/atoms/Button.svelte";
 
   import { fade, fly } from "svelte/transition";
   import { quintOut } from "svelte/easing";

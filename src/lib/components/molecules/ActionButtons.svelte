@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Animate from "$components/Animate.svelte";
+  import Animate from "$components/atoms/Animate.svelte";
   import ActionButtons from "$json/ActionButtons.json";
 
   import { fly } from "svelte/transition";

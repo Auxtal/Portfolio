@@ -7,7 +7,7 @@ import type { Handle, HandleServerError } from "@sveltejs/kit";
 SentryNode.init({
   dsn: import.meta.env.VITE_SENTRY_DSN,
   environment: import.meta.env.VITE_ENVIRONMENT,
-  release: "1.2.7"
+  release: "2.2.7"
 });
 
 export const handleError: HandleServerError = ({ error, event }) => {
@@ -15,6 +15,8 @@ export const handleError: HandleServerError = ({ error, event }) => {
   SentryNode.captureException(error, {
     contexts: { sveltekit: { event, errorId } }
   });
+
+  console.log(error);
 
   return {
     message: "Oops, an unexpected error occurred",

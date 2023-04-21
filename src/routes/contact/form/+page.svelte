@@ -1,9 +1,9 @@
 <script lang="ts">
-  import Animate from "$components/Animate.svelte";
-  import BackButton from "$components/BackButton.svelte";
-  import Button from "$components/Button.svelte";
+  import Animate from "$components/atoms/Animate.svelte";
+  import BackButton from "$components/molecules/BackButton.svelte";
+  import Button from "$components/atoms/Button.svelte";
 
-  import { Toast } from "$lib/helpers/toast";
+  import { Toast } from "$utils/toast";
 
   import { fade } from "svelte/transition";
   import { quintOut } from "svelte/easing";

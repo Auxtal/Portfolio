@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Animate from "$components/Animate.svelte";
+  import Animate from "$components/atoms/Animate.svelte";
   import Education from "$json/Education.json";
 
   import {

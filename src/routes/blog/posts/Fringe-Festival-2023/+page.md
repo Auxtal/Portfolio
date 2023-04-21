@@ -1,19 +1,22 @@
 ---
-layout: blog
 id: 3
+slug: Fringe-Festival-2023
 title: Fringe Festival 2023
-date: 2023-02-6
+published: 2023-02-6
+updated: 2023-02-6
 tags: [Event, "2023"]
 hidden: false
 ---
 
-# Fringe Festival 2023
-
-<img src="/images/Fringe-Festival-2023.webp" alt="Fringe Festival" width="450" />
+<script>
+  import FringeFestival from "./Fringe-Festival-2023.webp?w=500;700;900;1200;1600&avif&srcset"
+</script>
 
 ## Description
 
 For Fringe Festival 2023, myself and my colleague John, setup and operated the audio-visual equipment for Fringe Festival at Tranby College. Over the duration of 4 days, we setup the stage and a temporary sound desk for technical rehearsals which we had for 2 days, and then the actual shows. We ended up running seven shows in total over the course of 2 days, some of which being solo singers, comedy acts, and a band.
+
+<img srcset={FringeFestival} alt="Fringe Festival" width="450" />
 
 ## Equipment & Setup
 

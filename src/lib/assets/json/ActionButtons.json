@@ -1,14 +1,14 @@
 [
   {
-    "icon": "akar-icons:github-fill",
-    "url": "https://github.com/Auxtal/Portfolio",
+    "icon": "ion:logo-linkedin",
+    "url": "https://www.linkedin.com/in/Auxtal",
     "external": true,
     "x": -100,
     "duration": 1100
   },
   {
-    "icon": "ion:logo-linkedin",
-    "url": "https://www.linkedin.com/in/Auxtal",
+    "icon": "akar-icons:github-fill",
+    "url": "https://github.com/Auxtal/Portfolio",
     "external": true,
     "x": -150,
     "duration": 1200

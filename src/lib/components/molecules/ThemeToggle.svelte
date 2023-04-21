@@ -34,7 +34,7 @@
   use:enhance={submitToggleTheme}
 >
   <button
-    class="swap-rotate group swap rounded-md bg-secondary/20 p-1 text-secondary outline-none transition-colors duration-200 focus:text-primary active:bg-neutral active:text-primary focus:dark:text-secondary active:dark:text-secondary md:hover:bg-neutral md:hover:text-primary md:focus:bg-neutral md:focus:outline-none md:hover:dark:text-secondary {classes}"
+    class="group swap swap-rotate rounded-md bg-secondary/20 p-1 text-secondary outline-none transition-colors duration-200 focus:text-primary active:bg-neutral active:text-primary focus:dark:text-secondary active:dark:text-secondary md:hover:bg-neutral md:hover:text-primary md:focus:bg-neutral md:focus:outline-none md:hover:dark:text-secondary {classes}"
     class:swap-active={theme === "light"}
   >
     <svg

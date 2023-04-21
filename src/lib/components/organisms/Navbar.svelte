@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Animate from "$components/Animate.svelte";
-  import Button from "$components/Button.svelte";
-  import ThemeToggle from "$components/ThemeToggle.svelte";
-  import ConfettiToggle from "$components/ConfettiToggle.svelte";
+  import Animate from "$components/atoms/Animate.svelte";
+  import Button from "$components/atoms/Button.svelte";
+  import ThemeToggle from "$components/molecules/ThemeToggle.svelte";
+  import ConfettiToggle from "$components/molecules/ConfettiToggle.svelte";
 
   import Navlinks from "$json/Navlinks.json";
 

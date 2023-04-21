@@ -1,14 +1,15 @@
 ---
-layout: blog
 id: 2
+slug: AUD181
 title: AUD181
-date: 2022-12-17
+published: 2022-12-17
+updated: 2022-12-17
 tags: [University, "2022"]
-hidden: true
+hidden: false
 ---
 
 <script lang="ts">
-  import Button from "$lib/components/Button.svelte";
+  import Button from "$lib/components/atoms/Button.svelte";
 </script>
 
 ## Research Question 1
