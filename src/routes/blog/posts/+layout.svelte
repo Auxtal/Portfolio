@@ -22,11 +22,11 @@
 
 <Animate>
   <article
-    class="article prose mx-auto w-full max-w-[50.5rem] pt-7"
+    class="article prose mx-auto w-full max-w-[50.5rem] lg:pt-7"
     transition:fade|local={{ duration: 800, easing: quintOut }}
   >
     <BackButton href="/blog" />
-    <div class="mb-10 mt-5 flex flex-col items-center justify-center sm:mt-0">
+    <div class="mb-10 mt-5 flex flex-col items-center justify-center lg:mt-0">
       <h1 class="my-2 p-0 text-center text-5xl font-bold">{post.title}</h1>
       <p class="m-0 p-0 text-center">
         Published On The {dateformat(post.published, "UTC:dd mmmm yyyy")}
