@@ -26,7 +26,7 @@
     transition:fade|local={{ duration: 800, easing: quintOut }}
   >
     <BackButton href="/blog" />
-    <div class="mb-10 flex flex-col items-center justify-center">
+    <div class="mb-10 mt-5 flex flex-col items-center justify-center sm:mt-0">
       <h1 class="my-2 p-0 text-center text-5xl font-bold">{post.title}</h1>
       <p class="m-0 p-0 text-center">Published: {dateformat(post.published, "UTC:dd mmmm yyyy")}</p>
       <p class="m-0 p-0 text-center capitalize">{post.readingTime}</p>

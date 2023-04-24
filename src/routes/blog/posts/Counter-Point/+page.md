@@ -30,7 +30,7 @@ For the actual episodes themselves, it was a very simple setup we had 4 Sennheis
 
 ## Episode 1
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/L4Kx_xvajBU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe class="youtube" src="https://www.youtube-nocookie.com/embed/L4Kx_xvajBU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 > The rest of the episodes are yet to be completed. This post will be updated as soon as they're completed.
 

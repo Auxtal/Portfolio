@@ -85,7 +85,7 @@
   >
     <BackButton href="/contact" />
     <form
-      class="mt-6"
+      class="mt-3"
       method="POST"
       action="?/contact"
       use:persist={{ key: "contactForm" }}

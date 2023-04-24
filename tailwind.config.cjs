@@ -38,7 +38,8 @@ module.exports = {
         DEFAULT: {
           css: {
             "a, p, ol, ul": {
-              color: "rgba(var(--secondary-rgb), .7)"
+              color: "rgba(var(--secondary-rgb), .7)",
+              "overflow-wrap": "anywhere"
             },
             blockquote: {
               "border-left-color": "rgba(var(--secondary-rgb), .7)",
@@ -58,6 +59,10 @@ module.exports = {
               "border-radius": "10px",
               "margin-left": "auto",
               "margin-right": "auto"
+            },
+            ".youtube": {
+              "aspect-ratio": "16 / 9",
+              width: "100%"
             }
           }
         }
