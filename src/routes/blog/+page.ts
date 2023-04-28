@@ -1,9 +1,7 @@
-import { importPosts } from "$lib/utils/client/posts";
+import { posts } from "$lib/utils/client";
 
 export const load = () => {
-  const posts = () => importPosts();
-
   return {
-    posts: posts()
+    posts
   };
 };
