@@ -53,8 +53,13 @@
     padding: 14px 15px;
   }
 
-  #paginator :global(.option:hover) {
+  #paginator :is([data-theme="dark"]) :global(.option:hover) {
     background: rgba(var(--secondary-rgb), 0.4);
+    cursor: pointer;
+  }
+
+  #paginator :global(.option:hover) {
+    background: rgba(var(--primary-rgb), 0.4);
     cursor: pointer;
   }
 

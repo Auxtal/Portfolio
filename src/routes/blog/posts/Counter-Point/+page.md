@@ -4,19 +4,20 @@ slug: Counter-Point
 title: Counter Point
 published: 2023-04-14
 updated: 2023-04-19
-tags: [University, "2023"]
+tags: [University, Project, "2023"]
 hidden: false
 ---
 
 <script>
   import CounterPoint from "./Counter-Point-Episode-1.webp?w=500;700;900;1200;1600&avif&srcset"
+  metadata.cover = CounterPoint
 </script>
 
 ## Description
 
 Counter Point is a three-episode series of opposing opinions coming together to chat. The series is part of a university project called Live To Drive. For this project audio and film students work in tandem with one another to create the outcome you will see below. For this project, I mixed the audio for episode one and my fellow audio students mixed the rest of the episodes. The Episodes themselves are recorded live hence "Live To Drive".
 
-<img srcset={CounterPoint} alt="Fringe Festival" width="450" />
+<img srcset={CounterPoint} alt="CounterPoint" width="450" />
 
 ## Setup
 

@@ -83,7 +83,6 @@
     class="mx-auto flex h-screen w-full max-w-xl flex-col justify-center p-6"
     transition:fade|local={{ duration: 800, easing: quintOut }}
   >
-    <BackButton href="/contact" />
     <form
       class="mt-3.5"
       method="POST"

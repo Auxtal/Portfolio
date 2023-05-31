@@ -25,7 +25,7 @@
   <nav>
     <!-- Desktop Navbar -->
     <div
-      class="bg-primary-100 fixed z-20 hidden w-full items-center justify-between border-b border-secondary/10 px-4 py-4 backdrop-blur-lg lg:flex lg:min-h-[4rem]"
+      class="fixed z-20 hidden w-full items-center justify-between border-b border-secondary/10 bg-[--nav] px-4 py-4 backdrop-blur-md lg:flex lg:min-h-[4rem]"
       transition:fade={{ duration: 800, easing: quintOut }}
     >
       <a
@@ -34,9 +34,11 @@
         data-sveltekit-preload-data
       >
         <img
-          class="mr-2.5 h-9 w-9 rounded-full shadow-lg"
+          class="mr-2.5 rounded-full shadow-lg"
           src="/images/Logo-Round.webp"
           alt="Auxtal Logo Round"
+          width="36"
+          height="36"
         />
         <p class="text-xl">Auxtal</p>
       </a>
@@ -103,7 +105,7 @@
         <ThemeToggle />
         <label
           id="mobileMenuToggle"
-          class="swap-rotate swap no-animation btn h-[48px] w-[48px] rounded-md border-none bg-secondary/20 text-secondary hover:bg-secondary/20 active:bg-neutral active:text-primary active:dark:text-secondary"
+          class="swap swap-rotate no-animation btn h-[48px] w-[48px] rounded-md border-none bg-secondary/20 text-secondary hover:bg-secondary/20 active:bg-neutral active:text-primary active:dark:text-secondary"
         >
           <input type="checkbox" on:click={toggleMobileMenu} bind:checked={mobileMenu} />
           <svg

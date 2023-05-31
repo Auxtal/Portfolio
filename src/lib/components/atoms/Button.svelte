@@ -1,6 +1,4 @@
 <script lang="ts">
-  import Icon from "@iconify/svelte";
-
   export let classes: string | null = null;
   export let rel = "noreferrer";
   export let target: null = null;
@@ -14,6 +12,7 @@
   <a
     class={`no-animation btn rounded-md border-none bg-secondary/20 normal-case text-secondary no-underline outline-none !ring-0 backdrop-blur-sm transition-colors duration-200 hover:bg-neutral hover:text-primary focus:text-primary focus:outline-none active:bg-neutral hover:dark:text-secondary focus:dark:text-secondary md:focus:bg-neutral
      ${classes}`}
+    class:loading
     {rel}
     {target}
     {href}
@@ -21,26 +20,21 @@
   >
     <slot />
   </a>
-{:else if loading}
-  <button
-    class={`no-animation btn rounded-md border-none bg-secondary/20 normal-case text-secondary outline-none !ring-0 backdrop-blur-sm transition-colors duration-200 hover:bg-neutral hover:text-primary focus:text-primary focus:outline-none active:bg-neutral hover:dark:text-secondary focus:dark:text-secondary md:focus:bg-neutral
-     ${classes}`}
-    class:btn-disabled={loading}
-    on:click={onClickEvent()}
-  >
-    <Icon
-      height="30"
-      width="30"
-      icon="eos-icons:loading"
-      style="display: inline-block; margin-right: 5px;"
-    />
-  </button>
 {:else}
   <button
     class={`no-animation btn rounded-md border-none bg-secondary/20 normal-case text-secondary outline-none !ring-0 backdrop-blur-sm transition-colors duration-200 hover:bg-neutral hover:text-primary focus:text-primary focus:outline-none active:bg-neutral hover:dark:text-secondary focus:dark:text-secondary md:focus:bg-neutral
      ${classes}`}
+    class:loading
     on:click={onClickEvent()}
   >
     <slot />
   </button>
 {/if}
+
+<style>
+  .btn .loading {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+</style>

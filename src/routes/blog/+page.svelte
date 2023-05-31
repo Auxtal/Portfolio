@@ -48,9 +48,9 @@
 </svelte:head>
 
 <Animate>
-  <div class="absolute left-0 top-16 w-full px-6 sm:relative sm:top-5 sm:px-0 lg:top-0">
+  <div class="absolute left-0 top-12 w-full px-6 sm:relative sm:top-2 sm:px-0 lg:top-0">
     <div
-      class="flex flex-wrap items-center justify-between"
+      class="flex flex-wrap items-center justify-between lg:mt-3.5"
       transition:fade|local={{ duration: 800, easing: quintOut }}
     >
       <h1 class="mr-4 text-3xl font-bold text-neutral sm:mr-0 sm:text-4xl">Blog Posts</h1>
@@ -83,7 +83,7 @@
             </div>
           </div>
           <div>
-            <p class="pr-4 text-secondary">{new Date(post.published).toDateString()}</p>
+            <p class="pr-4 text-right text-secondary">{new Date(post.published).toDateString()}</p>
           </div>
         </div>
       {/each}
