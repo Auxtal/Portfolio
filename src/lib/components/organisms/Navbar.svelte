@@ -85,7 +85,7 @@
 
     <!-- Mobile Navbar -->
     <div
-      class="navbar fixed z-20 justify-between border-b border-secondary/10 backdrop-blur lg:hidden"
+      class="navbar fixed z-20 justify-between border-b border-secondary/10 bg-[--nav] backdrop-blur lg:hidden"
     >
       <div class="m-0 flex w-full p-0">
         <a
