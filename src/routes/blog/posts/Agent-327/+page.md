@@ -14,7 +14,7 @@ hidden: false
   metadata.cover = Cover
 </script>
 
-<iframe class="youtube" src="https://www.youtube.com/embed/1c9K7qqxB6A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="youtube" src="https://www.youtube.com/embed/1c9K7qqxB6A" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 
 ## Description
 

@@ -31,14 +31,14 @@ For the actual episodes themselves, it was a very simple setup we had 4 Sennheis
 
 ## Episode 1
 
-<iframe class="youtube" src="https://www.youtube-nocookie.com/embed/L4Kx_xvajBU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="youtube" src="https://www.youtube-nocookie.com/embed/L4Kx_xvajBU" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 
 ## Episode 2
 
-<iframe class="youtube" src="https://www.youtube-nocookie.com/embed/IVJVYiyHtms" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="youtube" src="https://www.youtube-nocookie.com/embed/IVJVYiyHtms" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 
 ## Episode 3
 
-<iframe class="youtube" src="https://www.youtube-nocookie.com/embed/tgRpVTSV9h8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="youtube" src="https://www.youtube-nocookie.com/embed/tgRpVTSV9h8" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 
 <br/>
