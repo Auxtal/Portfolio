@@ -94,9 +94,11 @@
           data-sveltekit-preload-data
         >
           <img
-            class="mr-2.5 w-9 rounded-full shadow-lg"
+            class="mr-2.5 rounded-full shadow-lg"
             src="/images/Logo-Round.webp"
             alt="Auxtal Logo Round"
+            width="36"
+            height="36"
           />
           <p class="text-xl">Auxtal</p>
         </a>
@@ -107,7 +109,12 @@
           id="mobileMenuToggle"
           class="swap-rotate swap no-animation btn h-[48px] w-[48px] rounded-md border-none bg-secondary/20 text-secondary hover:bg-secondary/20 active:bg-neutral active:text-primary active:dark:text-secondary"
         >
-          <input type="checkbox" on:click={toggleMobileMenu} bind:checked={mobileMenu} />
+          <input
+            type="checkbox"
+            on:click={toggleMobileMenu}
+            bind:checked={mobileMenu}
+            aria-label="Mobile Menu Toggle"
+          />
           <svg
             class="swap-off fill-current"
             xmlns="http://www.w3.org/2000/svg"
