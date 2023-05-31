@@ -1,7 +1,7 @@
-import { posts } from "$lib/utils/client";
+import { importPosts } from "$lib/utils/posts/client";
 
-export const load = () => {
+export const load = async () => {
   return {
-    posts
+    posts: await importPosts()
   };
 };

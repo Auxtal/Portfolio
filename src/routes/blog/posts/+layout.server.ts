@@ -1,9 +1,11 @@
-import { posts } from "$lib/utils/server";
+import { importPosts } from "$lib/utils/posts/server";
 
-export const load = ({ url }: { url: { pathname: string } }) => {
+export const load = async ({ url }: { url: { pathname: string } }) => {
   const { pathname } = url;
   const slug = pathname.replace("/blog/posts/", "");
-  const post = posts.find((post) => post.slug === slug);
+  const post = await importPosts().then((posts) => {
+    return posts.find((post) => post.slug === slug);
+  });
 
   return {
     post

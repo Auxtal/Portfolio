@@ -29,7 +29,7 @@
 <Animate>
   <div class="flex h-screen w-full flex-col items-center justify-center px-8 lg:px-0">
     <h1 class="mb-3 text-center text-5xl font-bold text-neutral backdrop-blur-sm">
-      {statusMessages[$page.status].title
+      {statusMessages[$page.status]
         ? statusMessages[$page.status].title
         : "Sorry An Error Occurred"}
     </h1>
