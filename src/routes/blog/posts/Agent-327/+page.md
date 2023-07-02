@@ -36,6 +36,6 @@ Every sound in the animation has been completely recreated from scratch, from th
 
 The SFX was created by recording everyday objects, layering & manipulating the audio to eventually have something that's both realistic & convincing. This process is called Foley and encompasses all the different sounds from footsteps, punches, fire & much more.
 
-Once the Foley & Music were finalised we then mixed it all in full 5.1 surround sound for Theatre & Cinema environments, making sure to adhere to industry norms for loudness (-24LUFS. -2DBFS True Peak), as well as a 'Downmixed' stereo version for at home & online viewing.
+Once the Foley & Music were finalised we then mixed it all in full 5.1 surround sound for Theatre & Cinema environments, making sure to adhere to industry norms for loudness (-24 LUFS. -2dBFS True Peak), as well as a 'Downmixed' stereo version for at home & online viewing.
 
 <br>

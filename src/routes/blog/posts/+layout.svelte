@@ -11,9 +11,10 @@
 
   export let data: {
     post: Post;
+    streams: any;
   };
 
-  let { post } = data;
+  let { post, streams } = data;
 </script>
 
 <svelte:head>
@@ -31,7 +32,13 @@
       <p class="m-0 mt-3 p-0 text-center">
         Published On The {dateformat(post.published, "UTC:dd mmmm yyyy")}
       </p>
-      <p class="m-0 p-0 text-center capitalize">{post.readingTime}</p>
+      {#await streams.readingTime.text}
+        <p class="m-0 p-0 text-center capitalize">Loading Reading Time...</p>
+      {:then value}
+        <p class="m-0 p-0 text-center capitalize">{value}</p>
+      {:catch error}
+        <p class="m-0 p-0 text-center capitalize">{error.message}</p>
+      {/await}
     </div>
     <slot />
   </article>

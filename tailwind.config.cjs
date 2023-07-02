@@ -64,7 +64,7 @@ module.exports = {
             },
             ".youtube": {
               "aspect-ratio": "16 / 9",
-              width: "100%"
+              "width": "100%"
             }
           }
         }

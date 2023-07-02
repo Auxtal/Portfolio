@@ -5,8 +5,8 @@
   import { page } from "$app/stores";
 
   interface Status {
-    title: String;
-    message: String;
+    title: string;
+    message: string;
   }
 
   interface StatusMessages {

@@ -10,7 +10,7 @@
 
 {#if href}
   <a
-    class={`no-animation btn rounded-md border-none bg-secondary/20 normal-case text-secondary no-underline outline-none !ring-0 backdrop-blur-sm transition-colors duration-200 hover:bg-neutral hover:text-primary focus:text-primary focus:outline-none active:bg-neutral hover:dark:text-secondary focus:dark:text-secondary md:focus:bg-neutral
+    class={`no-animation btn rounded-md border-none bg-secondary/20 normal-case text-secondary no-underline outline-none !ring-0 backdrop-blur-sm transition-colors duration-200 hover:bg-neutral hover:text-primary focus-visible:text-primary focus-visible:outline-none active:bg-neutral hover:dark:text-secondary focus-visible:dark:text-secondary md:focus-visible:bg-neutral
      ${classes}`}
     class:loading
     {rel}
@@ -22,7 +22,7 @@
   </a>
 {:else}
   <button
-    class={`no-animation btn rounded-md border-none bg-secondary/20 normal-case text-secondary outline-none !ring-0 backdrop-blur-sm transition-colors duration-200 hover:bg-neutral hover:text-primary focus:text-primary focus:outline-none active:bg-neutral hover:dark:text-secondary focus:dark:text-secondary md:focus:bg-neutral
+    class={`no-animation btn rounded-md border-none bg-secondary/20 normal-case text-secondary outline-none !ring-0 backdrop-blur-sm transition-colors duration-200 hover:bg-neutral hover:text-primary focus-visible:text-primary focus-visible:outline-none active:bg-neutral hover:dark:text-secondary focus-visible:dark:text-secondary md:focus-visible:bg-neutral
      ${classes}`}
     class:loading
     on:click={onClickEvent()}
@@ -30,11 +30,3 @@
     <slot />
   </button>
 {/if}
-
-<style>
-  .btn .loading {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-</style>

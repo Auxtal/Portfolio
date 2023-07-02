@@ -30,7 +30,7 @@
     >
       <a
         href="/"
-        class="btn-ghost no-animation btn flex items-center justify-center rounded-md text-xl normal-case outline-none transition-colors hover:bg-secondary/50 hover:text-primary focus:bg-secondary/50 focus:text-primary focus:outline-none hover:dark:text-secondary focus:dark:text-secondary"
+        class="btn-ghost no-animation btn flex items-center justify-center rounded-md text-xl normal-case outline-none transition-colors hover:bg-secondary/50 hover:text-primary focus-visible:bg-secondary/50 focus-visible:text-primary focus-visible:outline-none hover:dark:text-secondary focus-visible:dark:text-secondary"
         data-sveltekit-preload-data
       >
         <img
@@ -48,7 +48,7 @@
             <li class="mx-2">
               <a
                 href={Navlink.route}
-                class={`rounded-md px-5 py-2 hover:scale-110 hover:bg-secondary/50 hover:text-primary focus:scale-110 focus:bg-neutral focus:bg-secondary/50 focus:font-bold focus:text-primary active:text-primary hover:dark:text-secondary focus:dark:text-secondary ${
+                class={`rounded-md px-5 py-2 hover:scale-110 hover:bg-secondary/50 hover:text-primary focus-visible:scale-110 focus-visible:bg-neutral focus-visible:bg-secondary/50 focus-visible:font-bold focus-visible:text-primary active:text-primary hover:dark:text-secondary focus-visible:dark:text-secondary ${
                   $page.url.pathname.includes(Navlink.route)
                     ? "!bg-neutral font-bold text-primary active:text-primary dark:text-secondary"
                     : ""

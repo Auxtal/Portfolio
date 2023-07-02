@@ -34,12 +34,12 @@
   use:enhance={submitToggleTheme}
 >
   <button
-    class="group swap swap-rotate rounded-md bg-secondary/20 p-1 text-secondary outline-none transition-colors duration-200 focus:text-primary active:bg-neutral active:text-primary focus:dark:text-secondary active:dark:text-secondary md:hover:bg-neutral md:hover:text-primary md:focus:bg-neutral md:focus:outline-none md:hover:dark:text-secondary {classes}"
+    class="swap-rotate group swap rounded-md bg-secondary/20 p-1 text-secondary outline-none transition-colors duration-200 focus-visible:text-primary active:bg-neutral active:text-primary focus-visible:dark:text-secondary active:dark:text-secondary md:hover:bg-neutral md:hover:text-primary md:focus-visible:bg-neutral md:focus-visible:outline-none md:hover:dark:text-secondary {classes}"
     class:swap-active={theme === "light"}
     aria-label="Theme Toggle"
   >
     <svg
-      class="swap-on h-10 w-10 fill-current p-1 group-hover:scale-[0.9]"
+      class="swap-on h-10 w-10 fill-current p-1 group-hover:scale-[0.9] group-focus-visible:scale-[0.9]"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       ><path
@@ -47,7 +47,7 @@
       /></svg
     >
     <svg
-      class="swap-off h-10 w-10 fill-current p-1 group-hover:scale-[0.9]"
+      class="swap-off h-10 w-10 fill-current p-1 group-hover:scale-[0.9] group-focus-visible:scale-[0.9]"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       ><path

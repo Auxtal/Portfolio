@@ -1,6 +1,3 @@
-import readingTime from "reading-time";
-import striptags from "striptags";
-
 import type { Metadata } from "$lib/utils/types";
 
 export const importPosts = async () => {
@@ -12,9 +9,8 @@ export const importPosts = async () => {
 
   for (const [path, resolver] of Object.entries(imports)) {
     const promise = resolver().then((post) => {
-      const html = post.default.render()?.html;
-      const readingTimeResult = html ? readingTime(striptags(html) || "") : undefined;
-      return { path, html, readTime: readingTimeResult, ...post.metadata };
+      const render = post.default.render;
+      return { path, render, ...post.metadata };
     });
 
     postPromises.push(promise);
