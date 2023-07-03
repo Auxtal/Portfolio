@@ -14,7 +14,7 @@
 
 <style lang="postcss">
   #paginator :global(.pagination-nav) {
-    @apply shadow-lg;
+    @apply shadow-md;
 
     background: rgba(var(--secondary-rgb), 0.1);
     backdrop-filter: blur(4px);

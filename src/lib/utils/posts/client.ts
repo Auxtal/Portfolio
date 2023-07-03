@@ -1,9 +1,9 @@
-import type { Metadata } from "$lib/utils/types";
+import type { Post } from "$lib/utils/types";
 
 export const importPosts = async () => {
   const imports = import.meta.glob("$routes/blog/posts/**/*.md") as Record<
     string,
-    () => Promise<{ metadata: Metadata; default: any }>
+    () => Promise<{ metadata: Post; default: any }>
   >;
   const postPromises = [];
 

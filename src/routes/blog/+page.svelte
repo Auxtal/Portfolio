@@ -8,6 +8,8 @@
   import { quintOut } from "svelte/easing";
   import { goto } from "$app/navigation";
 
+  import Icon from "@iconify/svelte";
+
   import type { Post } from "$utils/types";
 
   export let data: {
@@ -48,33 +50,34 @@
 </svelte:head>
 
 <Animate>
-  <div class="absolute left-0 top-12 w-full px-6 sm:relative sm:top-2 sm:px-0 lg:top-0">
+  <div class="mx-6 mt-6 flex flex-col justify-center lg:mx-0 lg:mt-10 lg:pb-4 lg:pl-36 lg:pr-20">
     <div
-      class="flex flex-wrap items-center justify-between lg:mt-3.5"
+      class="mb-2 flex flex-wrap items-center justify-between"
       transition:fade|local={{ duration: 800, easing: quintOut }}
     >
-      <h1 class="mr-4 text-3xl font-bold text-neutral sm:mr-0 sm:text-4xl">Blog Posts</h1>
       <input
         placeholder="Search"
         type="text"
-        class="search input my-2 mt-4 w-72 !rounded-md bg-transparent text-sm text-secondary shadow-lg outline outline-1 outline-secondary/20 backdrop-blur-sm transition-all focus-visible:outline-[2.5px] focus-visible:outline-neutral sm:mt-0"
+        class="search input w-72 !rounded-md bg-transparent text-sm text-secondary placeholder-secondary shadow-md outline outline-2 outline-secondary/20 backdrop-blur-sm transition-all focus-visible:outline-[2.5px] focus-visible:outline-neutral"
         bind:value={searchTerm}
       />
     </div>
-    <div class="divider before:bg-secondary/20 after:bg-secondary/20" />
+    <div
+      class="divider m-0 mb-2 before:h-[1px] before:bg-secondary/20 before:shadow-md after:h-[1px] after:bg-secondary/20 after:shadow-md"
+    />
     {#if paginatedPosts.length}
       {#each paginatedPosts as post, i (post.id)}
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <div
-          class="my-4 flex h-min w-full cursor-pointer items-center justify-between rounded-md border border-secondary/20 bg-secondary/5 ring-neutral backdrop-blur-sm transition first:mt-0 last:mb-0 focus-visible:outline-none focus-visible:ring-2 dark:bg-secondary/10 lg:hover:-translate-y-0.5 lg:focus-visible:-translate-y-0.5"
+          class="mb-4 flex h-min w-full cursor-pointer items-center justify-between rounded-md border border-secondary/20 bg-secondary/5 py-8 shadow-md ring-neutral backdrop-blur-sm transition first:mt-0 last:mb-0 focus-visible:outline-none focus-visible:ring-2 dark:bg-secondary/10 lg:py-0 lg:hover:-translate-y-0.5 lg:focus-visible:-translate-y-0.5"
           in:fade={{ delay: 150 * i, duration: 800, easing: quintOut }}
           on:click={(event) => handleClick(post, event)}
         >
           <div>
-            <p class="m-0 p-2 text-xl font-bold text-secondary/80 sm:text-3xl">
+            <p class="text-1xl m-0 p-2 font-bold text-secondary sm:text-3xl">
               {post.title}
             </p>
-            <div class="hidden p-2 sm:block">
+            <div class="hidden p-2 lg:block">
               {#if post?.tags}
                 {#each post?.tags as tag}
                   <Tag name={tag} bind:selectedTag={searchTerm} />
@@ -83,7 +86,9 @@
             </div>
           </div>
           <div>
-            <p class="pr-4 text-right text-secondary">{new Date(post.published).toDateString()}</p>
+            <p class="pr-4 text-right text-secondary">
+              {new Date(post.published).toDateString()}
+            </p>
           </div>
         </div>
       {/each}
@@ -96,10 +101,13 @@
         on:setPage={(e) => (currentPage = e.detail.page)}
       />
     {:else}
-      <div class="flex items-center justify-center">
+      <div
+        class="flex flex-wrap items-center justify-center"
+        in:fade={{ duration: 800, easing: quintOut }}
+      >
+        <Icon height="35" width="35" icon="ic:round-filter-none" />
         <p
-          class="m-12 max-w-fit text-center text-4xl font-bold text-secondary/80 backdrop-blur-sm"
-          in:fade={{ duration: 800, easing: quintOut }}
+          class="mx-6 my-12 max-w-fit text-center text-4xl font-bold text-secondary backdrop-blur-sm"
         >
           No Posts Found
         </p>

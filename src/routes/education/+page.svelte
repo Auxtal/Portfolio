@@ -21,9 +21,9 @@
 </svelte:head>
 
 <Animate>
-  <div class="flex h-screen items-center justify-center">
+  <div class="flex h-[calc(100vh-65px)] items-center justify-center lg:h-[calc(100vh-88px)]">
     <div
-      class="absolute top-20 w-full lg:top-28 xl:relative xl:top-0"
+      class="max-h-[calc(100vh-65px)] w-full lg:max-h-[calc(100vh-88px)]"
       transition:fade|local={{ duration: 500 }}
     >
       <Timeline position="alternate">

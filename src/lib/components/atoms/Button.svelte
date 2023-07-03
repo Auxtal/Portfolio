@@ -10,7 +10,7 @@
 
 {#if href}
   <a
-    class={`no-animation btn rounded-md border-none bg-secondary/20 normal-case text-secondary no-underline outline-none !ring-0 backdrop-blur-sm transition-colors duration-200 hover:bg-neutral hover:text-primary focus-visible:text-primary focus-visible:outline-none active:bg-neutral hover:dark:text-secondary focus-visible:dark:text-secondary md:focus-visible:bg-neutral
+    class={`no-animation btn rounded-md border-none bg-secondary/20 normal-case text-secondary no-underline outline-none !ring-0 backdrop-blur-sm transition-colors duration-75 active:bg-neutral md:hover:bg-neutral md:hover:text-primary md:focus-visible:bg-neutral md:focus-visible:text-primary md:focus-visible:outline-none md:hover:dark:text-secondary md:focus-visible:dark:text-secondary lg:duration-200
      ${classes}`}
     class:loading
     {rel}
@@ -22,7 +22,7 @@
   </a>
 {:else}
   <button
-    class={`no-animation btn rounded-md border-none bg-secondary/20 normal-case text-secondary outline-none !ring-0 backdrop-blur-sm transition-colors duration-200 hover:bg-neutral hover:text-primary focus-visible:text-primary focus-visible:outline-none active:bg-neutral hover:dark:text-secondary focus-visible:dark:text-secondary md:focus-visible:bg-neutral
+    class={`no-animation btn rounded-md border-none bg-secondary/20 normal-case text-secondary outline-none !ring-0 backdrop-blur-sm transition-colors duration-75 active:bg-neutral md:hover:bg-neutral md:hover:text-primary md:focus-visible:bg-neutral md:focus-visible:text-primary md:focus-visible:outline-none md:hover:dark:text-secondary md:focus-visible:dark:text-secondary lg:duration-200
      ${classes}`}
     class:loading
     on:click={onClickEvent()}

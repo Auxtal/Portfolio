@@ -15,4 +15,6 @@
 <Toaster />
 <Navbar />
 <ActionButtons />
-<slot />
+<div class="absolute top-[65px] w-full overflow-y-scroll lg:top-20">
+  <slot />
+</div>

@@ -23,13 +23,13 @@
 
 <Animate>
   <article
-    class="article prose mx-auto w-full max-w-[50.5rem] lg:pt-7"
+    class="article prose mx-auto mt-6 w-full max-w-[45rem] px-6 lg:mt-10 lg:px-0"
     transition:fade|local={{ duration: 800, easing: quintOut }}
   >
     <BackButton href="/blog" />
-    <div class="mb-10 mt-5 flex flex-col items-center justify-center lg:mt-0">
-      <h1 class="my-2 p-0 text-center text-5xl font-bold">{post.title}</h1>
-      <p class="m-0 mt-3 p-0 text-center">
+    <div class="my-5 flex flex-col items-center justify-center">
+      <h1 class="mb-2 p-0 text-center text-5xl font-bold">{post.title}</h1>
+      <p class="m-0 p-0 text-center">
         Published On The {dateformat(post.published, "UTC:dd mmmm yyyy")}
       </p>
       {#await streams.readingTime.text}

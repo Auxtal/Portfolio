@@ -12,7 +12,7 @@ export const load = async ({ url }: { url: { pathname: string } }) => {
   });
 
   const loadReadingTime = (post: Post) => {
-    const html = post.render()?.html;
+    const html = post.renderResult()?.html;
     const readingTimeResult = html ? readingTime(striptags(html) || "") : undefined;
     return readingTimeResult;
   };

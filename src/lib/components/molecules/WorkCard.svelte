@@ -12,7 +12,7 @@
 
 <Animate>
   <div
-    class="indicator flex max-h-max w-full flex-col justify-between rounded-xl border border-secondary/20 bg-secondary/5 p-4 backdrop-blur-sm transition-transform duration-200 dark:bg-secondary/10 sm:max-h-[15rem] md:max-h-[23rem] md:max-w-[35rem] lg:min-h-full lg:hover:-translate-y-0.5"
+    class="indicator flex w-full flex-col justify-between rounded-xl border border-secondary/20 bg-secondary/5 p-4 shadow-md backdrop-blur-sm transition-transform duration-200 dark:bg-secondary/10 lg:hover:-translate-y-0.5"
     transition:fly|local={{ y: 50, duration: 500, easing: quintOut }}
   >
     {#if current}
@@ -33,8 +33,10 @@
     </div>
     {#if footer}
       <div class="mt-2" in:fade={{ delay: 200, duration: 800, easing: quintOut }}>
-        <div class="divider m-0 before:bg-secondary/20 after:bg-secondary/20" />
-        <p class="pt-1 text-xs font-semibold">
+        <div
+          class="divider m-0 before:h-[1px] before:bg-secondary/20 after:h-[1px] after:bg-secondary/20"
+        />
+        <p class="pt-1 text-xs font-semibold text-secondary/80">
           {footer}
         </p>
       </div>

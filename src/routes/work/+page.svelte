@@ -11,10 +11,10 @@
 </svelte:head>
 
 <div
-  class="mx-4 flex h-full justify-center pb-4 pt-[5rem] sm:mx-0 lg:ml-36 lg:mr-20 lg:h-screen lg:pb-0 xl:pt-0"
+  class="mx-4 mb-6 mt-6 flex h-full justify-center lg:mx-0 lg:mb-0 lg:ml-36 lg:mr-20 lg:mt-0 lg:h-[calc(100vh-88px)] lg:py-4"
 >
   <div
-    class="grid max-w-md auto-rows-[1fr] grid-cols-1 gap-y-5 md:my-auto md:max-w-full md:gap-x-5 lg:grid-cols-3 lg:gap-y-5"
+    class="grid max-w-md auto-rows-[1fr] grid-cols-1 gap-y-5 lg:my-auto lg:max-h-[calc(100vh-88px)] lg:max-w-full lg:grid-cols-3 lg:gap-x-5 lg:gap-y-5"
   >
     <Animate>
       {#each Work as Work}
