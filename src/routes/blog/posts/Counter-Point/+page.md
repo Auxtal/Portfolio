@@ -10,7 +10,6 @@ hidden: false
 
 <script>
   import CounterPoint from "./Counter-Point-Episode-1.webp?w=500;700;900;1200;1600&avif&srcset"
-  metadata.cover = CounterPoint
 </script>
 
 ## Description

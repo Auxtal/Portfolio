@@ -7,12 +7,12 @@ import type { Post } from "$lib/utils/types";
 export const load = async ({ url }: { url: { pathname: string } }) => {
   const { pathname } = url;
   const slug = pathname.replace("/blog/posts/", "");
-  const post = await importPosts().then((posts) => {
+  const post: Post | undefined = await importPosts().then((posts) => {
     return posts.find((post) => post.slug === slug);
   });
 
-  const loadReadingTime = (post: Post) => {
-    const html = post.renderResult()?.html;
+  const loadReadingTime = (post: Post | undefined) => {
+    const html = post ? post.render()?.html : undefined;
     const readingTimeResult = html ? readingTime(striptags(html) || "") : undefined;
     return readingTimeResult;
   };

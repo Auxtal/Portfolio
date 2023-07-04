@@ -16,7 +16,7 @@
     transition:fly|local={{ y: 50, duration: 500, easing: quintOut }}
   >
     {#if current}
-      <span class="badge-neutral badge indicator-item" />
+      <span class="badge badge-neutral indicator-item" />
     {/if}
     <div>
       {#if title}

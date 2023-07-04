@@ -15,6 +15,7 @@
 <style lang="postcss">
   #paginator :global(.pagination-nav) {
     @apply shadow-md;
+    @apply mb-4;
 
     background: rgba(var(--secondary-rgb), 0.1);
     backdrop-filter: blur(4px);
@@ -53,17 +54,40 @@
     padding: 14px 15px;
   }
 
-  #paginator :is([data-theme="dark"]) :global(.option:hover) {
-    background: rgba(var(--secondary-rgb), 0.4);
-    cursor: pointer;
+  #paginator :is([data-theme="dark"]) :global(.option:focus) {
+    background: transparent;
   }
 
-  #paginator :global(.option:hover) {
+  #paginator :global(.option:focus) {
+    background: transparent;
+  }
+
+  #paginator :is([data-theme="dark"]) :global(.option:active) {
+    background: rgba(var(--secondary-rgb), 0.4);
+  }
+
+  #paginator :global(.option:active) {
     background: rgba(var(--primary-rgb), 0.4);
-    cursor: pointer;
   }
 
   #paginator :global(.option.active) {
     color: var(--neutral);
+  }
+
+  /* LG Screen Width (Can't use tailwindcss screen() function...) */
+  @media (min-width: 992px) {
+    #paginator :global(.pagination-nav) {
+      margin: 0;
+    }
+
+    #paginator :is([data-theme="dark"]) :global(.option:hover) {
+      background: rgba(var(--secondary-rgb), 0.4);
+      cursor: pointer;
+    }
+
+    #paginator :global(.option:hover) {
+      background: rgba(var(--primary-rgb), 0.4);
+      cursor: pointer;
+    }
   }
 </style>

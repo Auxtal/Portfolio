@@ -1,3 +1,5 @@
+export { load } from "sveltekit-flash-message/server";
+
 import { redirect } from "@sveltejs/kit";
 import type { Actions } from "@sveltejs/kit";
 

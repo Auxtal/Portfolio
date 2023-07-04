@@ -1,5 +1,6 @@
 <script lang="ts">
   import Animate from "$components/atoms/Animate.svelte";
+  import Container from "$components/atoms/Container.svelte";
   import Button from "$components/atoms/Button.svelte";
 
   import { page } from "$app/stores";
@@ -27,23 +28,25 @@
 </svelte:head>
 
 <Animate>
-  <div class="flex h-[calc(100vh-88px)] w-full flex-col items-center justify-center px-8 lg:px-0">
-    <h1 class="mb-3 text-center text-5xl font-bold text-neutral backdrop-blur-sm">
-      {statusMessages[$page.status]
-        ? statusMessages[$page.status].title
-        : "Sorry An Error Occurred"}
-    </h1>
-    {#if $page.error?.errorId && !($page.status in statusMessages)}
-      <p class="mb-2 max-w-md text-center leading-6 text-secondary backdrop-blur-sm">
-        <strong>Error ID:</strong>
-        {$page.error?.errorId}
-      </p>
-    {/if}
-    {#if $page.status in statusMessages}
-      <p class="mb-2 max-w-md text-center leading-6 text-secondary backdrop-blur-sm">
-        {statusMessages[$page.status].message}
-      </p>
-    {/if}
-    <Button href="/" classes="px-14 mt-5">Go Home</Button>
-  </div>
+  <Container>
+    <div class="flex flex-col items-center justify-center px-8 lg:px-0">
+      <h1 class="mb-3 text-center text-5xl font-bold text-neutral backdrop-blur-sm">
+        {statusMessages[$page.status]
+          ? statusMessages[$page.status].title
+          : "Sorry An Error Occurred"}
+      </h1>
+      {#if $page.error?.errorId && !($page.status in statusMessages)}
+        <p class="mb-2 max-w-md text-center leading-6 text-secondary backdrop-blur-sm">
+          <strong>Error ID:</strong>
+          {$page.error?.errorId}
+        </p>
+      {/if}
+      {#if $page.status in statusMessages}
+        <p class="mb-2 max-w-md text-center leading-6 text-secondary backdrop-blur-sm">
+          {statusMessages[$page.status].message}
+        </p>
+      {/if}
+      <Button href="/" classes="px-14 my-5">Go Home</Button>
+    </div>
+  </Container>
 </Animate>

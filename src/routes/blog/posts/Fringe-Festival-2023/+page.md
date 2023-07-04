@@ -10,7 +10,6 @@ hidden: false
 
 <script>
   import FringeFestival from "./Fringe-Festival-2023.webp?w=500;700;900;1200;1600&avif&srcset"
-  metadata.cover = FringeFestival
 </script>
 
 ## Description

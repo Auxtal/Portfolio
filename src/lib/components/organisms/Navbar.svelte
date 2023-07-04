@@ -6,14 +6,14 @@
 
   import Navlinks from "$json/Navlinks.json";
 
+  import { fade } from "svelte/transition";
+  import { quintOut } from "svelte/easing";
+  import { page } from "$app/stores";
+
   import Icon from "@iconify/svelte";
   import OutClick from "svelte-outclick";
   // @ts-expect-error Resolve declaration issue
   import { Confetti } from "svelte-confetti";
-
-  import { fade } from "svelte/transition";
-  import { quintOut } from "svelte/easing";
-  import { page } from "$app/stores";
 
   let mobileMenu = false;
 
@@ -25,7 +25,7 @@
   <nav>
     <!-- Desktop Navbar -->
     <div
-      class="fixed z-20 hidden w-full items-center justify-between border-b border-secondary/20 bg-[--nav] px-4 py-4 backdrop-blur-md lg:flex lg:min-h-[4rem]"
+      class="fixed z-20 hidden w-full items-center justify-between border-b border-secondary/20 bg-primary/60 px-4 py-4 backdrop-blur-md transition-[background-color] lg:flex lg:min-h-[4rem]"
       transition:fade={{ duration: 800, easing: quintOut }}
     >
       <a
@@ -85,7 +85,7 @@
 
     <!-- Mobile Navbar -->
     <div
-      class="navbar fixed z-20 justify-between border-b border-secondary/20 bg-[--nav] backdrop-blur lg:hidden"
+      class="navbar fixed z-20 justify-between border-b border-secondary/20 bg-primary/60 backdrop-blur transition-[background_color] lg:hidden"
     >
       <div class="m-0 flex w-full p-0">
         <a
@@ -107,7 +107,7 @@
         <ThemeToggle />
         <label
           id="mobileMenuToggle"
-          class="swap-rotate swap no-animation btn h-[48px] w-[48px] rounded-md border-none bg-secondary/20 text-secondary duration-75 hover:bg-secondary/20 active:bg-neutral active:text-primary active:dark:text-secondary md:duration-200"
+          class="swap-rotate swap no-animation btn h-[48px] w-[48px] rounded-md border-none bg-secondary/20 text-secondary duration-150 hover:bg-secondary/20 active:bg-neutral active:text-primary active:dark:text-secondary"
         >
           <input
             type="checkbox"

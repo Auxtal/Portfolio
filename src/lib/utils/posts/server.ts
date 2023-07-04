@@ -9,8 +9,8 @@ export const importPosts = async () => {
 
   for (const [path, resolver] of Object.entries(imports)) {
     const promise = resolver().then((post) => {
-      const renderResult = post.default.render;
-      return { path, renderResult, ...post.metadata };
+      const render = post.default.render;
+      return { path, ...post.metadata, render };
     });
 
     postPromises.push(promise);

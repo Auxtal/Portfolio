@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { page } from "$app/stores";
   import { enhance } from "$app/forms";
+  import { page } from "$app/stores";
   import { onMount } from "svelte";
 
-  import type { SubmitFunction } from "$app/forms";
+  import type { SubmitFunction } from "@sveltejs/kit";
 
   let theme: string | null;
   export let classes: string | null = null;
@@ -34,7 +34,7 @@
   use:enhance={submitToggleTheme}
 >
   <button
-    class="group swap swap-rotate rounded-md bg-secondary/20 p-1 text-secondary outline-none transition-colors duration-75 focus-visible:text-primary active:bg-neutral active:text-primary focus-visible:dark:text-secondary active:dark:text-secondary md:duration-200 md:hover:bg-neutral md:hover:text-primary md:focus-visible:bg-neutral md:focus-visible:outline-none md:hover:dark:text-secondary {classes}"
+    class="group swap swap-rotate rounded-md bg-secondary/20 p-1 text-secondary outline-none transition-colors duration-150 focus-visible:text-primary active:bg-neutral active:text-primary focus-visible:dark:text-secondary active:dark:text-secondary lg:hover:bg-neutral lg:hover:text-primary lg:focus-visible:bg-neutral lg:focus-visible:outline-none lg:hover:dark:text-secondary {classes}"
     class:swap-active={theme === "light"}
     aria-label="Theme Toggle"
   >

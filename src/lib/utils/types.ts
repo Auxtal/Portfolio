@@ -7,6 +7,6 @@ export type Post = {
   updated: string;
   tags: string[];
   hidden: boolean;
-  readingTime: string;
-  renderResult: () => { html: string };
+  readingTime: string | undefined;
+  render: () => { html: string };
 };

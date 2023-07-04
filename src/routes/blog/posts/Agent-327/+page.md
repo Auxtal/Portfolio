@@ -9,9 +9,7 @@ hidden: false
 ---
 
 <script>
-  import Cover from "./Cover.jpg?w=500;700;900;1200;1600&avif&srcset"
   import InTheStudio from "./In-The-Studio.jpg?w=500;700;900;1200;1600&avif&srcset"
-  metadata.cover = Cover
 </script>
 
 <iframe class="youtube" src="https://www.youtube.com/embed/1c9K7qqxB6A" title="YouTube video player" frameborder="0" allowfullscreen></iframe>

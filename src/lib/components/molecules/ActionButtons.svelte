@@ -9,7 +9,7 @@
 </script>
 
 <Animate>
-  <div
+  <aside
     transition:fly|local={{ y: 200, duration: 1000, easing: quintOut }}
     class="fixed z-10 hidden h-screen w-24 lg:block"
   >
@@ -36,5 +36,5 @@
         {/each}
       </ul>
     </div>
-  </div>
+  </aside>
 </Animate>

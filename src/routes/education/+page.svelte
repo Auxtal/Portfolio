@@ -1,6 +1,10 @@
 <script lang="ts">
   import Animate from "$components/atoms/Animate.svelte";
+  import Container from "$components/atoms/Container.svelte";
   import Education from "$json/Education.json";
+
+  import { fade, fly, slide } from "svelte/transition";
+  import { quintOut } from "svelte/easing";
 
   import {
     Timeline,
@@ -10,9 +14,6 @@
     TimelineConnector,
     TimelineContent
   } from "svelte-vertical-timeline";
-
-  import { fade, fly, slide } from "svelte/transition";
-  import { quintOut } from "svelte/easing";
 </script>
 
 <svelte:head>
@@ -21,11 +22,8 @@
 </svelte:head>
 
 <Animate>
-  <div class="flex h-[calc(100vh-65px)] items-center justify-center lg:h-[calc(100vh-88px)]">
-    <div
-      class="max-h-[calc(100vh-65px)] w-full lg:max-h-[calc(100vh-88px)]"
-      transition:fade|local={{ duration: 500 }}
-    >
+  <Container noMobileFlex={true}>
+    <div transition:fade|local={{ duration: 500 }}>
       <Timeline position="alternate">
         {#each Education as Education, i}
           <TimelineItem style="margin:15px 0">
@@ -70,5 +68,5 @@
         {/each}
       </Timeline>
     </div>
-  </div>
+  </Container>
 </Animate>

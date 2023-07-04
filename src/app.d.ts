@@ -5,8 +5,10 @@ declare global {
     interface Error {
       errorId: string;
     }
+    interface PageData {
+      flash?: { type: "success" | "error"; message: string };
+    }
     // interface Locals {}
-    // interface PageData {}
     // interface Platform {}
   }
 }

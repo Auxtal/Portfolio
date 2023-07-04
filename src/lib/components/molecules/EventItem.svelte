@@ -10,6 +10,8 @@
   <div class="pl-4 text-sm">
     <h3 class="mb-2 text-lg font-semibold text-secondary">{title}</h3>
     <p class="text-secondary/70">{description}</p>
-    <a class="text-neutral underline" href="https://www.instagram.com/{handle}/">@{handle}</a>
+    <a class="text-neutral underline" href="https://www.instagram.com/{handle}/" target="_blank"
+      >@{handle}</a
+    >
   </div>
 </div>
