@@ -27,10 +27,12 @@ export const actions: Actions = {
       );
 
       if (response.status !== 200) {
-        return fail(response.status, { message: "Email Failed To Send" });
+        setFlash({ type: "error", message: "Email Request Failed, Please Try Again Later" }, event);
+        return fail(response.status, { form });
       }
     } catch (err) {
-      return fail(500, { message: "Unexpected Error Occurred" });
+      setFlash({ type: "error", message: "Error Occurred, Please Try Again Later" }, event);
+      return fail(500, { form });
     }
 
     setFlash({ type: "success", message: "Your Email Has Been Sent" }, event);

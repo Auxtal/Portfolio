@@ -23,7 +23,7 @@
 </svelte:head>
 
 <Animate>
-  <Container>
+  <Container itemsCenter={false}>
     <article
       class="article prose mx-auto mt-6 w-full max-w-[45rem] px-6 lg:mt-10 lg:px-0"
       transition:fade|local={{ duration: 800, easing: quintOut }}

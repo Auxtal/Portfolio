@@ -22,7 +22,8 @@
   const { form, errors, enhance, delayed } = superForm(data.form, {
     resetForm: true,
     taintedMessage: null,
-    validators: contactSchema
+    validators: contactSchema,
+    stickyNavbar: "#nav",
   });
 
   let formData = {

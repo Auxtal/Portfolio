@@ -22,7 +22,7 @@
 </script>
 
 <Animate>
-  <nav>
+  <nav id="nav">
     <!-- Desktop Navbar -->
     <div
       class="fixed z-20 hidden w-full items-center justify-between border-b border-secondary/20 bg-primary/60 px-4 py-4 backdrop-blur-md transition-[background-color] lg:flex lg:min-h-[4rem]"
@@ -107,7 +107,7 @@
         <ThemeToggle />
         <label
           id="mobileMenuToggle"
-          class="swap-rotate swap no-animation btn h-[48px] w-[48px] rounded-md border-none bg-secondary/20 text-secondary duration-150 hover:bg-secondary/20 active:bg-neutral active:text-primary active:dark:text-secondary"
+          class="swap swap-rotate no-animation btn h-[48px] w-[48px] rounded-md border-none bg-secondary/20 text-secondary duration-150 hover:bg-secondary/20 active:bg-neutral active:text-primary active:dark:text-secondary"
         >
           <input
             type="checkbox"
