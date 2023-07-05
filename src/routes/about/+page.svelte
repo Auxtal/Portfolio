@@ -13,12 +13,13 @@
 <svelte:head>
   <title>About</title>
   <meta name="description" content="Auxtal's Portfolio site about me page." />
+  <link rel="preload" as="image" href="/images/Graduation-Event.webp" />
 </svelte:head>
 
 <Animate>
   <Container>
     <div
-      class="flex flex-col items-center justify-center md:px-8 lg:ml-11 lg:max-w-full lg:flex-row"
+      class="my-4 flex flex-col items-center justify-center md:px-8 lg:ml-11 lg:max-w-full lg:flex-row"
     >
       <div class="px-10 lg:px-0" transition:fade|local={{ duration: 500, easing: quintOut }}>
         <img

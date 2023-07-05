@@ -1,8 +1,10 @@
 <script lang="ts">
+  import { clsx } from "clsx";
+
   export let selectedTag: string | null = null;
   export let name: string;
 
-  $: highlightTag = name.toLowerCase() === selectedTag?.toLowerCase() ? "!bg-neutral" : "";
+  $: highlightTag = clsx({ "!bg-neutral": name.toLowerCase() === selectedTag?.toLowerCase() });
   const handleTagClick = () => (selectedTag = name);
 </script>
 

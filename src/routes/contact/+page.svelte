@@ -15,7 +15,7 @@
 <Animate>
   <Container>
     <div
-      class="flex h-[calc(100vh-88px)] flex-col items-center justify-center px-8 lg:px-0"
+      class="my-4 flex flex-col items-center justify-center px-8 lg:px-0"
       transition:fade|local={{ duration: 800, easing: quintOut }}
     >
       <h1 class="mb-4 text-center text-5xl font-bold text-neutral backdrop-blur-sm">

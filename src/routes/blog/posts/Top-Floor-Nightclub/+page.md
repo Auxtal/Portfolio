@@ -13,8 +13,8 @@ hidden: false
   import Foolish2000 from "./Foolish-2000-RNB.webp?w=500;700;900;1200;1600&avif&srcset"
   import MagicMike from "./Magic-Mike.webp?w=500;700;900;1200;1600&avif&srcset"
 
-  import EventGrid from "$components/molecules/EventGrid.svelte"
-  import EventItem from "$components/molecules/EventItem.svelte"
+  import EventGrid from "$components/atoms/EventGrid.svelte"
+  import EventItem from "$components/atoms/EventItem.svelte"
 
   import { monthDiff } from "$lib/utils";
 

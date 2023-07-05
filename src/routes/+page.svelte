@@ -15,7 +15,7 @@
 <Animate>
   <Container>
     <div
-      class="flex w-full flex-col items-center justify-center px-5 lg:items-end lg:px-32"
+      class="my-4 flex w-full flex-col items-center justify-center px-5 lg:items-end lg:px-32"
       transition:fade|local={{ duration: 800, easing: quintOut }}
     >
       <h2
