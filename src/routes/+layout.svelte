@@ -9,6 +9,7 @@
 
 <svelte:head>
   <link rel="preload" as="image" href="/images/Logo-Round.webp" />
+  <link rel="preload" as="image" href="/images/Graduation-Event.webp" />
 </svelte:head>
 
 <Toaster />
