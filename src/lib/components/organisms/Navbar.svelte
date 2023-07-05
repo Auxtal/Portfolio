@@ -107,7 +107,7 @@
         <ThemeToggle />
         <label
           id="mobileMenuToggle"
-          class="swap swap-rotate no-animation btn h-[48px] w-[48px] rounded-md border-none bg-secondary/20 text-secondary duration-150 hover:bg-secondary/20 active:bg-neutral active:text-primary active:dark:text-secondary"
+          class="swap-rotate swap no-animation btn h-[48px] w-[48px] rounded-md border-none bg-secondary/20 text-secondary duration-150 hover:bg-secondary/20 active:bg-neutral active:text-primary active:dark:text-secondary"
         >
           <input
             type="checkbox"

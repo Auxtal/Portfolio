@@ -13,7 +13,7 @@ module.exports = {
           "--primary-rgb": "18, 18, 18",
           "--secondary": "#e7e7e7",
           "--secondary-rgb": "231, 231, 231",
-          "--dots": "#1f1f1f",
+          "--dots": "#1f1f1f"
         },
         light: {
           primary: "#F9F7F7",
@@ -25,7 +25,7 @@ module.exports = {
           "--primary-rgb": "249, 247, 247",
           "--secondary": "#121212",
           "--secondary-rgb": "18, 18, 18",
-          "--dots": "#d1d1d1",
+          "--dots": "#d1d1d1"
         }
       }
     ]
