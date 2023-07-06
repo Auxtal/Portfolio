@@ -1,9 +1,16 @@
+import { RateLimiter } from "sveltekit-rate-limiter/server";
 import { superValidate } from "sveltekit-superforms/server";
 import { setFlash } from "sveltekit-flash-message/server";
 import { fail } from "@sveltejs/kit";
 
 import { sendEmail, contactSchema } from "$lib/utils";
 import type { Actions } from "@sveltejs/kit";
+
+const limiter = new RateLimiter({
+  rates: {
+    IPUA: [3, "h"] // IP + User Agent limiter
+  }
+});
 
 export const load = async (event) => {
   const form = await superValidate(event, contactSchema);
@@ -16,6 +23,14 @@ export const actions: Actions = {
 
     if (!form.valid) {
       return fail(400, { form });
+    }
+
+    if (await limiter.isLimited(event)) {
+      setFlash(
+        { type: "error", message: "You Have Been Rate Limited, Please Try Again Later" },
+        event
+      );
+      return fail(429, { form });
     }
 
     try {
