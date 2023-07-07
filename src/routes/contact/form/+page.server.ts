@@ -8,7 +8,7 @@ import type { Actions } from "@sveltejs/kit";
 
 const limiter = new RateLimiter({
   rates: {
-    IPUA: [3, "h"] // IP + User Agent limiter
+    IP: [3, "d"] // IP limiter
   }
 });
 
@@ -46,7 +46,10 @@ export const actions: Actions = {
         return fail(response.status, { form });
       }
     } catch (err) {
-      setFlash({ type: "error", message: "Error Occurred, Please Try Again Later" }, event);
+      setFlash(
+        { type: "error", message: "An Unexpected Error Occurred, Please Try Again Later" },
+        event
+      );
       return fail(500, { form });
     }
 

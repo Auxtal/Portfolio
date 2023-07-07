@@ -12,8 +12,11 @@
 
   import Icon from "@iconify/svelte";
   import OutClick from "svelte-outclick";
+
   // @ts-expect-error Resolve declaration issue
   import { Confetti } from "svelte-confetti";
+  import { twMerge } from "tailwind-merge";
+  import { clsx } from "clsx";
 
   let mobileMenu = false;
 
@@ -29,9 +32,9 @@
       transition:fade={{ duration: 800, easing: quintOut }}
     >
       <a
+        data-sveltekit-preload-data
         href="/"
         class="btn-ghost no-animation btn flex items-center justify-center rounded-md text-xl normal-case outline-none transition-colors hover:bg-secondary/50 hover:text-primary focus-visible:bg-secondary/50 focus-visible:text-primary focus-visible:outline-none hover:dark:text-secondary focus-visible:dark:text-secondary"
-        data-sveltekit-preload-data
       >
         <img
           class="mr-2.5 rounded-full shadow-lg"
@@ -45,15 +48,19 @@
       <div class="justify-center text-sm">
         <ul class="menu menu-horizontal">
           {#each Navlinks as Navlink}
+            {@const highlightRoute = clsx({
+              "!bg-neutral font-bold text-primary active:text-primary dark:text-secondary":
+                $page.url.pathname.includes(Navlink.route)
+            })}
+
             <li class="mx-2">
               <a
-                href={Navlink.route}
-                class={`rounded-md px-5 py-2 hover:scale-110 hover:bg-secondary/50 hover:text-primary focus-visible:scale-110 focus-visible:bg-neutral focus-visible:bg-secondary/50 focus-visible:font-bold focus-visible:text-primary active:text-primary hover:dark:text-secondary focus-visible:dark:text-secondary ${
-                  $page.url.pathname.includes(Navlink.route)
-                    ? "!bg-neutral font-bold text-primary active:text-primary dark:text-secondary"
-                    : ""
-                }`}
                 data-sveltekit-preload-data
+                href={Navlink.route}
+                class={twMerge(
+                  "rounded-md px-5 py-2 hover:scale-110 hover:bg-secondary/50 hover:text-primary focus-visible:scale-110 focus-visible:bg-neutral focus-visible:bg-secondary/50 focus-visible:font-bold focus-visible:text-primary active:text-primary hover:dark:text-secondary focus-visible:dark:text-secondary",
+                  highlightRoute
+                )}
               >
                 {Navlink.name}
               </a>
@@ -89,9 +96,9 @@
     >
       <div class="m-0 flex w-full p-0">
         <a
+          data-sveltekit-preload-data
           href="/"
           class="btn-ghost no-animation btn flex items-center justify-center rounded-md text-xl normal-case outline-none transition-colors hover:bg-transparent active:bg-secondary/50 active:text-primary active:outline-none active:dark:text-secondary"
-          data-sveltekit-preload-data
         >
           <img
             class="mr-2.5 rounded-full shadow-lg"
@@ -145,18 +152,22 @@
         <OutClick on:outclick={hideMobileMenu} excludeQuerySelectorAll={"#mobileMenuToggle"}>
           <ul class="mx-2 rounded-xl bg-zinc-800/50 p-4 shadow backdrop-blur transition">
             {#each Navlinks as Navlink}
-              <li
-                class={`transition-bg rounded-md text-primary hover:bg-primary/5 dark:text-secondary hover:dark:bg-secondary/5 ${
+              {@const highlightRoute = clsx({
+                "bg-neutral font-bold text-primary dark:text-secondary":
                   $page.url.pathname.includes(Navlink.route)
-                    ? "bg-neutral font-bold text-primary dark:text-secondary"
-                    : ""
-                }`}
+              })}
+
+              <li
+                class={twMerge(
+                  "transition-bg rounded-md text-primary hover:bg-primary/5 dark:text-secondary hover:dark:bg-secondary/5",
+                  highlightRoute
+                )}
               >
                 <a
+                  data-sveltekit-preload-data
                   href={Navlink.route}
                   class="mt-1 block w-full p-3 text-center transition"
                   on:click={hideMobileMenu}
-                  data-sveltekit-preload-data
                 >
                   {Navlink.name}
                 </a>

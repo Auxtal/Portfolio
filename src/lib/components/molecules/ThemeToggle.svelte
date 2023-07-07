@@ -1,12 +1,14 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
+
   import { enhance } from "$app/forms";
   import { page } from "$app/stores";
   import { onMount } from "svelte";
 
   import type { SubmitFunction } from "@sveltejs/kit";
 
+  export let classes: string | undefined = undefined;
   let theme: string | null;
-  export let classes: string | null = null;
 
   onMount(() => {
     const doc = document.documentElement;
@@ -34,7 +36,10 @@
   use:enhance={submitToggleTheme}
 >
   <button
-    class="group swap swap-rotate rounded-md bg-secondary/20 p-1 text-secondary outline-none transition-colors duration-150 focus-visible:text-primary active:bg-neutral active:text-primary focus-visible:dark:text-secondary active:dark:text-secondary lg:hover:bg-neutral lg:hover:text-primary lg:focus-visible:bg-neutral lg:focus-visible:outline-none lg:hover:dark:text-secondary {classes}"
+    class={twMerge(
+      "group swap swap-rotate rounded-md bg-secondary/20 p-1 text-secondary outline-none transition-colors duration-150 focus-visible:text-primary active:bg-neutral active:text-primary focus-visible:dark:text-secondary active:dark:text-secondary lg:hover:bg-neutral lg:hover:text-primary lg:focus-visible:bg-neutral lg:focus-visible:outline-none lg:hover:dark:text-secondary",
+      classes
+    )}
     class:swap-active={theme === "light"}
     aria-label="Theme Toggle"
   >

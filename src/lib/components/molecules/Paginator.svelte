@@ -58,12 +58,12 @@
     background: transparent;
   }
 
-  #paginator :global(.option:focus) {
-    background: transparent;
-  }
-
   #paginator :is([data-theme="dark"]) :global(.option:active) {
     background: rgba(var(--secondary-rgb), 0.4);
+  }
+
+  #paginator :global(.option:focus) {
+    background: transparent;
   }
 
   #paginator :global(.option:active) {

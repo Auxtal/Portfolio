@@ -1,7 +1,8 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import { clsx } from "clsx";
 
-  export let selectedTag: string | null = null;
+  export let selectedTag: string | undefined = undefined;
   export let name: string;
 
   $: highlightTag = clsx({ "!bg-neutral": name.toLowerCase() === selectedTag?.toLowerCase() });
@@ -10,7 +11,10 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-  class="tag mx-1 mt-2 inline-block cursor-pointer rounded bg-secondary/10 p-2 px-4 text-secondary transition-colors first:ml-0 hover:bg-neutral sm:mt-0 {highlightTag}"
+  class={twMerge(
+    "tag mx-1 mt-2 inline-block cursor-pointer rounded bg-secondary/10 p-2 px-4 text-secondary transition-colors first:ml-0 hover:bg-neutral sm:mt-0",
+    highlightTag
+  )}
   on:click={handleTagClick}
 >
   {name}

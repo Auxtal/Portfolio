@@ -1,7 +1,8 @@
 <script lang="ts">
   import Icon from "@iconify/svelte";
+  import type { HTMLAnchorAttributes } from "svelte/elements";
 
-  export let href: string;
+  export let href: HTMLAnchorAttributes["href"];
 </script>
 
 <a

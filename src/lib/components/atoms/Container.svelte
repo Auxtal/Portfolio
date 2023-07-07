@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import { clsx } from "clsx";
 
   export let flexContainer = true;
@@ -21,9 +22,12 @@
 </script>
 
 <main
-  class="absolute top-[65px] h-[calc(100vh-65px)] w-full lg:top-[81px] lg:h-[calc(100vh-81px)] {outtaClasses}"
+  class={twMerge(
+    "absolute top-[65px] h-[calc(100vh-65px)] w-full lg:top-[81px] lg:h-[calc(100vh-81px)]",
+    outtaClasses
+  )}
 >
-  <div class="max-h-[calc(100vh-65px)] w-full lg:max-h-[calc(100vh-81px)] {innerClasses}">
+  <div class={twMerge("max-h-[calc(100vh-65px)] w-full lg:max-h-[calc(100vh-81px)]", innerClasses)}>
     <slot />
   </div>
 </main>

@@ -24,7 +24,7 @@ hidden: false
 
 ## Description
 
-Top Floor Nightclub is one of the venues that I have the opportunity to work in as they are a client of Technical Alliance. If you’re ever in the area chances are I’m working so come on in and say hello! Working at Top Floor has been lots of fun. Although I’ve only been working there for {monthDiff(started, current)} months I have a myriad of weird and funny stories associated with the nightlife of Perth. I’ve had amazing opportunities to operate lighting for many large and borderline “famous” DJs which has been awesome.
+Top Floor Nightclub is one of the venues that I have the opportunity to work in as they're a client of Technical Alliance. If you’re ever in the area chances are I’m working so come on in and say hello! Working at Top Floor has been lots of fun. Although I’ve only been working there for {monthDiff(started, current)} months I have a myriad of weird and funny stories associated with the nightlife of Perth. I’ve had amazing opportunities to operate lighting for many large and borderline “famous” DJs which has been awesome.
 
 <EventGrid>
   <EventItem title="Barbie Night" description="For the barbie night I had the opportunity to operate lighting for the wonderful DJ Rog!" handle="djrog1998" image={BarbieNight} />
