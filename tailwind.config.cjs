@@ -63,6 +63,12 @@ module.exports = {
             ".youtube": {
               "aspect-ratio": "16 / 9",
               width: "100%"
+            },
+            ".heading-link": {
+              "display": "inline-block",
+              "color": "var(--neutral)",
+              "vertical-align": "sub",
+              "margin-right": "10px"
             }
           }
         }
