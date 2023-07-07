@@ -19,7 +19,7 @@
 
   export let data: PageData;
   const flash = initFlash(page);
-  const { form, errors, enhance, delayed, message } = superForm(data.form, {
+  const { form, errors, enhance, delayed } = superForm(data.form, {
     resetForm: true,
     taintedMessage: null,
     validators: contactSchema,
@@ -54,7 +54,6 @@
       class="mx-auto flex w-full max-w-xl flex-col justify-center p-6"
       transition:fade|local={{ duration: 800, easing: quintOut }}
     >
-      {#if $message}<h4>{$message}</h4>{/if}
       <BackButton href="/contact" />
       <form
         class="mt-4 transition-all"

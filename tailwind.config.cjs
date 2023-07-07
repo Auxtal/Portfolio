@@ -56,6 +56,7 @@ module.exports = {
               color: "rgba(var(--secondary-rgb), 1)"
             },
             "img, iframe": {
+              "filter": "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));",
               "border-radius": "10px",
               "margin-left": "auto",
               "margin-right": "auto"
