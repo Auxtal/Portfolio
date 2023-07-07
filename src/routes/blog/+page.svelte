@@ -5,6 +5,7 @@
   import Paginator from "$components/molecules/Paginator.svelte";
 
   import { searchTerm } from "$lib/utils/stores";
+  import { currentPage } from "$lib/utils/stores";
 
   import { fade } from "svelte/transition";
   import { quintOut } from "svelte/easing";
@@ -20,8 +21,6 @@
   };
 
   let pageSize = 4;
-  let currentPage = 1;
-
   let { posts } = data;
 
   const handleClick = async (post: Post, event: MouseEvent) => {
@@ -43,7 +42,7 @@
     return new Date(post2.published).valueOf() - new Date(post1.published).valueOf();
   });
 
-  $: paginatedPosts = paginate({ items, pageSize, currentPage });
+  $: paginatedPosts = paginate({ items, pageSize, currentPage: $currentPage });
 </script>
 
 <svelte:head>
@@ -80,11 +79,11 @@
         {/each}
         <Paginator
           {pageSize}
-          {currentPage}
+          currentPage={$currentPage}
           totalItems={items.length}
           limit={1}
           showStepOptions={true}
-          on:setPage={(e) => (currentPage = e.detail.page)}
+          on:setPage={(e) => ($currentPage = e.detail.page)}
         />
       {:else}
         <div
