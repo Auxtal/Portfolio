@@ -15,7 +15,7 @@ hidden: false
 
 For Fringe Festival 2023, my colleague John, and I set up and operated the audio-visual equipment for Fringe Festival at Tranby College. Over the duration of 4 days, we set up the stage and a temporary sound desk for technical rehearsals which we had for 2 days, and then the actual shows. We ended up running seven shows in total over the course of 2 days, some of which were solo singers, comedy acts, and a band.
 
-<img srcset={FringeFestival} alt="Fringe Festival" width="450" />
+<img srcset={FringeFestival} alt="Fringe Festival" width="650" />
 
 ## Equipment & Setup
 

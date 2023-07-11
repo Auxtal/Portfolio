@@ -14,6 +14,8 @@ hidden: false
   import Foolish2000 from "./Foolish-2000-RNB.webp?w=500;700;900;1200;1600&avif&srcset"
   import MagicMike from "./Magic-Mike.webp?w=500;700;900;1200;1600&avif&srcset"
 
+  import TopFloor from "./Top-Floor.jpg?w=500;700;900;1200;1600&avif&srcset"
+
   import EventGrid from "$components/atoms/EventGrid.svelte"
   import EventItem from "$components/atoms/EventItem.svelte"
 
@@ -26,6 +28,8 @@ hidden: false
 ## Description
 
 Top Floor Nightclub is one of the venues that I have the opportunity to work in as they're a client of Technical Alliance. If you’re ever in the area chances are I’m working so come on in and say hello! Working at Top Floor has been lots of fun. Although I’ve only been working there for {monthDiff(started, current)} months I have a myriad of weird and funny stories associated with the nightlife of Perth. I’ve had amazing opportunities to operate lighting for many large and borderline “famous” DJs which has been awesome.
+
+<img srcset={TopFloor} alt="Top Floor Night Club" width="650" />
 
 ## Events
 

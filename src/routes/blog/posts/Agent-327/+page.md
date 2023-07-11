@@ -23,7 +23,7 @@ hidden: false
 
 In the twenty comic books that were published since 1968, Martin Lodewijk created a rich universe with international conspiracies, hilarious characters, and a healthy dose of Dutch humor. This three-minute teaser for a full-length animated feature is based on Dutch artist Martin Lodewijk’s classic comics series Agent 327.
 
-<img srcset={InTheStudio} alt="In The Studio" width="450" />
+<img srcset={InTheStudio} alt="In The Studio" width="650" />
 
 ## Process
 
