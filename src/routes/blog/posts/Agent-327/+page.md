@@ -1,5 +1,4 @@
 ---
-id: 5
 slug: Agent-327
 title: Agent 327
 published: 2023-05-17

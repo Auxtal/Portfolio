@@ -68,7 +68,7 @@
         class="divider m-0 mb-2 before:h-[1px] before:bg-secondary/20 before:shadow-md after:h-[1px] after:bg-secondary/20 after:shadow-md"
       />
       {#if paginatedPosts.length}
-        {#each paginatedPosts as post, i (post.id)}
+        {#each paginatedPosts as post, i}
           <BlogPost
             {i}
             title={post.title}

@@ -30,7 +30,7 @@ export const Toast = (status: string, message: string) => {
       toast.success(message, {
         style: `
           background-color: rgba(var(--secondary-rgb), 0.2);
-          backdrop-filter: blur(8px);
+          backdrop-filter: blur(12px);
           color: var(--secondary);
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
           transition-property: background-color, color;
@@ -42,12 +42,12 @@ export const Toast = (status: string, message: string) => {
     case "error":
       toast.error(message, {
         style: `
-        background-color: rgba(var(--secondary-rgb), 0.2);
-        backdrop-filter: blur(8px);
-        color: var(--secondary);
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        transition-property: background-color, color;
-        transition-duration: 150ms;`,
+          background-color: rgba(var(--secondary-rgb), 0.2);
+          backdrop-filter: blur(12px);
+          color: var(--secondary);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-property: background-color, color;
+          transition-duration: 150ms;`,
         duration: 5000,
         position: "bottom-right"
       });

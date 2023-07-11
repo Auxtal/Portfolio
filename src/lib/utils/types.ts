@@ -1,6 +1,4 @@
 export type Post = {
-  id: number;
-  layout: string;
   slug: string;
   title: string;
   published: string;

@@ -1,5 +1,4 @@
 ---
-id: 4
 slug: Counter-Point
 title: Counter Point
 published: 2023-04-14

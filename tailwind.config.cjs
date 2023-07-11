@@ -9,6 +9,7 @@ module.exports = {
           accent: "#adadad",
           neutral: "#006eff",
           "--neutral": "#006eff",
+          "--neutral-rgb": "0 110 255",
           "--primary": "#121212",
           "--primary-rgb": "18, 18, 18",
           "--secondary": "#e7e7e7",
@@ -21,6 +22,7 @@ module.exports = {
           accent: "#404040",
           neutral: "#006eff",
           "--neutral": "#006eff",
+          "--neutral-rgb": "0 110 255",
           "--primary": "#F9F7F7",
           "--primary-rgb": "249, 247, 247",
           "--secondary": "#121212",
@@ -66,10 +68,18 @@ module.exports = {
               width: "100%"
             },
             ".heading-link": {
+              "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)",
+              "transition-property": "transform, filter",
+              "transform": "translateY(-1px)",
+              "transition-duration": "150ms",
               "display": "inline-block",
               "color": "var(--neutral)",
               "vertical-align": "sub",
               "margin-right": "10px"
+            },
+            ".heading-link:hover": {
+              "filter": "drop-shadow(2px 5px 5px rgb(var(--neutral-rgb) / 0.4))",
+              "transform": "translateY(-2px)"
             }
           }
         }
