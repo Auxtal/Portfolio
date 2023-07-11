@@ -27,9 +27,11 @@ hidden: false
 
 Top Floor Nightclub is one of the venues that I have the opportunity to work in as they're a client of Technical Alliance. If you’re ever in the area chances are I’m working so come on in and say hello! Working at Top Floor has been lots of fun. Although I’ve only been working there for {monthDiff(started, current)} months I have a myriad of weird and funny stories associated with the nightlife of Perth. I’ve had amazing opportunities to operate lighting for many large and borderline “famous” DJs which has been awesome.
 
+## Events
+
 <EventGrid>
-  <EventItem title="Boston Switch" description="I also am getting the opportunity to operate lighting for Boston Switch on his Paper Rain tour when he comes to Top Floor!" handle="bostonswitch" image="{BostonSwitch}" />
-  <EventItem title="The Moving Stills" description="I also am getting the chance to mix FOH audio for The Moving Stills Westside Tour at Top Floor!" handle="themovingstills" image="{TheMovingStills}" />
+  <EventItem title="Boston Switch" description="I also get to operate lighting for Boston Switch on his Paper Rain Tour when he comes to Top Floor!" handle="bostonswitch" image="{BostonSwitch}" />
+  <EventItem title="The Moving Stills" description="I also get to mix FOH audio for The Moving Stills Westside Tour at Top Floor!" handle="themovingstills" image="{TheMovingStills}" />
   <EventItem title="Barbie Night" description="For the barbie night I had the opportunity to operate lighting for the wonderful DJ Rog!" handle="djrog1998" image={BarbieNight} />
   <EventItem title="Foolish Party" description="For the Foolish party I had the opportunity to operate lighting for Aus #1 HipHop and R&B DJ Nino Brown!" handle="dj_ninobrown" image="{Foolish2000}"/>
   <EventItem title="Magic Mike" description="I've also had the opportunity to operate lighting for a couple of Magic Mike shows!" handle="topshelfentertainment" image="{MagicMike}" />
