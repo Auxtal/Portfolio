@@ -57,7 +57,7 @@
                   {Education.year_start} - {Education.year_end}
                 </p>
                 <p
-                  transition:fade|local={{ delay: 150, duration: 800, easing: quintOut }}
+                  transition:fade|local={{ delay: 150, duration: 500, easing: quintOut }}
                   class="font-secondary text-accent"
                 >
                   {Education.description}

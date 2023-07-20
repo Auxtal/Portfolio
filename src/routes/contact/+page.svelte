@@ -16,7 +16,7 @@
   <Container>
     <div
       class="my-4 flex flex-col items-center justify-center px-8 lg:px-0"
-      transition:fade|local={{ duration: 800, easing: quintOut }}
+      transition:fade|local={{ duration: 500, easing: quintOut }}
     >
       <h1 class="mb-4 text-center text-5xl font-bold text-neutral backdrop-blur-sm">
         Get In Touch

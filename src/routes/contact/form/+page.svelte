@@ -52,7 +52,7 @@
   <Container>
     <div
       class="mx-auto flex w-full max-w-xl flex-col justify-center p-6"
-      transition:fade|local={{ duration: 800, easing: quintOut }}
+      transition:fade|local={{ duration: 500, easing: quintOut }}
     >
       <BackButton href="/contact" />
       <form

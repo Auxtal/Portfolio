@@ -13,6 +13,8 @@ hidden: false
 
 <iframe class="youtube" src="https://www.youtube.com/embed/1c9K7qqxB6A" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 
+> In the YouTube video there's a bit of a delay, this is not in our final version.
+
 ## Description
 
 "Agent 327" is the animation of choice that our group chose for Project 2 in our AUD213 unit. The goal of the project is to choose an animation and remake all of the audio for said animation. This includes the dialog, foley, music, and ambiance. This was probably the biggest project that I have done so far in my time at SAE. The project itself was run throughout the whole trimester (12 Weeks).
@@ -23,7 +25,7 @@ hidden: false
 
 In the twenty comic books that were published since 1968, Martin Lodewijk created a rich universe with international conspiracies, hilarious characters, and a healthy dose of Dutch humor. This three-minute teaser for a full-length animated feature is based on Dutch artist Martin Lodewijk’s classic comics series Agent 327.
 
-<img srcset={InTheStudio} alt="In The Studio" width="650" />
+<img srcset={InTheStudio} alt="In The Studio" />
 
 ## Process
 

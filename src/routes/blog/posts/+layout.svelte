@@ -25,8 +25,8 @@
 <Animate>
   <Container itemsCenter={false}>
     <article
-      class="prose mx-auto mt-6 w-full max-w-[45rem] px-6 lg:mt-10 lg:px-0"
-      transition:fade|local={{ duration: 800, easing: quintOut }}
+      class="prose mx-auto mt-6 w-full max-w-[40.6rem] px-6 lg:mt-10 lg:px-0"
+      transition:fade|local={{ duration: 500, easing: quintOut }}
     >
       <BackButton href="/blog" />
       <div class="my-5 flex flex-col items-center justify-center">

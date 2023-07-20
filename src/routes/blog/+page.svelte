@@ -55,7 +55,7 @@
     <div class="mx-6 mt-6 flex flex-col justify-center lg:mx-0 lg:mt-10 lg:pb-4 lg:pl-36 lg:pr-20">
       <div
         class="mb-2 flex flex-wrap items-center justify-between"
-        transition:fade|local={{ duration: 800, easing: quintOut }}
+        transition:fade|local={{ duration: 500, easing: quintOut }}
       >
         <input
           placeholder="Search"
@@ -88,7 +88,7 @@
       {:else}
         <div
           class="flex flex-wrap items-center justify-center"
-          in:fade={{ duration: 800, easing: quintOut }}
+          in:fade={{ duration: 500, easing: quintOut }}
         >
           <Icon height="35" width="35" icon="ic:round-filter-none" />
           <!-- prettier-ignore -->

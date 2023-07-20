@@ -25,13 +25,13 @@
       {/if}
       <div
         class={`flex flex-wrap justify-center text-sm leading-6 text-secondary`}
-        transition:fade|local={{ delay: 150, duration: 800, easing: quintOut }}
+        transition:fade|local={{ delay: 150, duration: 500, easing: quintOut }}
       >
         <slot />
       </div>
     </div>
     {#if footer}
-      <div class="mt-2" in:fade={{ delay: 200, duration: 800, easing: quintOut }}>
+      <div class="mt-2" in:fade={{ delay: 200, duration: 500, easing: quintOut }}>
         <!-- prettier-ignore -->
         <div class="divider m-0 before:h-[1px] before:bg-secondary/20 after:h-[1px] after:bg-secondary/20"/>
         <p class="pt-1 text-xs font-semibold text-secondary/80">

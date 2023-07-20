@@ -15,7 +15,7 @@ hidden: false
 
 Counter Point is a three-episode series of opposing opinions coming together to chat. The series is part of a university project called Live To Drive. For this project audio and film students work in tandem with one another to create the outcome you will see below. For this project, I mixed the audio for episode one and my fellow audio students mixed the rest of the episodes. The Episodes themselves are recorded live hence "Live To Drive".
 
-<img srcset={CounterPoint} alt="CounterPoint" width="650" />
+<img srcset={CounterPoint} alt="CounterPoint" />
 
 ## Setup
 

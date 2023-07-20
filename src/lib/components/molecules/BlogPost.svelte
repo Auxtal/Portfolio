@@ -14,7 +14,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
   class="mb-4 flex h-min w-full cursor-pointer items-center justify-between rounded-md border border-secondary/20 bg-secondary/5 py-8 shadow-md ring-neutral backdrop-blur-sm transition first:mt-0 last:mb-0 focus-visible:outline-none focus-visible:ring-2 dark:bg-secondary/10 lg:py-0 lg:hover:-translate-y-0.5 lg:focus-visible:-translate-y-0.5"
-  in:fade={{ delay: 150 * i, duration: 800, easing: quintOut }}
+  in:fade={{ delay: 150 * i, duration: 500, easing: quintOut }}
   on:click
 >
   <div>

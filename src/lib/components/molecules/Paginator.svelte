@@ -7,7 +7,7 @@
 </script>
 
 <Animate>
-  <div id="paginator" transition:fade|local={{ duration: 800, easing: quintOut }}>
+  <div id="paginator" transition:fade|local={{ duration: 500, easing: quintOut }}>
     <PaginationNav {...$$props} on:setPage />
   </div>
 </Animate>

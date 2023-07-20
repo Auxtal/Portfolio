@@ -16,7 +16,7 @@
   <Container>
     <div
       class="my-4 flex w-full flex-col items-center justify-center px-5 lg:items-end lg:px-32"
-      transition:fade|local={{ duration: 800, easing: quintOut }}
+      transition:fade|local={{ duration: 500, easing: quintOut }}
     >
       <h2
         class="font-secondary text-center text-4xl font-bold text-accent backdrop-blur-sm sm:font-bold md:text-right"
