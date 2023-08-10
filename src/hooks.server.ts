@@ -29,11 +29,21 @@ export const handleError: HandleServerError = ({ error, event }) => {
   };
 };
 
-const handleTRPC: Handle = createTRPCHandle({ router, createContext });
+const handleTRPC: Handle = createTRPCHandle({
+  router,
+  createContext,
+  onError: ({ type, path, error }) => {
+    const errorId = crypto.randomUUID();
+    SentryNode.captureException(error, {
+      contexts: { TRPC: { type, path, errorId } }
+    });
+
+    console.error(`Encountered error while trying to process ${type} @ ${path}:`, error);
+  }
+});
 
 const handleTheme: Handle = async ({ event, resolve }) => {
   const theme = event.cookies.get("theme");
-
   if (theme) {
     return await resolve(event, {
       transformPageChunk: ({ html }) => html.replace('data-theme="dark"', `data-theme="${theme}"`)

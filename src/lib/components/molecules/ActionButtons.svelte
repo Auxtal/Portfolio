@@ -48,12 +48,12 @@
               <Icon height="30" width="30" icon="mdi:spotify" />
               {#if spotifyHover}
                 <div
-                  class="absolute left-[4.3rem] top-0 flex h-max w-64 rounded-lg bg-secondary/10 p-2 shadow-md backdrop-blur-lg hover:flex"
+                  class="top-100 absolute left-[4.2rem] flex h-max w-64 rounded-lg bg-secondary/10 p-2 shadow-md backdrop-blur-lg hover:flex border border-secondary/20"
                   transition:fade|local={{ duration: 150, easing: quintOut }}
                 >
                   <div>
                     <img
-                      class="aspect-square h-auto w-16 rounded-lg object-cover"
+                      class="aspect-square h-auto w-16 rounded-md object-cover shadow-md"
                       src={$track.data?.artwork}
                       alt="Album Artwork"
                     />
