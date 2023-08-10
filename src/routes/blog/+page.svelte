@@ -30,6 +30,17 @@
     }
   };
 
+  const handleKeyDown = async (post: Post, event: KeyboardEvent) => {
+    if (event.key != "Enter") {
+      return;
+    }
+
+    const target = event.target as Element;
+    if (!target.classList.contains("tag")) {
+      await goto(`blog/posts/${post.slug}`);
+    }
+  };
+
   $: filteredPosts = posts.filter((post: Post) => {
     return (
       post?.hidden === false &&
@@ -75,6 +86,7 @@
             tags={post?.tags}
             published={post.published}
             on:click={(event) => handleClick(post, event)}
+            on:keydown={(event) => handleKeyDown(post, event)}
           />
         {/each}
         <Paginator
