@@ -18,7 +18,7 @@
 <Animate>
   <Container>
     <div
-      class="my-4 flex flex-col items-center justify-center md:px-8 lg:ml-11 lg:max-w-full lg:flex-row"
+      class="my-4 flex flex-col items-center justify-center pb-4 md:px-8 lg:ml-11 lg:max-w-full lg:flex-row"
     >
       <div class="px-10 lg:px-0" transition:fade|local={{ duration: 500, easing: quintOut }}>
         <img

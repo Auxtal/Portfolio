@@ -5,6 +5,11 @@
   import Navbar from "$components/organisms/Navbar.svelte";
 
   import { Toaster } from "svelte-french-toast";
+  import { QueryClientProvider } from "@tanstack/svelte-query";
+
+  import type { LayoutData } from "./$types";
+
+  export let data: LayoutData;
 </script>
 
 <svelte:head>
@@ -12,7 +17,9 @@
   <link rel="preload" as="image" href="/images/Graduation-Event.webp" />
 </svelte:head>
 
-<Toaster />
-<Navbar />
-<ActionButtons />
-<slot />
+<QueryClientProvider client={data.queryClient}>
+  <Toaster />
+  <Navbar />
+  <ActionButtons />
+  <slot />
+</QueryClientProvider>

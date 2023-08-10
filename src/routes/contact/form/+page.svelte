@@ -70,7 +70,7 @@
             placeholder="Name"
             type="text"
             bind:value={$form.name}
-            class="peer input my-2 block w-full !rounded-md bg-transparent px-4 text-sm text-secondary placeholder-secondary shadow-md outline outline-2 outline-secondary/20 backdrop-blur-sm transition-all focus-visible:outline-[2.5px] focus-visible:outline-neutral"
+            class="peer input my-2 block w-full !rounded-md bg-transparent px-4 text-sm text-secondary placeholder-secondary/50 shadow-md outline outline-2 outline-secondary/20 backdrop-blur-sm transition-all focus-visible:outline-[2.5px] focus-visible:outline-neutral"
             class:!outline-red-500={$errors.name}
           />
           {#if $errors.name}
@@ -89,7 +89,7 @@
             placeholder="Email"
             type="text"
             bind:value={$form.email}
-            class="peer input my-2 block w-full !rounded-md bg-transparent px-4 text-sm text-secondary placeholder-secondary shadow-md outline outline-2 outline-secondary/20 backdrop-blur-sm transition-all focus-visible:outline-[2.5px] focus-visible:outline-neutral"
+            class="peer input my-2 block w-full !rounded-md bg-transparent px-4 text-sm text-secondary placeholder-secondary/50 shadow-md outline outline-2 outline-secondary/20 backdrop-blur-sm transition-all focus-visible:outline-[2.5px] focus-visible:outline-neutral"
             class:!outline-red-500={$errors.email}
           />
           {#if $errors.email}
@@ -108,7 +108,7 @@
             placeholder="Subject"
             type="text"
             bind:value={$form.subject}
-            class="peer input my-2 block w-full !rounded-md bg-transparent px-4 text-sm text-secondary placeholder-secondary shadow-md outline outline-2 outline-secondary/20 backdrop-blur-sm transition-all focus-visible:outline-[2.5px] focus-visible:outline-neutral"
+            class="peer input my-2 block w-full !rounded-md bg-transparent px-4 text-sm text-secondary placeholder-secondary/50 shadow-md outline outline-2 outline-secondary/20 backdrop-blur-sm transition-all focus-visible:outline-[2.5px] focus-visible:outline-neutral"
             class:!outline-red-500={$errors.subject}
           />
           {#if $errors.subject}
@@ -126,7 +126,7 @@
             name="message"
             placeholder="Message"
             bind:value={$form.message}
-            class="peer textarea my-2 block w-full resize-none !rounded-md bg-transparent px-4 pt-3 text-sm text-secondary placeholder-secondary shadow-md outline outline-2 outline-secondary/20 backdrop-blur-sm transition-all focus-visible:outline-[2.5px] focus-visible:outline-neutral"
+            class="peer textarea my-2 block w-full resize-none !rounded-md bg-transparent px-4 pt-3 text-sm text-secondary placeholder-secondary/50 shadow-md outline outline-2 outline-secondary/20 backdrop-blur-sm transition-all focus-visible:outline-[2.5px] focus-visible:outline-neutral"
             class:!outline-red-500={$errors.message}
             rows="5"
           />

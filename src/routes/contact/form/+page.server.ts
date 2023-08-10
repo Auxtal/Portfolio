@@ -27,7 +27,7 @@ export const actions: Actions = {
 
     if (await limiter.isLimited(event)) {
       setFlash(
-        { type: "error", message: "You Have Been Rate Limited, Please Try Again Later" },
+        { type: "error", message: "You've Been Rate Limited, Please Try Again Later" },
         event
       );
       return fail(429, { form });

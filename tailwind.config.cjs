@@ -43,22 +43,26 @@ module.exports = {
               color: "rgba(var(--secondary-rgb), .7)",
               "overflow-wrap": "anywhere"
             },
+            "h1, h2, h3, h4": {
+              color: "var(--neutral)"
+            },
+            "ul li::marker": {
+              color: "rgba(var(--secondary-rgb), 1)"
+            },
+            "strong": {
+              color: "rgba(var(--secondary-rgb), 1)"
+            },
             blockquote: {
               "border-left-color": "rgba(var(--secondary-rgb), .7)",
               color: "rgba(var(--secondary-rgb), .7)"
-            },
-            "h1, h2, h3, h4": {
-              color: "var(--neutral)"
             },
             pre: {
               background: "rgba(var(--secondary-rgb), .1)",
               color: "var(--secondary)"
             },
-            "strong, li::marker": {
-              color: "rgba(var(--secondary-rgb), 1)"
-            },
             "img, iframe": {
-              "filter": "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));",
+              filter:
+                "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));",
               "border-radius": "10px",
               "margin-left": "auto",
               "margin-right": "auto"
@@ -70,16 +74,16 @@ module.exports = {
             ".heading-link": {
               "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)",
               "transition-property": "transform, filter",
-              "transform": "translateY(-1px)",
+              transform: "translateY(-1px)",
               "transition-duration": "150ms",
-              "display": "inline-block",
-              "color": "var(--neutral)",
+              display: "inline-block",
+              color: "var(--neutral)",
               "vertical-align": "sub",
               "margin-right": "10px"
             },
             ".heading-link:hover": {
-              "filter": "drop-shadow(2px 5px 5px rgb(var(--neutral-rgb) / 0.4))",
-              "transform": "translateY(-2px)"
+              filter: "drop-shadow(2px 5px 5px rgb(var(--neutral-rgb) / 0.4))",
+              transform: "translateY(-2px)"
             }
           }
         }
