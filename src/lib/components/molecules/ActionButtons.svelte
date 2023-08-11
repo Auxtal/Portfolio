@@ -39,7 +39,7 @@
             <li
               class="spotify-glow peer relative flex min-h-max items-center rounded-md bg-[#1DB954] p-2 text-primary outline-none transition group-focus-visible:outline-none dark:text-secondary"
               tabindex="0"
-              transition:fade={{ duration: 500, easing: quintOut }}
+              transition:fade={{ duration: 500, delay: 800, easing: quintOut }}
               on:mouseover={() => (spotifyHover = true)}
               on:mouseleave={() => (spotifyHover = false)}
               on:focusin={() => (spotifyHover = true)}
@@ -48,18 +48,22 @@
               <Icon height="30" width="30" icon="mdi:spotify" />
               {#if spotifyHover}
                 <div
-                  class="top-100 absolute left-[4.2rem] flex h-max w-64 rounded-lg bg-secondary/10 p-2 shadow-md backdrop-blur-lg hover:flex border border-secondary/20"
+                  class="top-100 absolute left-[4.2rem] flex h-max w-64 rounded-lg border border-secondary/20 bg-secondary/10 p-2 shadow-md backdrop-blur-lg hover:flex"
                   transition:fade|local={{ duration: 150, easing: quintOut }}
                 >
                   <div>
-                    <img
-                      class="aspect-square h-auto w-16 rounded-md object-cover shadow-md"
-                      src={$track.data?.artwork}
-                      alt="Album Artwork"
-                    />
+                    <a href={$track.data?.url} target="_blank">
+                      <img
+                        class="aspect-square h-auto w-16 rounded-md object-cover shadow-md"
+                        src={$track.data?.artwork}
+                        alt="Album Artwork"
+                      />
+                    </a>
                   </div>
                   <div class="ml-3">
-                    <h1 class="mb-2 font-bold text-secondary">{$track.data?.title}</h1>
+                    <h1 class="mb-2 max-w-[18ch] truncate font-bold text-secondary">
+                      {$track.data?.title}
+                    </h1>
                     <p class="text-secondary/70">{$track.data?.artist.name}</p>
                   </div>
                 </div>

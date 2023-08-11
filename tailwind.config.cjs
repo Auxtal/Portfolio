@@ -81,9 +81,10 @@ module.exports = {
               "vertical-align": "sub",
               "margin-right": "10px"
             },
-            ".heading-link:hover": {
+            ".heading-link:hover, .heading-link:focus-visible": {
               filter: "drop-shadow(2px 5px 5px rgb(var(--neutral-rgb) / 0.4))",
-              transform: "translateY(-2px)"
+              transform: "translateY(-2px)",
+              outline: "none"
             }
           }
         }
