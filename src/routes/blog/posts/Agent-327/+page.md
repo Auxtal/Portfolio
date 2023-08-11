@@ -13,7 +13,7 @@ hidden: false
 
 <iframe class="youtube" src="https://www.youtube.com/embed/1c9K7qqxB6A" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 
-> In the YouTube video there's a bit of a delay, this is not in our final version.
+> **In the YouTube video there's a bit of a delay, this is not in our final version.**
 
 ## Description
 

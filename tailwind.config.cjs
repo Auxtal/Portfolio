@@ -8,12 +8,13 @@ module.exports = {
           secondary: "#e7e7e7",
           accent: "#adadad",
           neutral: "#006eff",
-          "--neutral": "#006eff",
-          "--neutral-rgb": "0 110 255",
           "--primary": "#121212",
           "--primary-rgb": "18, 18, 18",
           "--secondary": "#e7e7e7",
           "--secondary-rgb": "231, 231, 231",
+          "--accent": "#adadad",
+          "--neutral": "#006eff",
+          "--neutral-rgb": "0 110 255",
           "--dots": "#1f1f1f"
         },
         light: {
@@ -21,12 +22,13 @@ module.exports = {
           secondary: "#121212",
           accent: "#404040",
           neutral: "#006eff",
-          "--neutral": "#006eff",
-          "--neutral-rgb": "0 110 255",
           "--primary": "#F9F7F7",
           "--primary-rgb": "249, 247, 247",
           "--secondary": "#121212",
           "--secondary-rgb": "18, 18, 18",
+          "--accent": "#404040",
+          "--neutral": "#006eff",
+          "--neutral-rgb": "0 110 255",
           "--dots": "#d1d1d1"
         }
       }
@@ -40,24 +42,24 @@ module.exports = {
         DEFAULT: {
           css: {
             "a, p, ol, ul": {
-              color: "rgba(var(--secondary-rgb), .7)",
+              color: "var(--accent)",
               "overflow-wrap": "anywhere"
             },
             "h1, h2, h3, h4": {
               color: "var(--neutral)"
             },
             "ul li::marker": {
-              color: "rgba(var(--secondary-rgb), 1)"
+              color: "var(--secondary)"
             },
-            "strong": {
-              color: "rgba(var(--secondary-rgb), 1)"
+            strong: {
+              color: "var(--secondary)"
             },
             blockquote: {
-              "border-left-color": "rgba(var(--secondary-rgb), .7)",
-              color: "rgba(var(--secondary-rgb), .7)"
+              "border-left-color": "var(--accent)",
+              color: "var(--accent)"
             },
             pre: {
-              background: "rgba(var(--secondary-rgb), .1)",
+              background: "var(--secondary)",
               color: "var(--secondary)"
             },
             "img, iframe": {

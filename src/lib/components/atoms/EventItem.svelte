@@ -15,7 +15,7 @@
   />
   <div class="pl-4 text-sm">
     <h3 class="mb-2 text-lg font-semibold text-secondary">{title}</h3>
-    <p class="text-secondary/70">{description}</p>
+    <p class="text-accent">{description}</p>
     <a class="text-neutral underline" href="https://www.instagram.com/{handle}/" target="_blank"
       >@{handle}</a
     >

@@ -37,7 +37,7 @@
         </h1>
         <p
           transition:fade|local={{ duration: 500, easing: quintOut }}
-          class="font-secondary text-md px-8 text-center leading-6 text-accent backdrop-blur-sm lg:px-0 lg:text-left lg:text-xl lg:leading-normal"
+          class="text-md px-8 text-center leading-6 text-accent backdrop-blur-sm lg:px-0 lg:text-left lg:text-xl lg:leading-normal"
         >
           Hey, I'm Ethan, {birthday ? `I'm ${yearDiff(birthday)} years old and` : ""} I go by Auxtal
           online. In my spare time, I'm a hobbyist developer who likes full-stack development. I love

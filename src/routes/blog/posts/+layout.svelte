@@ -29,17 +29,17 @@
       transition:fade|local={{ duration: 500, easing: quintOut }}
     >
       <BackButton href="/blog" />
-      <div class="my-5 flex flex-col items-center justify-center">
+      <div class="mb-5 mt-7 flex flex-col items-center justify-center">
         <h1 class="mb-2 p-0 text-center text-5xl font-bold">{post.title}</h1>
-        <p class="m-0 p-0 text-center">
+        <p class="m-0 p-0 text-center font-semibold">
           Published On The {dateformat(post.published, "UTC:dd mmmm yyyy")}
         </p>
         {#await streams.readingTime.text}
-          <p class="m-0 p-0 text-center capitalize">Loading Reading Time...</p>
+          <p class="m-0 p-0 text-center font-semibold capitalize">Loading Reading Time...</p>
         {:then value}
-          <p class="m-0 p-0 text-center capitalize">{value}</p>
+          <p class="m-0 p-0 text-center font-semibold capitalize">{value}</p>
         {:catch error}
-          <p class="m-0 p-0 text-center capitalize">{error.message}</p>
+          <p class="m-0 p-0 text-center font-semibold capitalize">{error.message}</p>
         {/await}
       </div>
       <slot />

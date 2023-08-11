@@ -46,7 +46,7 @@
               <Animate>
                 <h3
                   transition:fly|local={{ x: -150, duration: 500, easing: quintOut }}
-                  class="font-secondary font-extrabold"
+                  class="font-extrabold"
                 >
                   {Education.place}
                 </h3>
@@ -58,7 +58,7 @@
                 </p>
                 <p
                   transition:fade|local={{ delay: 150, duration: 500, easing: quintOut }}
-                  class="font-secondary text-accent"
+                  class="text-accent"
                 >
                   {Education.description}
                 </p>

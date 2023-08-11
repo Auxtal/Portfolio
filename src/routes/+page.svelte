@@ -19,7 +19,7 @@
       transition:fade|local={{ duration: 500, easing: quintOut }}
     >
       <h2
-        class="font-secondary text-center text-4xl font-bold text-accent backdrop-blur-sm sm:font-bold md:text-right"
+        class="text-center text-4xl font-bold text-accent backdrop-blur-sm sm:font-bold md:text-right"
       >
         Hi, my name is
       </h2>

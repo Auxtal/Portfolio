@@ -21,7 +21,7 @@
       <h1 class="mb-4 text-center text-5xl font-bold text-neutral backdrop-blur-sm">
         Get In Touch
       </h1>
-      <p class="font-secondary mb-6 max-w-md text-center leading-6 text-secondary backdrop-blur-sm">
+      <p class="mb-6 max-w-md text-center leading-6 text-secondary backdrop-blur-sm">
         If you want to say hello or if you have any questions, my inbox is always open for queries!
       </p>
       <div>

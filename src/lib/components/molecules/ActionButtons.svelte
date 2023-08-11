@@ -39,7 +39,8 @@
             <li
               class="spotify-glow peer relative flex min-h-max items-center rounded-md bg-[#1DB954] p-2 text-primary outline-none transition group-focus-visible:outline-none dark:text-secondary"
               tabindex="0"
-              transition:fade={{ duration: 500, delay: 800, easing: quintOut }}
+              in:fade={{ duration: 500, delay: 800, easing: quintOut }}
+              out:fade={{ duration: 500, easing: quintOut }}
               on:mouseover={() => (spotifyHover = true)}
               on:mouseleave={() => (spotifyHover = false)}
               on:focusin={() => (spotifyHover = true)}
@@ -61,10 +62,10 @@
                     </a>
                   </div>
                   <div class="ml-3">
-                    <h1 class="mb-2 max-w-[18ch] truncate font-bold text-secondary">
+                    <h1 class="mb-2 max-w-[17ch] truncate font-bold text-secondary">
                       {$track.data?.title}
                     </h1>
-                    <p class="text-secondary/70">{$track.data?.artist.name}</p>
+                    <p class="text-accent">{$track.data?.artist.name}</p>
                   </div>
                 </div>
               {/if}
