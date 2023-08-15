@@ -1,7 +1,7 @@
 <script lang="ts">
   import "$src/app.postcss";
 
-  import ActionButtons from "$components/molecules/ActionButtons.svelte";
+  import ActionButtons from "$components/organisms/ActionButtons.svelte";
   import Navbar from "$components/organisms/Navbar.svelte";
 
   import { Toaster } from "svelte-french-toast";

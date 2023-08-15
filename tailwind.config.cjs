@@ -35,58 +35,57 @@ module.exports = {
     ]
   },
   darkMode: ["class", '[data-theme="dark"]'],
-  plugins: [require("daisyui"), require("@tailwindcss/typography")],
+  plugins: [require("daisyui"), require("@tailwindcss/typography"), require('tailwindcss-logical')],
   theme: {
     extend: {
       typography: {
         DEFAULT: {
           css: {
             "a, p, ol, ul": {
-              color: "var(--accent)",
+              "color": "var(--accent)",
               "overflow-wrap": "anywhere"
             },
             "h1, h2, h3, h4": {
-              color: "var(--neutral)"
+              "color": "var(--neutral)"
             },
             "ul li::marker": {
-              color: "var(--secondary)"
+              "color": "var(--secondary)"
             },
-            strong: {
-              color: "var(--secondary)"
+            "strong": {
+              "color": "var(--secondary)"
             },
-            blockquote: {
+            "blockquote": {
               "border-left-color": "var(--accent)",
-              color: "var(--accent)"
+              "color": "var(--accent)"
             },
-            pre: {
-              background: "var(--secondary)",
-              color: "var(--secondary)"
+            "pre": {
+              "background": "var(--secondary)",
+              "color": "var(--secondary)"
             },
             "img, iframe": {
-              filter:
-                "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));",
+              "filter": "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));",
               "border-radius": "10px",
               "margin-left": "auto",
               "margin-right": "auto"
             },
             ".youtube": {
               "aspect-ratio": "16 / 9",
-              width: "100%"
+              "width": "100%"
             },
             ".heading-link": {
               "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)",
               "transition-property": "transform, filter",
-              transform: "translateY(-1px)",
+              "transform": "translateY(-1px)",
               "transition-duration": "150ms",
-              display: "inline-block",
-              color: "var(--neutral)",
+              "display": "inline-block",
+              "color": "var(--neutral)",
               "vertical-align": "sub",
               "margin-right": "10px"
             },
             ".heading-link:hover, .heading-link:focus-visible": {
-              filter: "drop-shadow(2px 5px 5px rgb(var(--neutral-rgb) / 0.4))",
-              transform: "translateY(-2px)",
-              outline: "none"
+              "filter": "drop-shadow(2px 5px 5px rgb(var(--neutral-rgb) / 0.4))",
+              "transform": "translateY(-2px)",
+              "outline": "none"
             }
           }
         }

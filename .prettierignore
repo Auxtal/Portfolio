@@ -4,6 +4,7 @@
 /package
 /build
 
+tailwind.config.cjs
 !.env.example
 node_modules
 .DS_Store

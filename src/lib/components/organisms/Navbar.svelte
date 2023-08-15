@@ -34,7 +34,7 @@
       <a
         data-sveltekit-preload-data
         href="/"
-        class="btn-ghost no-animation btn flex items-center justify-center rounded-md text-xl normal-case outline-none transition-colors hover:bg-secondary/50 hover:text-primary focus-visible:bg-secondary/50 focus-visible:text-primary focus-visible:outline-none hover:dark:text-secondary focus-visible:dark:text-secondary"
+        class="btn-ghost no-animation btn flex items-center justify-center rounded-md text-xl normal-case outline-none transition-colors hover:bg-secondary/20 focus-visible:bg-secondary/20 focus-visible:outline-none hover:dark:text-secondary focus-visible:dark:text-secondary"
       >
         <img
           class="mr-2.5 rounded-full shadow-lg"
@@ -49,16 +49,16 @@
         <ul class="menu menu-horizontal">
           {#each Navlinks as Navlink}
             {@const highlightRoute = clsx({
-              "!bg-neutral font-bold text-primary active:text-primary dark:text-secondary":
+              "!bg-neutral font-bold text-primary active:text-primary dark:text-secondary hover:before:bg-primary/20 hover:before:dark:bg-secondary/20":
                 $page.url.pathname.includes(Navlink.route)
             })}
 
-            <li class="mx-2">
+            <li class="group mx-2">
               <a
                 data-sveltekit-preload-data
                 href={Navlink.route}
                 class={twMerge(
-                  "rounded-md px-5 py-2 hover:scale-110 hover:bg-secondary/50 hover:text-primary focus-visible:scale-110 focus-visible:bg-neutral focus-visible:bg-secondary/50 focus-visible:font-bold focus-visible:text-primary active:text-primary hover:dark:text-secondary focus-visible:dark:text-secondary",
+                  "relative overflow-hidden rounded-md px-5 py-2 before:absolute before:-z-10 before:rounded-md before:bg-secondary/20 before:transition-all before:content-[''] before:bs-full before:is-full before:block-start-[100%] before:inline-start-[-100%] hover:scale-110 hover:bg-transparent hover:before:bg-secondary/20 hover:before:block-start-[0%] hover:before:inline-start-[0%] focus-visible:scale-110 focus-visible:bg-secondary/20 focus-visible:font-bold active:text-primary group-[&:has(+li:hover)]:before:inline-start-[100%] hover:dark:text-secondary focus-visible:dark:text-secondary",
                   highlightRoute
                 )}
               >

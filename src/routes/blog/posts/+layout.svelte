@@ -1,7 +1,7 @@
 <script lang="ts">
   import Animate from "$components/atoms/Animate.svelte";
   import Container from "$components/atoms/Container.svelte";
-  import BackButton from "$components/molecules/BackButton.svelte";
+  import BackButton from "$components/atoms/BackButton.svelte";
 
   import { fade } from "svelte/transition";
   import { quintOut } from "svelte/easing";
