@@ -4,6 +4,7 @@ title: Fringe Festival 2023
 published: 2023-02-06
 updated: 2023-02-06
 tags: [Event, "2023"]
+excerpt: Come and see what I did for Fringe Festival!
 hidden: false
 ---
 

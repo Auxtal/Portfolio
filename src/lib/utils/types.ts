@@ -4,6 +4,7 @@ export type Post = {
   published: string;
   updated: string;
   tags: string[];
+  excerpt: string;
   hidden: boolean;
   readingTime: string | undefined;
   render: () => { html: string };

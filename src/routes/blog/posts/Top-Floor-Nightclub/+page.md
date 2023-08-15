@@ -4,6 +4,7 @@ title: Top Floor Nightclub
 published: 2023-07-03
 updated: 2023-07-03
 tags: [Venue, "2023"]
+excerpt: Come and see some of the events I've done at Top Floor!
 hidden: false
 ---
 

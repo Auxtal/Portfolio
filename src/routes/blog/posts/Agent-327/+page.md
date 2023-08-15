@@ -4,6 +4,7 @@ title: Agent 327
 published: 2023-05-17
 updated: 2023-05-17
 tags: [University, Project, "2023"]
+excerpt: An animation foley project for university!
 hidden: false
 ---
 

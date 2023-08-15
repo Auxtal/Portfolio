@@ -4,6 +4,7 @@ title: Counter Point
 published: 2023-04-14
 updated: 2023-04-19
 tags: [University, Project, "2023"]
+excerpt: A live "TV Show" called Counter Point.
 hidden: false
 ---
 

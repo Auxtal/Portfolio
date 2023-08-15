@@ -6,6 +6,7 @@
 
   import { searchTerm } from "$lib/utils/stores";
   import { currentPage } from "$lib/utils/stores";
+  import { sortPosts } from "$lib/utils";
 
   import { fade } from "svelte/transition";
   import { quintOut } from "svelte/easing";
@@ -49,10 +50,7 @@
     );
   });
 
-  $: items = filteredPosts.sort((post1: Post, post2: Post) => {
-    return new Date(post2.published).valueOf() - new Date(post1.published).valueOf();
-  });
-
+  $: items = sortPosts(filteredPosts);
   $: paginatedPosts = paginate({ items, pageSize, currentPage: $currentPage });
 </script>
 

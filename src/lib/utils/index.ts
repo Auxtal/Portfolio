@@ -1,6 +1,8 @@
 import toast from "svelte-french-toast";
 import { z } from "zod";
 
+import type { Post } from "./types";
+
 export const contactSchema = z.object({
   name: z
     .string({ required_error: "Name is required" })
@@ -75,6 +77,12 @@ export const sendEmail = async (name: string, email: string, subject: string, me
   });
 
   return response;
+};
+
+export const sortPosts = (posts: Post[]) => {
+  return posts.sort((post1: Post, post2: Post) => {
+    return new Date(post2.published).valueOf() - new Date(post1.published).valueOf();
+  });
 };
 
 export const monthDiff = (date1: Date, date2: Date) => {
