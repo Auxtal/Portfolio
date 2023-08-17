@@ -3,7 +3,7 @@ import { t } from "../trpc";
 import { z } from "zod";
 
 export const fetchPosts = async (slug: string | null) => {
-  const response = await fetch("http://localhost:5173/api/posts")
+  const response = await fetch(`${import.meta.env.VITE_BASE_URL}/api/posts`)
     .then((r) => r.json())
     .then(posts.parse);
 

@@ -1,7 +1,7 @@
 import readingTime from "reading-time";
 import striptags from "striptags";
 
-import { json } from "@sveltejs/kit";
+import { json, type RequestHandler } from "@sveltejs/kit";
 import type { Post, PostModules } from "$lib/utils/types";
 
 const getPosts = () => {
@@ -31,7 +31,7 @@ const getPosts = () => {
   return posts;
 };
 
-export const GET = async () => {
+export const GET: RequestHandler = async () => {
   const posts = getPosts();
   return json(posts);
 };

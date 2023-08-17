@@ -2,8 +2,8 @@
   import Tag from "$components/atoms/Tag.svelte";
   import { searchTerm } from "$lib/utils/stores";
 
-  import { fade } from "svelte/transition";
   import { quintOut } from "svelte/easing";
+  import { fade } from "svelte/transition";
 
   export let title: string;
   export let tags: string[];

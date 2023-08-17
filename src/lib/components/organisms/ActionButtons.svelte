@@ -16,8 +16,7 @@
 
   $: track = createQuery({
     queryFn: () => trpc($page).lastfm.currentTrack.query(),
-    queryKey: ["currentTrack"],
-    refetchInterval: 300000 // 5 Minutes
+    queryKey: ["currentTrack"]
   });
 </script>
 

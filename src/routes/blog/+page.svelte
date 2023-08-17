@@ -24,7 +24,7 @@
     queryKey: ["posts"]
   });
 
-  $: posts = $postQuery.data || [];
+  $: posts = $postQuery.data ?? [];
   let pageSize = 4;
 
   const handleClick = async (post: Post, event: MouseEvent) => {

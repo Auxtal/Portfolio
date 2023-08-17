@@ -1,8 +1,6 @@
 import toast from "svelte-french-toast";
 import { z } from "zod";
 
-import type { Post } from "./types";
-
 export const contactSchema = z.object({
   name: z
     .string({ required_error: "Name is required" })

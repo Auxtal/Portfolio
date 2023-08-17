@@ -4,7 +4,9 @@ import { setFlash } from "sveltekit-flash-message/server";
 import { fail } from "@sveltejs/kit";
 
 import { sendEmail, contactSchema } from "$lib/utils";
+
 import type { Actions } from "@sveltejs/kit";
+import type { PageServerLoad, RequestEvent } from "./$types";
 
 const limiter = new RateLimiter({
   rates: {
@@ -12,7 +14,7 @@ const limiter = new RateLimiter({
   }
 });
 
-export const load = async (event) => {
+export const load: PageServerLoad = async (event: RequestEvent) => {
   const form = await superValidate(event, contactSchema);
   return { form };
 };
