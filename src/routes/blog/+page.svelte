@@ -4,30 +4,33 @@
   import BlogPost from "$components/molecules/BlogPost.svelte";
   import Paginator from "$components/molecules/Paginator.svelte";
 
-  import { searchTerm } from "$lib/utils/stores";
   import { currentPage } from "$lib/utils/stores";
-  import { sortPosts } from "$lib/utils";
+  import { searchTerm } from "$lib/utils/stores";
+  import { trpc } from "$lib/trpc/client";
 
   import { fade } from "svelte/transition";
   import { quintOut } from "svelte/easing";
   import { goto } from "$app/navigation";
+  import { page } from "$app/stores";
 
+  import { createQuery } from "@tanstack/svelte-query";
   import { paginate } from "svelte-paginate";
   import Icon from "@iconify/svelte";
 
   import type { Post } from "$utils/types";
 
-  export let data: {
-    posts: Post[];
-  };
+  $: postQuery = createQuery({
+    queryFn: () => trpc($page).posts.fetchPosts.query(),
+    queryKey: ["posts"]
+  });
 
+  $: posts = $postQuery.data || [];
   let pageSize = 4;
-  let { posts } = data;
 
   const handleClick = async (post: Post, event: MouseEvent) => {
     const target = event.target as Element;
     if (!target.classList.contains("tag")) {
-      await goto(`blog/posts/${post.slug}`);
+      await goto(post.slug);
     }
   };
 
@@ -38,7 +41,7 @@
 
     const target = event.target as Element;
     if (!target.classList.contains("tag")) {
-      await goto(`blog/posts/${post.slug}`);
+      await goto(post.slug);
     }
   };
 
@@ -50,7 +53,7 @@
     );
   });
 
-  $: items = sortPosts(filteredPosts);
+  $: items = filteredPosts;
   $: paginatedPosts = paginate({ items, pageSize, currentPage: $currentPage });
 </script>
 

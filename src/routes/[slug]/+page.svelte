@@ -6,16 +6,14 @@
   import { fade } from "svelte/transition";
   import { quintOut } from "svelte/easing";
 
-  // @ts-expect-error Resolve declaration issue
   import dateformat from "dateformat";
   import type { Post } from "$utils/types";
 
   export let data: {
     post: Post;
-    streams: any;
   };
 
-  let { post, streams } = data;
+  let { post } = data;
 </script>
 
 <svelte:head>
@@ -34,15 +32,9 @@
         <p class="m-0 p-0 text-center font-semibold">
           Published On The {dateformat(post.published, "UTC:dd mmmm yyyy")}
         </p>
-        {#await streams.readingTime.text}
-          <p class="m-0 p-0 text-center font-semibold capitalize">Loading Reading Time...</p>
-        {:then value}
-          <p class="m-0 p-0 text-center font-semibold capitalize">{value}</p>
-        {:catch error}
-          <p class="m-0 p-0 text-center font-semibold capitalize">{error.message}</p>
-        {/await}
+        <p class="m-0 p-0 text-center font-semibold capitalize">{post.readingTime.text}</p>
       </div>
-      <slot />
+      {@html post.content.html}
     </article>
   </Container>
 </Animate>

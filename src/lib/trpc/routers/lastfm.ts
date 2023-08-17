@@ -1,4 +1,4 @@
-import { recentTracks } from "$utils/lastfm";
+import { recentTracks } from "$lib/utils/zod/lastfm";
 import { env } from "$env/dynamic/private";
 import { t } from "../trpc";
 import { z } from "zod";

@@ -79,12 +79,6 @@ export const sendEmail = async (name: string, email: string, subject: string, me
   return response;
 };
 
-export const sortPosts = (posts: Post[]) => {
-  return posts.sort((post1: Post, post2: Post) => {
-    return new Date(post2.published).valueOf() - new Date(post1.published).valueOf();
-  });
-};
-
 export const monthDiff = (date1: Date, date2: Date) => {
   let months;
 
