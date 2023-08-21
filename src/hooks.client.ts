@@ -1,9 +1,11 @@
 import * as SentrySvelte from "@sentry/svelte";
+import { env } from "$env/dynamic/public";
+
 import type { HandleClientError } from "@sveltejs/kit";
 
 SentrySvelte.init({
-  dsn: import.meta.env.VITE_SENTRY_DSN,
-  environment: import.meta.env.VITE_ENVIRONMENT,
+  dsn: env.PUBLIC_SENTRY_DSN,
+  environment: env.PUBLIC_ENVIRONMENT,
   release: "2.5.15"
 });
 

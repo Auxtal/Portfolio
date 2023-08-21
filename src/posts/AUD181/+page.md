@@ -14,13 +14,13 @@ hidden: false
 
 ## Research Question 1
 
-**Use the Week 1 in-class activity as a basis for discussing the concept of a ‘song’ vs a ‘production’ or ‘arrangement’. Does one work without the other? Are they equally important in conveying the energy or message of a song?**
+> **Use the Week 1 in-class activity as a basis for discussing the concept of a ‘song’ vs a ‘production’ or ‘arrangement’. Does one work without the other? Are they equally important in conveying the energy or message of a song?**
 
 A song is an original piece of musical work done by either the songwriter or the composer. Compared to an arrangement which is not so much a remix but more of a rearrangement of the song hence the name an ‘arrangement’. This is where you take a pre-existing piece of work and rearrange it in a way that you like this is typically done by producers when a track or rough song is provided to them by an artist. In terms of “Does one work without the other?”, the answer is yes and no. You can just release a song but if it hasn’t gone through the work of a producer re-arranging the song it may not have the style or outcome that you’re after. When it comes to the importance of the energy or message of the song I think yes they are just equally as important, because without a song or “reference track” doing an arrangement would be very difficult and a lot of the vibes or message you're going for could be discarded. (Carlos, 2020)
 
 ## Research Question 2
 
-**Choose a DAW other than Pro Tools or Ableton and discuss some of the reasons that it may be used as an alternative. Who are some of the well-known creatives to use this DAW as their primary tool and why do they choose it?**
+> **Choose a DAW other than Pro Tools or Ableton and discuss some of the reasons that it may be used as an alternative. Who are some of the well-known creatives to use this DAW as their primary tool and why do they choose it?**
 
 Cubase! Many professional music producers use Cubase, such as; Hans Zimmer, Kirkpatrick, Ludwig Göransson, Cirkut, and Alan Silvestri. Why do they use it? For composers who want to incorporate numerous synthesizers and samples into their music, Cubase is a well-liked DAW that is mostly MIDI and plugin instrument based (also known as VSTi’s). It is also excellent at recording audio tracks. (Zamri, 2022)
 

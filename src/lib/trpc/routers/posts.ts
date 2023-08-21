@@ -1,9 +1,10 @@
 import { posts } from "$lib/utils/zod/posts";
+import { env } from "$env/dynamic/public";
 import { t } from "../trpc";
 import { z } from "zod";
 
 export const fetchPosts = async (slug: string | null) => {
-  const response = await fetch(`${import.meta.env.VITE_BASE_URL}/api/posts`)
+  const response = await fetch(`${env.PUBLIC_BASE_URL}/api/posts`)
     .then((r) => r.json())
     .then(posts.parse);
 

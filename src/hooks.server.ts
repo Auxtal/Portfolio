@@ -1,6 +1,7 @@
 import { createTRPCHandle } from "trpc-sveltekit";
 import { createContext } from "$lib/trpc/context";
 import { router } from "$lib/trpc/router";
+import { env } from "$env/dynamic/public";
 
 import { sequence } from "@sveltejs/kit/hooks";
 import * as SentryNode from "@sentry/node";
@@ -10,8 +11,8 @@ import crypto from "crypto";
 import type { Handle, HandleServerError } from "@sveltejs/kit";
 
 SentryNode.init({
-  dsn: import.meta.env.VITE_SENTRY_DSN,
-  environment: import.meta.env.VITE_ENVIRONMENT,
+  dsn: env.PUBLIC_SENTRY_DSN,
+  environment: env.PUBLIC_ENVIRONMENT,
   release: "2.5.15"
 });
 

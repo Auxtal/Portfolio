@@ -72,7 +72,7 @@
         <input
           placeholder="Search"
           type="text"
-          class="input w-72 !rounded-md bg-transparent text-sm text-secondary placeholder-secondary shadow-md outline outline-2 outline-secondary/20 backdrop-blur-sm transition-all focus-visible:outline-[2.5px] focus-visible:outline-neutral"
+          class="input outline w-72 !rounded-md bg-transparent text-sm text-secondary placeholder-secondary shadow-md outline-2 outline-secondary/20 backdrop-blur-sm transition-all focus-visible:outline-[2.5px] focus-visible:outline-neutral"
           bind:value={$searchTerm}
         />
       </div>

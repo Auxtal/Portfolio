@@ -44,7 +44,7 @@
       <a
         data-sveltekit-preload-data
         href="/"
-        class="btn-ghost no-animation btn flex items-center justify-center rounded-md text-xl normal-case outline-none transition-colors hover:bg-secondary/20 focus-visible:bg-secondary/20 focus-visible:outline-none hover:dark:text-secondary focus-visible:dark:text-secondary"
+        class="btn btn-ghost no-animation flex items-center justify-center rounded-md text-xl normal-case outline-none transition-colors hover:bg-secondary/20 focus-visible:bg-secondary/20 focus-visible:outline-none hover:dark:text-secondary focus-visible:dark:text-secondary"
       >
         <img
           class="mr-2.5 rounded-full shadow-lg"
@@ -109,7 +109,7 @@
         <a
           data-sveltekit-preload-data
           href="/"
-          class="btn-ghost no-animation btn flex items-center justify-center rounded-md text-xl normal-case outline-none transition-colors hover:bg-transparent active:bg-secondary/50 active:text-primary active:outline-none active:dark:text-secondary"
+          class="btn btn-ghost no-animation flex items-center justify-center rounded-md text-xl normal-case outline-none transition-colors hover:bg-transparent active:bg-secondary/50 active:text-primary active:outline-none active:dark:text-secondary"
         >
           <img
             class="mr-2.5 rounded-full shadow-lg"
@@ -125,7 +125,7 @@
         <ThemeToggle />
         <label
           id="mobileMenuToggle"
-          class="swap-rotate swap no-animation btn h-[48px] w-[48px] rounded-md border-none bg-secondary/20 text-secondary duration-150 hover:bg-secondary/20 active:bg-neutral active:text-primary active:dark:text-secondary"
+          class="swap-rotate btn swap no-animation h-[48px] w-[48px] rounded-md border-none bg-secondary/20 text-secondary duration-150 hover:bg-secondary/20 active:bg-neutral active:text-primary active:dark:text-secondary"
         >
           <input
             type="checkbox"

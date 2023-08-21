@@ -3,7 +3,8 @@ import { superValidate } from "sveltekit-superforms/server";
 import { setFlash } from "sveltekit-flash-message/server";
 import { fail } from "@sveltejs/kit";
 
-import { sendEmail, contactSchema } from "$lib/utils";
+import { contactSchema } from "$lib/utils";
+import { sendEmail } from "$lib/server";
 
 import type { Actions } from "@sveltejs/kit";
 import type { PageServerLoad, RequestEvent } from "./$types";

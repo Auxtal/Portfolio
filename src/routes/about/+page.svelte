@@ -1,13 +1,14 @@
 <script lang="ts">
   import Animate from "$components/atoms/Animate.svelte";
   import Container from "$components/atoms/Container.svelte";
+  import { env } from "$env/dynamic/public";
 
   import { fade, fly } from "svelte/transition";
   import { quintOut } from "svelte/easing";
 
   import { yearDiff } from "$lib/utils";
 
-  const birthday = import.meta.env.VITE_BIRTHDAY;
+  const birthday = env.PUBLIC_BIRTHDAY;
 </script>
 
 <svelte:head>

@@ -48,25 +48,32 @@ module.exports = {
             "h1, h2, h3, h4": {
               "color": "var(--neutral)"
             },
-            "ul li::marker": {
+            "ul li::marker, ol li::marker": {
               "color": "var(--secondary)"
             },
-            "strong": {
+            "p strong": {
               "color": "var(--secondary)"
             },
             "blockquote": {
-              "border-left-color": "var(--accent)",
-              "color": "var(--accent)"
+              "border-left-color": "var(--secondary)",
+              "color": "var(--secondary)"
             },
             "pre": {
               "background": "var(--secondary)",
               "color": "var(--secondary)"
+            },
+            "hr": {
+              "background": "var(--accent)",
             },
             "img, iframe": {
               "filter": "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));",
               "border-radius": "10px",
               "margin-left": "auto",
               "margin-right": "auto"
+            },
+            ".btn": {
+              "text-decoration": "none",
+              "font-weight": "600"
             },
             ".youtube": {
               "aspect-ratio": "16 / 9",

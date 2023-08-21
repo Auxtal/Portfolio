@@ -7,87 +7,80 @@
 </script>
 
 <Animate>
-  <div id="paginator" transition:fade|local={{ duration: 500, easing: quintOut }}>
+  <div
+    id="paginator"
+    class="[&>.pagination-nav]:bg-secondary/5 dark:[&>.pagination-nav]:bg-secondary/10"
+    transition:fade|local={{ duration: 500, easing: quintOut }}
+  >
+    <!-- Background Colors are set here due to the dark selector in raw css not working. -->
     <PaginationNav {...$$props} on:setPage />
   </div>
 </Animate>
 
 <style lang="postcss">
   #paginator :global(.pagination-nav) {
+    @apply border-secondary/20;
+    @apply backdrop-blur-sm;
+    @apply justify-center;
+    @apply items-center;
+    @apply rounded-md;
+    @apply flex-wrap;
+    @apply max-w-fit;
     @apply shadow-md;
+    @apply border;
+    @apply flex;
     @apply mb-4;
 
-    background: rgba(var(--secondary-rgb), 0.1);
-    backdrop-filter: blur(4px);
-    justify-content: center;
-    max-width: fit-content;
-    align-items: center;
-    border-radius: 5px;
-    flex-wrap: wrap;
-    display: flex;
+    @screen lg {
+      @apply m-0;
+    }
   }
 
   #paginator :global(.option) {
-    transition: all 200ms ease-out;
-    color: var(--secondary);
-    justify-content: center;
-    align-items: center;
-    user-select: none;
-    display: flex;
-    padding: 10px;
-  }
-
-  #paginator :global(.option svg path) {
-    fill: var(--secondary);
+    @apply justify-center;
+    @apply text-secondary;
+    @apply transition-all;
+    @apply items-center;
+    @apply select-none;
+    @apply p-[10px];
+    @apply flex;
   }
 
   #paginator :global(.option:first-child) {
-    border-radius: 3px 0 0 3px;
+    @apply rounded-tl-md;
+    @apply rounded-bl-md;
   }
 
   #paginator :global(.option:last-child) {
-    border-radius: 0 3px 3px 0;
+    @apply rounded-tr-md;
+    @apply rounded-br-md;
   }
 
   #paginator :global(.option.number),
   #paginator :global(.option.ellipsis) {
-    padding: 14px 15px;
+    @apply p-3;
   }
 
-  #paginator :is([data-theme="dark"]) :global(.option:focus) {
-    background: transparent;
-  }
-
-  #paginator :is([data-theme="dark"]) :global(.option:active) {
-    background: rgba(var(--secondary-rgb), 0.4);
+  #paginator :global(.option svg path) {
+    @apply fill-secondary;
   }
 
   #paginator :global(.option:focus) {
-    background: transparent;
+    @apply bg-transparent;
   }
 
   #paginator :global(.option:active) {
-    background: rgba(var(--primary-rgb), 0.4);
+    @apply bg-primary/40;
   }
 
   #paginator :global(.option.active) {
-    color: var(--neutral);
+    @apply text-neutral;
   }
 
-  /* LG Screen Width (Can't use tailwindcss screen() function...) */
-  @media (min-width: 992px) {
-    #paginator :global(.pagination-nav) {
-      margin: 0;
-    }
-
-    #paginator :is([data-theme="dark"]) :global(.option:hover) {
-      background: rgba(var(--secondary-rgb), 0.4);
-      cursor: pointer;
-    }
-
-    #paginator :global(.option:hover) {
-      background: rgba(var(--primary-rgb), 0.4);
-      cursor: pointer;
+  #paginator :global(.option:hover) {
+    @screen lg {
+      @apply bg-primary/40;
+      @apply cursor-pointer;
     }
   }
 </style>

@@ -3,7 +3,7 @@ slug: Top-Floor-Nightclub
 title: Top Floor Nightclub
 published: 2023-07-03
 updated: 2023-07-03
-tags: [Venue, "2023"]
+tags: [Venue, Event, "2023"]
 excerpt: Come and see some of the events I've done at Top Floor!
 hidden: false
 ---
@@ -35,11 +35,36 @@ Top Floor Nightclub is one of the venues that I have the opportunity to work in 
 ## Events
 
 <EventGrid>
-  <EventItem title="Boston Switch" description="I operated lighting for Boston Switch!" handle="bostonswitch" image="{BostonSwitch}" />
-  <EventItem title="Moving Stills" description="I mixed FOH audio for The Moving Stills!" handle="themovingstills" image="{TheMovingStills}" />
-  <EventItem title="Barbie Night" description="I operated lighting for DJ Rog!" handle="djrog1998" image={BarbieNight} />
-  <EventItem title="Foolish Party" description="I operated lighting for Aus #1 R&B DJ Ninobrown!" handle="dj_ninobrown" image="{Foolish2000}"/>
-  <EventItem title="Magic Mike" description="I operated lighting for a couple of Magic Mike shows!" handle="topshelfentertainment" image="{MagicMike}" />
+  <EventItem
+    title="Boston Switch"
+    description="I operated lighting for Boston Switch!"
+    handle="bostonswitch"
+    image="{BostonSwitch}"
+  />
+  <EventItem
+    title="Moving Stills"
+    description="I mixed FOH audio for The Moving Stills!"
+    handle="themovingstills"
+    image="{TheMovingStills}" 
+  />
+  <EventItem
+    title="Barbie Night"
+    description="I operated lighting for DJ Rog!"
+    handle="djrog1998"
+    image={BarbieNight}
+  />
+  <EventItem
+    title="Foolish Party"
+    description="I operated lighting for Aus #1 R&B DJ Ninobrown!"
+    handle="dj_ninobrown"
+    image="{Foolish2000}"
+  />
+  <EventItem
+    title="Magic Mike"
+    description="I operated lighting for a couple of Magic Mike shows!"
+    handle="topshelfentertainment"
+    image="{MagicMike}"
+  />
 </EventGrid>
 
 <br>

@@ -1,13 +1,13 @@
 import { recentTracks } from "$utils/zod/lastfm";
-import { env } from "$env/dynamic/private";
+import { env } from "$env/dynamic/public";
 import { t } from "../trpc";
 import { z } from "zod";
 
 export const fetchCurrentTrack = async () => {
   const query = new URLSearchParams({
     method: "user.getrecenttracks",
-    user: env.LAST_FM_USERNAME,
-    api_key: env.LAST_FM_API_KEY,
+    user: env.PUBLIC_FM_USERNAME,
+    api_key: env.PUBLIC_FM_API_KEY,
     format: "json",
     limit: "1",
     extended: "true"
