@@ -19,6 +19,7 @@
 
   import type { Post } from "$utils/types";
 
+  // This data is cached by prefetchQuery in +page.ts so no fetch actually happens here
   $: postQuery = createQuery({
     queryFn: () => trpc($page).posts.fetchPosts.query(),
     queryKey: ["posts"]
@@ -79,26 +80,7 @@
       <div
         class="divider m-0 mb-2 before:h-[1px] before:bg-secondary/20 before:shadow-md after:h-[1px] after:bg-secondary/20 after:shadow-md"
       />
-      {#if paginatedPosts.length}
-        {#each paginatedPosts as post, i}
-          <BlogPost
-            {i}
-            title={post.title}
-            tags={post?.tags}
-            published={post.published}
-            on:click={(event) => handleClick(post, event)}
-            on:keydown={(event) => handleKeyDown(post, event)}
-          />
-        {/each}
-        <Paginator
-          {pageSize}
-          currentPage={$currentPage}
-          totalItems={items.length}
-          limit={1}
-          showStepOptions={true}
-          on:setPage={(e) => ($currentPage = e.detail.page)}
-        />
-      {:else}
+      {#if $postQuery.isLoading}
         <div
           class="flex flex-wrap items-center justify-center"
           in:fade={{ duration: 500, easing: quintOut }}
@@ -106,9 +88,41 @@
           <Icon height="35" width="35" icon="ic:round-filter-none" />
           <!-- prettier-ignore -->
           <p class="mx-6 my-12 max-w-fit text-center text-4xl font-bold text-secondary backdrop-blur-sm">
-            No Posts Found
+            Loading Posts...
           </p>
         </div>
+      {:else if $postQuery.isSuccess}
+        {#if paginatedPosts.length}
+          {#each paginatedPosts as post, i}
+            <BlogPost
+              {i}
+              title={post.title}
+              tags={post?.tags}
+              published={post.published}
+              on:click={(event) => handleClick(post, event)}
+              on:keydown={(event) => handleKeyDown(post, event)}
+            />
+          {/each}
+          <Paginator
+            {pageSize}
+            currentPage={$currentPage}
+            totalItems={items.length}
+            limit={1}
+            showStepOptions={true}
+            on:setPage={(e) => ($currentPage = e.detail.page)}
+          />
+        {:else}
+          <div
+            class="flex flex-wrap items-center justify-center"
+            in:fade={{ duration: 500, easing: quintOut }}
+          >
+            <Icon height="35" width="35" icon="ic:round-filter-none" />
+            <!-- prettier-ignore -->
+            <p class="mx-6 my-12 max-w-fit text-center text-4xl font-bold text-secondary backdrop-blur-sm">
+              No Posts Found
+            </p>
+          </div>
+        {/if}
       {/if}
     </div>
   </Container>

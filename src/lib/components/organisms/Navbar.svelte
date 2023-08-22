@@ -24,14 +24,6 @@
 
   const toggleMobileMenu = () => (mobileMenu = !mobileMenu);
   const hideMobileMenu = () => (mobileMenu = false);
-
-  $: postQuery = createQuery({
-    queryFn: () => trpc($page).posts.fetchPosts.query(),
-    queryKey: ["posts"]
-  });
-
-  $: posts = $postQuery.data ?? [];
-  $: currentPost = posts.find((obj) => obj.slug === $page.url.pathname.substring(1));
 </script>
 
 <Animate>
@@ -60,8 +52,7 @@
           {#each Navlinks as Navlink}
             {@const highlightRoute = clsx({
               "!bg-neutral font-bold text-primary active:text-primary dark:text-secondary hover:before:bg-primary/20 hover:before:dark:bg-secondary/20":
-                $page.url.pathname.includes(Navlink.route) ||
-                (currentPost && Navlink.name === "Blog")
+                $page.url.pathname.includes(Navlink.route)
             })}
 
             <li class="group mx-2">
