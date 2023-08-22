@@ -8,9 +8,7 @@ import adapter from "@sveltejs/adapter-netlify";
 const config = {
   extensions: [".svelte", ...mdsvexConfig.extensions],
   kit: {
-    adapter: adapter({
-      edge: true
-    })
+    adapter: adapter()
   },
   preprocess: [sveltePreprocess(), mdsvex(mdsvexConfig)]
 };
