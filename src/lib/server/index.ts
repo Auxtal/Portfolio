@@ -21,11 +21,19 @@ export const sendEmail = async (name: string, email: string, subject: string, me
     })
   });
 
-  await ntfyClient.publish({
-    message: "A Contact Email Has Been Sent To You",
-    title: "Portfolio Website",
-    topic: "portfolio"
-  });
+  try {
+    await ntfyClient.publish({
+      message: "A Contact Email Has Been Sent To You",
+      title: "Portfolio Website",
+      topic: "portfolio",
+      authorization: {
+        username: "auxtal",
+        password: env.SECRET_NTFY_PASSWORD
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
 
   return response;
 };
