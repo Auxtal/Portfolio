@@ -6,22 +6,28 @@
     "checkJs": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "ignoreDeprecations": "5.0",
     "module": "esnext",
     "moduleResolution": "Node",
     "paths": {
       "$components": ["./src/lib/components/"],
       "$components/*": ["./src/lib/components/*"],
-      "$json": ["./src/lib/assets/data/"],
-      "$json/*": ["./src/lib/assets/data/*"],
-      "$lib": ["src/lib"],
-      "$lib/*": ["src/lib/*"],
+      "$css": ["./src/lib/assets/css/"],
+      "$css/*": ["./src/lib/assets/css/*"],
+      "$json": ["./src/lib/assets/json/"],
+      "$json/*": ["./src/lib/assets/json/*"],
+      "$lib": ["./src/lib"],
+      "$lib/*": ["./src/lib/*"],
+      "$routes": ["./src/routes"],
+      "$routes/*": ["./src/routes/*"],
       "$src": ["./src/"],
-      "$src/*": ["./src/*"]
+      "$src/*": ["./src/*"],
+      "$utils": ["./src/lib/utils/"],
+      "$utils/*": ["./src/lib/utils/*"]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true
-  },
-  "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.js", "src/**/*.svelte", "src/**/*.json"]
+  }
 }

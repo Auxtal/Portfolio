@@ -1,6 +1,10 @@
 <script lang="ts">
-  import Animate from "$components/Animate.svelte";
+  import Animate from "$components/atoms/Animate.svelte";
+  import Container from "$components/atoms/Container.svelte";
   import Education from "$json/Education.json";
+
+  import { fade, fly, slide } from "svelte/transition";
+  import { quintOut } from "svelte/easing";
 
   import {
     Timeline,
@@ -10,21 +14,16 @@
     TimelineConnector,
     TimelineContent
   } from "svelte-vertical-timeline";
-
-  import { fade, fly, slide } from "svelte/transition";
-  import { quintOut } from "svelte/easing";
 </script>
 
 <svelte:head>
   <title>Education</title>
+  <meta name="description" content="Auxtal's Portfolio site education page." />
 </svelte:head>
 
 <Animate>
-  <div class="flex h-screen items-center justify-center">
-    <div
-      class="absolute top-20 w-full lg:top-28 xl:relative xl:top-0"
-      transition:fade|local={{ duration: 500 }}
-    >
+  <Container noMobileFlex={true}>
+    <div transition:fade|local={{ duration: 500 }}>
       <Timeline position="alternate">
         {#each Education as Education, i}
           <TimelineItem style="margin:15px 0">
@@ -47,7 +46,7 @@
               <Animate>
                 <h3
                   transition:fly|local={{ x: -150, duration: 500, easing: quintOut }}
-                  class="font-secondary font-extrabold"
+                  class="font-extrabold"
                 >
                   {Education.place}
                 </h3>
@@ -58,8 +57,8 @@
                   {Education.year_start} - {Education.year_end}
                 </p>
                 <p
-                  transition:fade|local={{ delay: 150, duration: 800, easing: quintOut }}
-                  class="font-secondary text-accent"
+                  transition:fade|local={{ delay: 150, duration: 500, easing: quintOut }}
+                  class="text-accent"
                 >
                   {Education.description}
                 </p>
@@ -69,5 +68,5 @@
         {/each}
       </Timeline>
     </div>
-  </div>
+  </Container>
 </Animate>

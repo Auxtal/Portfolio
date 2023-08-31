@@ -1,13 +1,25 @@
 <script lang="ts">
   import "$src/app.postcss";
 
-  import ActionButtons from "$components/ActionButtons.svelte";
-  import Navbar from "$components/Navbar.svelte";
+  import ActionButtons from "$components/organisms/ActionButtons.svelte";
+  import Navbar from "$components/organisms/Navbar.svelte";
 
   import { Toaster } from "svelte-french-toast";
+  import { QueryClientProvider } from "@tanstack/svelte-query";
+
+  import type { LayoutData } from "./$types";
+
+  export let data: LayoutData;
 </script>
 
-<Toaster />
-<Navbar />
-<ActionButtons />
-<slot />
+<svelte:head>
+  <link rel="preload" as="image" href="/images/Logo-Round.webp" />
+  <link rel="preload" as="image" href="/images/Graduation-Event.webp" />
+</svelte:head>
+
+<QueryClientProvider client={data.queryClient}>
+  <Toaster />
+  <Navbar />
+  <ActionButtons />
+  <slot />
+</QueryClientProvider>

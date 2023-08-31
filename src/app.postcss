@@ -1,3 +1,5 @@
+@import url($css/prism-vsc-dark-plus.css);
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,6 +10,7 @@
   src: url("/fonts/Eina01-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -15,6 +18,7 @@
   src: url("/fonts/Eina01-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -22,6 +26,7 @@
   src: url("/fonts/Eina01-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 
 :root {
@@ -44,13 +49,5 @@ body {
   body {
     font-family: "Eina01", "sans-serif";
     font-size: 16px;
-  }
-}
-
-@layer utilities {
-  .transition-bg {
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-property: background-color;
-    transition-duration: 150ms;
   }
 }

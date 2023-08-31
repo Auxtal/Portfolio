@@ -1,34 +1,13 @@
-import type { ServerLoad } from "@sveltejs/kit";
+import { trpc } from "$lib/trpc/client";
 
-interface Metadata {
-  layout: string;
-  id: number;
-  title: string;
-  date: Date;
-  tags: string[];
-  hidden: boolean;
-}
+import type { PageLoad } from "../[slug]/$types";
+import type { LoadEvent } from "@sveltejs/kit";
 
-export type Post = {
-  path: string;
-  metadata: Metadata;
-};
+export const load: PageLoad = async (event: LoadEvent) => {
+  const { queryClient } = await event.parent();
 
-export const load: ServerLoad = () => {
-  const body = [];
-  const allPosts = import.meta.glob("./**/*.svelte.md") as Record<
-    string,
-    () => Promise<{ metadata: Metadata }>
-  >;
-
-  for (const path in allPosts) {
-    body.push(
-      allPosts[path]().then(({ metadata }) => {
-        return { path, metadata };
-      })
-    );
-  }
-
-  const posts = Promise.all(body);
-  return { posts };
+  await queryClient.prefetchQuery({
+    queryFn: async () => trpc(event).posts.fetchPosts.query(),
+    queryKey: ["posts"]
+  });
 };

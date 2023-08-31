@@ -4,6 +4,7 @@ module.exports = {
     require("cssnano")({
       preset: "default"
     }),
+    require("tailwindcss/nesting"),
     require("tailwindcss")
   ]
 };
