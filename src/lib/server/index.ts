@@ -23,9 +23,11 @@ export const sendEmail = async (name: string, email: string, subject: string, me
 
   try {
     await ntfyClient.publish({
-      message: "A Contact Email Has Been Sent To You",
-      title: "Portfolio Website",
       topic: "portfolio",
+      title: "Portfolio Website",
+      message: "A Contact Email Has Been Sent To You",
+      iconURL: "https://i.ibb.co/vZgSTS1/Logo-Round.png",
+      tags: ["email"],
       authorization: {
         username: "auxtal",
         password: env.SECRET_NTFY_PASSWORD
