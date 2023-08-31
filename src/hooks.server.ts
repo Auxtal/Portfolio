@@ -5,7 +5,6 @@ import { env } from "$env/dynamic/public";
 
 import { sequence } from "@sveltejs/kit/hooks";
 import * as SentryNode from "@sentry/node";
-// @ts-expect-error Resolve declaration issue
 import crypto from "crypto";
 
 import type { Handle, HandleServerError } from "@sveltejs/kit";
@@ -19,7 +18,8 @@ SentryNode.init({
 export const handleError: HandleServerError = ({ error, event }) => {
   const errorId = crypto.randomUUID();
   SentryNode.captureException(error, {
-    contexts: { sveltekit: { event, errorId } }
+    contexts: { sveltekit: { event } },
+    tags: { errorId }
   });
 
   console.log(error);
@@ -36,7 +36,8 @@ const handleTRPC: Handle = createTRPCHandle({
   onError: ({ type, path, error }) => {
     const errorId = crypto.randomUUID();
     SentryNode.captureException(error, {
-      contexts: { TRPC: { type, path, errorId } }
+      contexts: { TRPC: { type, path } },
+      tags: { errorId }
     });
 
     console.error(`Encountered error while trying to process ${type} @ ${path}:`, error);

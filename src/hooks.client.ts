@@ -12,7 +12,8 @@ SentrySvelte.init({
 export const handleError: HandleClientError = ({ error, event }) => {
   const errorId = crypto.randomUUID();
   SentrySvelte.captureException(error, {
-    contexts: { sveltekit: { event, errorId } }
+    contexts: { sveltekit: { event } },
+    tags: { errorId }
   });
 
   console.log(error);
