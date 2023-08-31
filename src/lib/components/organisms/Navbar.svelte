@@ -5,13 +5,11 @@
   import ConfettiToggle from "$components/molecules/ConfettiToggle.svelte";
 
   import Navlinks from "$json/Navlinks.json";
-  import { trpc } from "$lib/trpc/client";
 
   import { fade } from "svelte/transition";
   import { quintOut } from "svelte/easing";
   import { page } from "$app/stores";
 
-  import { createQuery } from "@tanstack/svelte-query";
   import OutClick from "svelte-outclick";
   import Icon from "@iconify/svelte";
 

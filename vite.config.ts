@@ -8,13 +8,7 @@ import type { UserConfig } from "vite";
 const config: UserConfig = {
   plugins: [
     sentrySvelteKit({
-      sourceMapsUploadOptions: {
-        org: "auxtal",
-        project: "portfolio",
-        authToken: process.env.SENTRY_AUTH_TOKEN,
-        cleanArtifacts: true,
-        rewrite: false
-      }
+      autoUploadSourceMaps: false
     }),
     sveltekit(),
     imagetools({
