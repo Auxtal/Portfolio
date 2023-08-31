@@ -1,12 +1,15 @@
+import { sentrySvelteKit } from "@sentry/sveltekit";
 import { sveltekit } from "@sveltejs/kit/vite";
 import { imagetools } from "vite-imagetools";
-// @ts-expect-error Resolve declaration issue
 import path from "path";
 
 import type { UserConfig } from "vite";
 
 const config: UserConfig = {
   plugins: [
+    sentrySvelteKit({
+      autoUploadSourceMaps: false
+    }),
     sveltekit(),
     imagetools({
       removeMetadata: true

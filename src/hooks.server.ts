@@ -4,13 +4,12 @@ import { router } from "$lib/trpc/router";
 import { env } from "$env/dynamic/public";
 
 import { sequence } from "@sveltejs/kit/hooks";
-import * as SentryNode from "@sentry/node";
-// @ts-expect-error Resolve declaration issue
+import * as Sentry from "@sentry/sveltekit";
 import crypto from "crypto";
 
 import type { Handle, HandleServerError } from "@sveltejs/kit";
 
-SentryNode.init({
+Sentry.init({
   dsn: env.PUBLIC_SENTRY_DSN,
   environment: env.PUBLIC_ENVIRONMENT,
   release: "2.5.15"
@@ -18,8 +17,9 @@ SentryNode.init({
 
 export const handleError: HandleServerError = ({ error, event }) => {
   const errorId = crypto.randomUUID();
-  SentryNode.captureException(error, {
-    contexts: { sveltekit: { event, errorId } }
+  Sentry.captureException(error, {
+    contexts: { sveltekit: { event } },
+    tags: { errorId }
   });
 
   console.log(error);
@@ -35,8 +35,9 @@ const handleTRPC: Handle = createTRPCHandle({
   createContext,
   onError: ({ type, path, error }) => {
     const errorId = crypto.randomUUID();
-    SentryNode.captureException(error, {
-      contexts: { TRPC: { type, path, errorId } }
+    Sentry.captureException(error, {
+      contexts: { TRPC: { type, path } },
+      tags: { errorId }
     });
 
     console.error(`Encountered error while trying to process ${type} @ ${path}:`, error);

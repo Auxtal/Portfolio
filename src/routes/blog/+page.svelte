@@ -19,7 +19,6 @@
 
   import type { Post } from "$utils/types";
 
-  // This data is cached by prefetchQuery in +page.ts so no fetch actually happens here
   $: postQuery = createQuery({
     queryFn: () => trpc($page).posts.fetchPosts.query(),
     queryKey: ["posts"]
