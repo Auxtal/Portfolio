@@ -1,8 +1,8 @@
 ---
 slug: AUD212
 title: AUD212
-published: 2023-8-21
-updated: 2023-8-21
+published: 2023-08-21
+updated: 2023-08-21
 tags: [University, Unit, "2023"]
 excerpt: A post about my AUD212 unit at university.
 hidden: false
