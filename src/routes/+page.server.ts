@@ -1,12 +1,9 @@
 export { load } from "sveltekit-flash-message/server";
-
-import { redirect } from "@sveltejs/kit";
 import type { Actions } from "@sveltejs/kit";
 
 export const actions: Actions = {
-  toggleTheme: async ({ url, cookies }) => {
+  toggleTheme: async ({ cookies }) => {
     const theme = cookies.get("theme");
-    const redirectUrl = url.searchParams.get("redirect") as string;
 
     if (!theme) {
       cookies.set("theme", "light", {
@@ -24,7 +21,5 @@ export const actions: Actions = {
       secure: true,
       sameSite: "strict"
     });
-
-    throw redirect(302, redirectUrl);
   }
 };
