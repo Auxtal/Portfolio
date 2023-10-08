@@ -35,7 +35,7 @@
     "eslint-plugin-svelte3": "^4.0.0",
     "mdsvex": "^0.10.6",
     "ntfy": "^1.3.1",
-    "postcss": "^8.4.20",
+    "postcss": "^8.4.31",
     "postcss-cli": "^10.1.0",
     "prettier": "^2.8.1",
     "prettier-plugin-svelte": "^2.9.0",
