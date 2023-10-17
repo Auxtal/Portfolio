@@ -9,6 +9,7 @@ hidden: false
 ---
 
 <script>
+  import BreadGang from "./Bread-Gang.jpg?w=500;700;900;1200;1600&avif&srcset"
   import BostonSwitch from "./Boston-Switch.webp?w=500;700;900;1200;1600&avif&srcset"
   import TheMovingStills from "./The-Moving-Stills.webp?w=500;700;900;1200;1600&avif&srcset"
   import BarbieNight from "./Barbie-Night.webp?w=500;700;900;1200;1600&avif&srcset"
@@ -35,6 +36,12 @@ Top Floor Nightclub is one of the venues that I have the opportunity to work in 
 ## Events
 
 <EventGrid>
+  <EventItem
+    title="Bread Gang"
+    description="I operated lighting for Bread Gang!"
+    handle="breadgangtv"
+    image="{BreadGang}"
+  />
   <EventItem
     title="Boston Switch"
     description="I operated lighting for Boston Switch!"

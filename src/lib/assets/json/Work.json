@@ -18,15 +18,15 @@
     "current": true
   },
   {
-    "place": "Cameo Rascale",
-    "description": "Cameo Rascale is an internationally acclaimed acrobatic, comedy juggling act. When they come to my local area I am sometimes hired as a Lighting Designer for them. I have programmed and operated several of their shows including 2 promotional videos.",
-    "role": "Lighting Designer",
-    "current": false
-  },
-  {
     "place": "Foundation Christian College",
     "description": "I worked at FCC as a volunteer since I was 12 years old and once I graduated I was employed as an AV technician to run events and install equipment and maintain the theatre.",
     "role": "AV Technician",
+    "current": false
+  },
+  {
+    "place": "Cameo Rascale",
+    "description": "Cameo Rascale is an internationally acclaimed acrobatic, comedy juggling act. When they come to my local area I am sometimes hired as a Lighting Designer for them. I have programmed and operated several of their shows including 2 promotional videos.",
+    "role": "Lighting Designer",
     "current": false
   },
   {

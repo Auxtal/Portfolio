@@ -25,7 +25,7 @@
   });
 
   $: posts = $postQuery.data ?? [];
-  let pageSize = 4;
+  let pageSize = 6;
 
   const handleClick = async (post: Post, event: MouseEvent) => {
     const target = event.target as Element;
@@ -72,7 +72,7 @@
         <input
           placeholder="Search"
           type="text"
-          class="input outline w-72 !rounded-md bg-transparent text-sm text-secondary placeholder-secondary shadow-md outline-2 outline-secondary/20 backdrop-blur-sm transition-all focus-visible:outline-[2.5px] focus-visible:outline-neutral"
+          class="input outline w-72 !rounded-md bg-transparent text-sm text-secondary placeholder-secondary/50 shadow-md outline-2 outline-secondary/20 backdrop-blur-sm transition-all focus-visible:outline-[2.5px] focus-visible:outline-neutral"
           bind:value={$searchTerm}
         />
       </div>
@@ -115,9 +115,9 @@
             class="flex flex-wrap items-center justify-center"
             in:fade={{ duration: 500, easing: quintOut }}
           >
-            <Icon height="35" width="35" icon="ic:round-filter-none" />
+            <Icon height="50" width="50" icon="ic:baseline-no-sim" />
             <!-- prettier-ignore -->
-            <p class="mx-6 my-12 max-w-fit text-center text-4xl font-bold text-secondary backdrop-blur-sm">
+            <p class="mx-2 my-12 max-w-fit text-center text-4xl font-bold text-secondary backdrop-blur-sm">
               No Posts Found
             </p>
           </div>
