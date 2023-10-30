@@ -16,7 +16,7 @@
     "@iconify/icons-logos": "^1.2.20",
     "@iconify/svelte": "^3.0.1",
     "@sveltejs/adapter-netlify": "^2.0.6",
-    "@sveltejs/kit": "^1.8.3",
+    "@sveltejs/kit": "^1.27.2",
     "@tailwindcss/typography": "^0.5.8",
     "@tanstack/svelte-query": "^4.32.6",
     "@trpc/client": "^10.37.1",
