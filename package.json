@@ -63,8 +63,8 @@
     "trpc-sveltekit": "^3.5.20",
     "tslib": "^2.4.1",
     "typescript": "^4.9.4",
+    "vite-imagetools": "^6.2.4",
     "vite": "^4.4.12",
-    "vite-imagetools": "^4.0.19",
     "zod": "^3.20.2"
   },
   "dependencies": {
