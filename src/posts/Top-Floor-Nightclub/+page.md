@@ -9,6 +9,8 @@ hidden: false
 ---
 
 <script>
+  import DonDarkoe from "./Don-Darkoe.webp?w=500;700;900;1200;1600&avif&srcset"
+  import Blkout from "./Blkout.webp?w=500;700;900;1200;1600&avif&srcset"
   import BreadGang from "./Bread-Gang.jpg?w=500;700;900;1200;1600&avif&srcset"
   import BostonSwitch from "./Boston-Switch.webp?w=500;700;900;1200;1600&avif&srcset"
   import TheMovingStills from "./The-Moving-Stills.webp?w=500;700;900;1200;1600&avif&srcset"
@@ -29,13 +31,25 @@ hidden: false
 
 ## Description
 
-Top Floor Nightclub is one of the venues that I have the opportunity to work in as they're a client of Technical Alliance. If you’re ever in the area chances are I’m working so come on in and say hello! Working at Top Floor has been lots of fun. Although I’ve only been working there for {monthDiff(started, current)} months I have a myriad of weird and funny stories associated with the nightlife of Perth. I’ve had amazing opportunities to operate lighting for many large and borderline “famous” DJs which has been awesome.
+Top Floor Nightclub is one of the venues that I have the opportunity to work in as they're a client of Technical Alliance. If you’re ever in the area chances are I’m working so come on in and say hello! Working at Top Floor has been lots of fun. Although I’ve only been working there for {monthDiff(started, current)} months I have a myriad of weird and funny stories associated with the nightlife of Perth. I’ve also had amazing opportunities to operate lighting for many popular DJs which has been awesome.
 
 <img srcset={TopFloor} alt="Top Floor Night Club" />
 
 ## Events
 
 <EventGrid>
+  <EventItem
+    title="Don Darkoe"
+    description="I operated lighting for Don Darkoe!"
+    handle="dondarkoe"
+    image="{DonDarkoe}"
+  />
+  <EventItem
+    title="Blkout"
+    description="I operated lighting for Blkout!"
+    handle="1800blkout"
+    image="{Blkout}"
+  />
   <EventItem
     title="Bread Gang"
     description="I operated lighting for Bread Gang!"

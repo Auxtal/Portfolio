@@ -6,7 +6,7 @@ import type { HandleClientError } from "@sveltejs/kit";
 Sentry.init({
   dsn: env.PUBLIC_SENTRY_DSN,
   environment: env.PUBLIC_ENVIRONMENT,
-  release: "2.6.15"
+  release: "2.6.16"
 });
 
 export const handleError: HandleClientError = ({ error, event }) => {
