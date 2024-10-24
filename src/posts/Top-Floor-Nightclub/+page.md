@@ -9,6 +9,13 @@ hidden: false
 ---
 
 <script>
+  import CaptainBass from "./Captain-Bass.jpg?w=500;700;900;1200;1600&avif&srcset"
+  import TaikiNulight from "./Taiki-Nulight.jpg?w=500;700;900;1200;1600&avif&srcset"
+  import BreadGang from "./Bread-Gang.jpg?w=500;700;900;1200;1600&avif&srcset"
+  import TerrenceAndPhillip from "./Terrence-And-Phillip.jpg?w=500;700;900;1200;1600&avif&srcset"
+  import DonDarkoe from "./Dondarkoe.jpg?w=500;700;900;1200;1600&avif&srcset"
+  import Blkout from "./Blkout.jpg?w=500;700;900;1200;1600&avif&srcset"
+  import SammyTheSinner from "./Sammy-The-Sinner.jpg?w=500;700;900;1200;1600&avif&srcset"
   import BostonSwitch from "./Boston-Switch.webp?w=500;700;900;1200;1600&avif&srcset"
   import TheMovingStills from "./The-Moving-Stills.webp?w=500;700;900;1200;1600&avif&srcset"
   import BarbieNight from "./Barbie-Night.webp?w=500;700;900;1200;1600&avif&srcset"
@@ -35,6 +42,48 @@ Top Floor Nightclub is one of the venues that I have the opportunity to work in 
 ## Events
 
 <EventGrid>
+  <EventItem
+    title="Captain Bass"
+    description="I operated lighting for Captain Bass!"
+    handle="captainbassbe"
+    image="{CaptainBass}"
+  />
+  <EventItem
+    title="Taiki Nulight"
+    description="I operated lighting for Taiki Nulight!"
+    handle="taikinulightuk"
+    image="{TaikiNulight}"
+  />
+  <EventItem
+    title="Bread Gang"
+    description="I operated lighting for Bread Gang!"
+    handle="breadgangtv"
+    image="{BreadGang}"
+  />
+  <EventItem
+    title="Terrence And Phillip"
+    description="I operated lighting for Terrence And Phillip!"
+    handle="terrenceandphillip"
+    image="{TerrenceAndPhillip}"
+  />
+  <EventItem
+    title="Don Darkoe"
+    description="I operated lighting for Don Darkoe!"
+    handle="dondarkoe"
+    image="{DonDarkoe}"
+  />
+  <EventItem
+    title="Blkout"
+    description="I operated lighting for Blkout!"
+    handle="1800blkout"
+    image="{Blkout}"
+  />
+  <EventItem
+    title="Sammy The Sinner"
+    description="I operated lighting for Sammy The Sinner!"
+    handle="sammythesinner_"
+    image="{SammyTheSinner}"
+  />
   <EventItem
     title="Boston Switch"
     description="I operated lighting for Boston Switch!"
