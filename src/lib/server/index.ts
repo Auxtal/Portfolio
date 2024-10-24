@@ -1,7 +1,7 @@
 import { env } from "$env/dynamic/private";
-import { NtfyClient } from "ntfy";
+// import { NtfyClient } from "ntfy";
 
-const ntfyClient = new NtfyClient("https://ntfy.auxtal.xyz");
+// const ntfyClient = new NtfyClient("https://ntfy.auxtal.xyz");
 
 export const sendEmail = async (name: string, email: string, subject: string, message: string) => {
   const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
@@ -21,21 +21,21 @@ export const sendEmail = async (name: string, email: string, subject: string, me
     })
   });
 
-  try {
-    await ntfyClient.publish({
-      topic: "portfolio",
-      title: "Portfolio Website",
-      message: "A Contact Email Has Been Sent To You",
-      iconURL: "https://i.ibb.co/vZgSTS1/Logo-Round.png",
-      tags: ["email"],
-      authorization: {
-        username: "auxtal",
-        password: env.SECRET_NTFY_PASSWORD
-      }
-    });
-  } catch (error) {
-    console.log(error);
-  }
+  // try {
+  //   await ntfyClient.publish({
+  //     topic: "portfolio",
+  //     title: "Portfolio Website",
+  //     message: "A Contact Email Has Been Sent To You",
+  //     iconURL: "https://i.ibb.co/vZgSTS1/Logo-Round.png",
+  //     tags: ["email"],
+  //     authorization: {
+  //       username: "auxtal",
+  //       password: env.SECRET_NTFY_PASSWORD
+  //     }
+  //   });
+  // } catch (error) {
+  //   console.log(error);
+  // }
 
   return response;
 };
